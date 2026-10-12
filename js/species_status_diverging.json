@@ -1,0 +1,167 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Distribution of recorded TSX threat categories among distinct monitored species. The diverging axis separates lower and higher severity statuses.",
+  "title": {
+    "text": "Share of monitored species by recorded threat status"
+  },
+  "width": 720,
+  "height": 260,
+  "data": {
+    "url": "data/species_status_diverging.csv",
+    "format": {
+      "type": "csv",
+      "parse": {
+        "count": "number",
+        "group_total": "number",
+        "percentage": "number",
+        "start_pct": "number",
+        "end_pct": "number"
+      }
+    }
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "bar",
+        "size": 36,
+        "stroke": "#FFFFFF",
+        "strokeWidth": 1
+      },
+      "encoding": {
+        "y": {
+          "field": "group",
+          "type": "nominal",
+          "title": null,
+          "sort": [
+            "Reptiles & Amphibians",
+            "Plants",
+            "Birds",
+            "Mammals"
+          ],
+          "axis": {
+            "labelFontSize": 13,
+            "labelLimit": 190
+          }
+        },
+        "x": {
+          "field": "start_pct",
+          "type": "quantitative",
+          "title": "Share of monitored species within each group (%)",
+          "scale": {
+            "domain": [
+              -60,
+              80
+            ]
+          },
+          "axis": {
+            "values": [
+              -60,
+              -40,
+              -20,
+              0,
+              20,
+              40,
+              60,
+              80
+            ],
+            "labelExpr": "abs(datum.value) + '%'",
+            "gridColor": "#E8EEE7"
+          }
+        },
+        "x2": {
+          "field": "end_pct"
+        },
+        "color": {
+          "field": "status",
+          "type": "nominal",
+          "title": "Recorded threat status",
+          "scale": {
+            "domain": [
+              "Near Threatened",
+              "Vulnerable",
+              "Endangered",
+              "Critically Endangered"
+            ],
+            "range": [
+              "#9FB997",
+              "#D1B36A",
+              "#D47B4E",
+              "#B54A3A"
+            ]
+          },
+          "legend": {
+            "orient": "bottom",
+            "direction": "horizontal",
+            "columns": 2,
+            "labelFontSize": 14,
+            "titleFontSize": 15,
+            "symbolSize": 180,
+            "offset": 14
+          }
+        },
+        "tooltip": [
+          {
+            "field": "group",
+            "type": "nominal",
+            "title": "Species group"
+          },
+          {
+            "field": "status",
+            "type": "nominal",
+            "title": "Threat status"
+          },
+          {
+            "field": "count",
+            "type": "quantitative",
+            "title": "Distinct monitored species"
+          },
+          {
+            "field": "percentage",
+            "type": "quantitative",
+            "title": "Share of group",
+            "format": ".1f"
+          }
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "rule",
+        "stroke": "#173D34",
+        "strokeWidth": 1.5
+      },
+      "encoding": {
+        "x": {
+          "datum": 0
+        }
+      }
+    }
+  ],
+  "config": {
+    "background": "#FFFFFF",
+    "font": "DM Sans",
+    "view": {
+      "stroke": null
+    },
+    "title": {
+      "font": "DM Sans",
+      "fontSize": 19,
+      "fontWeight": 700,
+      "color": "#173D34",
+      "subtitleFont": "DM Sans",
+      "subtitleColor": "#586D61"
+    },
+    "axis": {
+      "labelFont": "DM Sans",
+      "titleFont": "DM Sans",
+      "labelColor": "#243B32",
+      "titleColor": "#173D34"
+    },
+    "legend": {
+      "labelFont": "DM Sans",
+      "titleFont": "DM Sans",
+      "labelColor": "#243B32",
+      "titleColor": "#173D34"
+    }
+  }
+}

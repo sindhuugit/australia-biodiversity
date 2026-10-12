@@ -1,0 +1,108 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "CAPAD 2024 share of terrestrial land protected, with ABS 2021 generalised state boundaries.",
+  "title": {
+    "text": "How Much of Australia Is Protected?",
+    "subtitle": "Protected terrestrial land by state and territory, 2024"
+  },
+  "width": 550,
+  "height": 400,
+  "projection": {
+    "type": "mercator",
+    "center": [
+      134,
+      -28
+    ],
+    "scale": 600,
+    "translate": [
+      275,
+      200
+    ]
+  },
+  "data": {
+    "url": "https://raw.githubusercontent.com/rowanhogan/australian-states/master/states.geojson",
+    "format": {
+      "type": "json",
+      "property": "features"
+    }
+  },
+  "transform": [
+    {
+      "calculate": "datum.properties.STATE_CODE",
+      "as": "state_code"
+    },
+    {
+      "lookup": "state_code",
+      "from": {
+        "data": {
+          "url": "data/capad_states_2024.csv",
+          "format": {
+            "type": "csv",
+            "parse": {
+              "state_code": "string",
+              "protected_pct": "number",
+              "protected_ha": "number"
+            }
+          }
+        },
+        "key": "state_code",
+        "fields": [
+          "state",
+          "protected_pct",
+          "protected_ha"
+        ]
+      }
+    },
+    {
+      "filter": "isValid(datum.protected_pct)"
+    }
+  ],
+  "mark": {
+    "type": "geoshape",
+    "stroke": "#FFFFFF",
+    "strokeWidth": 1.2
+  },
+  "encoding": {
+    "color": {
+      "field": "protected_pct",
+      "type": "quantitative",
+      "title": "Protected land (%)",
+      "scale": {
+        "scheme": "greens",
+        "domain": [
+          0,
+          60
+        ]
+      }
+    },
+    "tooltip": [
+      {
+        "field": "properties.STATE_NAME",
+        "type": "nominal",
+        "title": "State / territory"
+      },
+      {
+        "field": "protected_pct",
+        "type": "quantitative",
+        "title": "Land protected (%)",
+        "format": ".1f"
+      },
+      {
+        "field": "protected_ha",
+        "type": "quantitative",
+        "title": "Protected area (ha)",
+        "format": ",.0f"
+      }
+    ],
+    "shape": {
+      "field": "geometry",
+      "type": "geojson"
+    }
+  },
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "background": "#FFFFFF"
+  }
+}

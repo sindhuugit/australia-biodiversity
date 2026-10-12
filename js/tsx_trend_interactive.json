@@ -1,0 +1,172 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "TSX 2025 official group-specific trends with published lower and upper uncertainty bounds; reptiles and amphibians displayed separately.",
+  "title": {
+    "text": "How Has Threatened Wildlife Changed?",
+    "subtitle": "Tracking changes in Australia's threatened wildlife populations from 1985 to 2022"
+  },
+  "width": "container",
+  "height": 390,
+  "data": {
+    "url": "data/tsx_trends_for_visualisation.csv",
+    "format": {
+      "type": "csv",
+      "parse": {
+        "year": "number",
+        "value": "number",
+        "low": "number",
+        "high": "number"
+      }
+    }
+  },
+  "params": [
+    {
+      "name": "selectedGroup",
+      "value": "All Species",
+      "bind": {
+        "input": "select",
+        "options": [
+          "All Species",
+          "Birds",
+          "Mammals",
+          "Plants",
+          "Reptiles",
+          "Amphibians"
+        ],
+        "name": "Species group: "
+      }
+    }
+  ],
+  "transform": [
+    {
+      "filter": "datum.group === selectedGroup"
+    }
+  ],
+  "layer": [
+    {
+      "mark": {
+        "type": "area",
+        "color": "#A8C4A0",
+        "opacity": 0.45
+      },
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              1985,
+              2022
+            ]
+          },
+          "axis": {
+            "title": "Year",
+            "format": "d",
+            "tickMinStep": 1
+          }
+        },
+        "y": {
+          "field": "low",
+          "type": "quantitative",
+          "title": "Relative abundance index",
+          "scale": {
+            "zero": true
+          }
+        },
+        "y2": {
+          "field": "high"
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "line",
+        "color": "#173D34",
+        "strokeWidth": 3
+      },
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "value",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "point",
+        "filled": true,
+        "color": "#D77A50",
+        "size": 52,
+        "opacity": 1,
+        "stroke": "#FFFFFF",
+        "strokeWidth": 1
+      },
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "value",
+          "type": "quantitative"
+        },
+        "tooltip": [
+          {
+            "field": "group",
+            "type": "nominal",
+            "title": "Species group"
+          },
+          {
+            "field": "year",
+            "type": "quantitative",
+            "format": "d",
+            "title": "Year"
+          },
+          {
+            "field": "value",
+            "type": "quantitative",
+            "format": ".3f",
+            "title": "Relative index"
+          },
+          {
+            "field": "low",
+            "type": "quantitative",
+            "title": "Lower bound",
+            "format": ".3f"
+          },
+          {
+            "field": "high",
+            "type": "quantitative",
+            "title": "Upper bound",
+            "format": ".3f"
+          }
+        ]
+      }
+    }
+  ],
+  "config": {
+    "background": "#FFFFFF",
+    "font": "DM Sans",
+    "view": {
+      "stroke": null
+    },
+    "title": {
+      "font": "DM Sans",
+      "fontSize": 19,
+      "fontWeight": 700,
+      "color": "#173D34",
+      "subtitleFont": "DM Sans",
+      "subtitleFontSize": 12,
+      "subtitleColor": "#586D61"
+    },
+    "axis": {
+      "labelFont": "DM Sans",
+      "titleFont": "DM Sans",
+      "gridColor": "#E8EEE7"
+    }
+  }
+}

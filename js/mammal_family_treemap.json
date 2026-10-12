@@ -1,0 +1,683 @@
+{
+  "$schema": "https://vega.github.io/schema/vega/v5.json",
+  "description": "Interactive treemap of distinct monitored mammal species in the Australian Threatened Species Index 2025. Family colours show the share of species with a higher-risk recorded status; clicking a family reveals species coloured by their recorded status.",
+  "width": 1000,
+  "height": 625,
+  "padding": {
+    "left": 4,
+    "right": 4,
+    "top": 4,
+    "bottom": 4
+  },
+  "background": "#FFFFFF",
+  "signals": [
+    {
+      "name": "activeFamily",
+      "value": "",
+      "on": [
+        {
+          "events": "@familyTiles:click",
+          "update": "datum.family"
+        },
+        {
+          "events": "@backButtonArea:click",
+          "update": "''"
+        }
+      ]
+    },
+    {
+      "name": "scaleX",
+      "update": "(width - 24) / 900"
+    },
+    {
+      "name": "scaleY",
+      "update": "500 / 530"
+    }
+  ],
+  "data": [
+    {
+      "name": "nodes",
+      "url": "data/mammal_species_treemap.csv",
+      "format": {
+        "type": "csv",
+        "parse": {
+          "x0": "number",
+          "x1": "number",
+          "y0": "number",
+          "y1": "number",
+          "count": "number",
+          "highRiskPct": "number",
+          "highRisk": "number"
+        }
+      }
+    },
+    {
+      "name": "families",
+      "source": "nodes",
+      "transform": [
+        {
+          "type": "filter",
+          "expr": "datum.level === 'family' && activeFamily === ''"
+        }
+      ]
+    },
+    {
+      "name": "species",
+      "source": "nodes",
+      "transform": [
+        {
+          "type": "filter",
+          "expr": "datum.level === 'species' && datum.family === activeFamily && activeFamily !== ''"
+        }
+      ]
+    },
+    {
+      "name": "familyLegend",
+      "values": [
+        {
+          "x": 0,
+          "label": "Below 25%",
+          "color": "#B7E8DC"
+        },
+        {
+          "x": 220,
+          "label": "25% to <50%",
+          "color": "#65C9BC"
+        },
+        {
+          "x": 425,
+          "label": "50% to <75%",
+          "color": "#328FB8"
+        },
+        {
+          "x": 620,
+          "label": "75% to 100%",
+          "color": "#6656AF"
+        }
+      ]
+    },
+    {
+      "name": "speciesLegend",
+      "values": [
+        {
+          "x": 0,
+          "label": "Near Threatened",
+          "color": "#8FD3A6"
+        },
+        {
+          "x": 235,
+          "label": "Vulnerable",
+          "color": "#EBC85A"
+        },
+        {
+          "x": 470,
+          "label": "Endangered",
+          "color": "#ED8A4A"
+        },
+        {
+          "x": 705,
+          "label": "Critically Endangered",
+          "color": "#D6523C"
+        }
+      ]
+    }
+  ],
+  "scales": [
+    {
+      "name": "risk",
+      "type": "threshold",
+      "domain": [
+        25,
+        50,
+        75
+      ],
+      "range": [
+        "#B7E8DC",
+        "#65C9BC",
+        "#328FB8",
+        "#6656AF"
+      ]
+    },
+    {
+      "name": "status",
+      "type": "ordinal",
+      "domain": [
+        "Near Threatened",
+        "Vulnerable",
+        "Endangered",
+        "Critically Endangered"
+      ],
+      "range": [
+        "#8FD3A6",
+        "#EBC85A",
+        "#ED8A4A",
+        "#D6523C"
+      ]
+    }
+  ],
+  "marks": [
+    {
+      "type": "rect",
+      "interactive": false,
+      "encode": {
+        "enter": {
+          "x": {
+            "value": 0
+          },
+          "y": {
+            "value": 0
+          },
+          "width": {
+            "signal": "width"
+          },
+          "height": {
+            "value": 553
+          },
+          "fill": {
+            "value": "#FAF7EF"
+          }
+        }
+      }
+    },
+    {
+      "type": "text",
+      "encode": {
+        "enter": {
+          "x": {
+            "value": 4
+          },
+          "y": {
+            "value": 23
+          },
+          "fill": {
+            "value": "#173D34"
+          },
+          "font": {
+            "value": "DM Sans"
+          },
+          "fontSize": {
+            "value": 15
+          },
+          "fontWeight": {
+            "value": 600
+          }
+        },
+        "update": {
+          "text": {
+            "signal": "activeFamily === '' ? 'Select a family to explore its species' : 'Family: ' + activeFamily"
+          }
+        }
+      }
+    },
+    {
+      "type": "rect",
+      "name": "familyTiles",
+      "from": {
+        "data": "families"
+      },
+      "encode": {
+        "enter": {
+          "stroke": {
+            "value": "#FAF7EF"
+          },
+          "strokeWidth": {
+            "value": 3
+          },
+          "cursor": {
+            "value": "pointer"
+          }
+        },
+        "update": {
+          "x": {
+            "signal": "12 + datum.x0 * scaleX"
+          },
+          "x2": {
+            "signal": "12 + datum.x1 * scaleX"
+          },
+          "y": {
+            "signal": "48 + datum.y0 * scaleY"
+          },
+          "y2": {
+            "signal": "48 + datum.y1 * scaleY"
+          },
+          "fill": {
+            "scale": "risk",
+            "field": "highRiskPct"
+          },
+          "tooltip": {
+            "signal": "{Family:datum.family,'Monitored species':datum.count,'Endangered or critically endangered species':datum.highRisk,'Higher-risk share (%)':datum.highRiskPct}"
+          }
+        }
+      }
+    },
+    {
+      "type": "text",
+      "from": {
+        "data": "families"
+      },
+      "interactive": false,
+      "encode": {
+        "enter": {
+          "fill": {
+            "value": "#173D34"
+          },
+          "font": {
+            "value": "DM Sans"
+          },
+          "fontWeight": {
+            "value": 600
+          },
+          "align": {
+            "value": "center"
+          },
+          "baseline": {
+            "value": "middle"
+          }
+        },
+        "update": {
+          "x": {
+            "signal": "12 + (datum.x0 + datum.x1)/2 * scaleX"
+          },
+          "y": {
+            "signal": "48 + (datum.y0 + datum.y1)/2 * scaleY"
+          },
+          "fontSize": {
+            "signal": "(datum.x1-datum.x0)*scaleX>135 ? 15 : 11"
+          },
+          "limit": {
+            "signal": "max(0,(datum.x1-datum.x0)*scaleX-12)"
+          },
+          "text": {
+            "signal": "(datum.x1-datum.x0)*scaleX>38 && (datum.y1-datum.y0)*scaleY>30 ? datum.family : ''"
+          }
+        }
+      }
+    },
+    {
+      "type": "rect",
+      "from": {
+        "data": "species"
+      },
+      "encode": {
+        "enter": {
+          "stroke": {
+            "value": "#FAF7EF"
+          },
+          "strokeWidth": {
+            "value": 3
+          }
+        },
+        "update": {
+          "x": {
+            "signal": "12 + datum.x0 * scaleX"
+          },
+          "x2": {
+            "signal": "12 + datum.x1 * scaleX"
+          },
+          "y": {
+            "signal": "48 + datum.y0 * scaleY"
+          },
+          "y2": {
+            "signal": "48 + datum.y1 * scaleY"
+          },
+          "fill": {
+            "scale": "status",
+            "field": "status"
+          },
+          "tooltip": {
+            "signal": "{'Mammal species':datum.name,'Scientific name':datum.scientific,Family:datum.family,'Recorded threat status':datum.status}"
+          }
+        }
+      }
+    },
+    {
+      "type": "text",
+      "from": {
+        "data": "species"
+      },
+      "interactive": false,
+      "encode": {
+        "enter": {
+          "fill": {
+            "value": "#173D34"
+          },
+          "font": {
+            "value": "DM Sans"
+          },
+          "fontSize": {
+            "value": 12
+          },
+          "fontWeight": {
+            "value": 600
+          },
+          "align": {
+            "value": "center"
+          },
+          "baseline": {
+            "value": "middle"
+          }
+        },
+        "update": {
+          "x": {
+            "signal": "12 + (datum.x0 + datum.x1)/2 * scaleX"
+          },
+          "y": {
+            "signal": "48 + (datum.y0 + datum.y1)/2 * scaleY"
+          },
+          "limit": {
+            "signal": "max(0,(datum.x1-datum.x0)*scaleX-12)"
+          },
+          "text": {
+            "signal": "(datum.x1-datum.x0)*scaleX>55 && (datum.y1-datum.y0)*scaleY>35 ? datum.name : ''"
+          },
+          "fontSize": {
+            "signal": "(datum.x1-datum.x0)*scaleX>145 ? 15 : 12"
+          }
+        }
+      }
+    },
+    {
+      "type": "rect",
+      "name": "backButtonArea",
+      "encode": {
+        "enter": {},
+        "update": {
+          "x": {
+            "signal": "width - 184"
+          },
+          "y": {
+            "value": 5
+          },
+          "width": {
+            "value": 174
+          },
+          "height": {
+            "value": 38
+          },
+          "fill": {
+            "value": "#FFFFFF"
+          },
+          "stroke": {
+            "value": "#31765A"
+          },
+          "strokeWidth": {
+            "value": 1.4
+          },
+          "cornerRadius": {
+            "value": 7
+          },
+          "cursor": {
+            "value": "pointer"
+          },
+          "opacity": {
+            "signal": "activeFamily === '' ? 0 : 1"
+          }
+        }
+      }
+    },
+    {
+      "type": "text",
+      "interactive": false,
+      "encode": {
+        "enter": {
+          "font": {
+            "value": "DM Sans"
+          },
+          "fontSize": {
+            "value": 13
+          },
+          "fontWeight": {
+            "value": 700
+          },
+          "align": {
+            "value": "center"
+          },
+          "baseline": {
+            "value": "middle"
+          },
+          "fill": {
+            "value": "#31765A"
+          }
+        },
+        "update": {
+          "x": {
+            "signal": "width - 97"
+          },
+          "y": {
+            "value": 24
+          },
+          "text": {
+            "signal": "activeFamily === '' ? '' : '← All families'"
+          }
+        }
+      }
+    },
+    {
+      "type": "rule",
+      "interactive": false,
+      "encode": {
+        "enter": {
+          "x": {
+            "value": 12
+          },
+          "x2": {
+            "signal": "width - 12"
+          },
+          "y": {
+            "value": 560
+          },
+          "stroke": {
+            "value": "#D7E2D5"
+          },
+          "strokeWidth": {
+            "value": 1
+          }
+        }
+      }
+    },
+    {
+      "type": "text",
+      "interactive": false,
+      "encode": {
+        "enter": {
+          "x": {
+            "value": 14
+          },
+          "y": {
+            "value": 584
+          },
+          "font": {
+            "value": "DM Sans"
+          },
+          "fontSize": {
+            "value": 13
+          },
+          "fontWeight": {
+            "value": 700
+          },
+          "fill": {
+            "value": "#173D34"
+          }
+        },
+        "update": {
+          "text": {
+            "signal": "activeFamily === '' ? 'FAMILY COLOUR KEY  ·  % of monitored species Endangered or Critically Endangered' : ''"
+          }
+        }
+      }
+    },
+    {
+      "type": "rect",
+      "interactive": false,
+      "from": {
+        "data": "familyLegend"
+      },
+      "encode": {
+        "enter": {
+          "x": {
+            "signal": "16 + datum.x"
+          },
+          "y": {
+            "value": 599
+          },
+          "width": {
+            "value": 19
+          },
+          "height": {
+            "value": 19
+          },
+          "cornerRadius": {
+            "value": 3
+          }
+        },
+        "update": {
+          "fill": {
+            "field": "color"
+          },
+          "opacity": {
+            "signal": "activeFamily === '' ? 1 : 0"
+          }
+        }
+      }
+    },
+    {
+      "type": "text",
+      "interactive": false,
+      "from": {
+        "data": "familyLegend"
+      },
+      "encode": {
+        "enter": {
+          "x": {
+            "signal": "43 + datum.x"
+          },
+          "y": {
+            "value": 609
+          },
+          "baseline": {
+            "value": "middle"
+          },
+          "font": {
+            "value": "DM Sans"
+          },
+          "fontSize": {
+            "value": 12
+          },
+          "fill": {
+            "value": "#243B32"
+          }
+        },
+        "update": {
+          "text": {
+            "field": "label"
+          },
+          "opacity": {
+            "signal": "activeFamily === '' ? 1 : 0"
+          }
+        }
+      }
+    },
+    {
+      "type": "text",
+      "interactive": false,
+      "encode": {
+        "enter": {
+          "x": {
+            "value": 14
+          },
+          "y": {
+            "value": 584
+          },
+          "font": {
+            "value": "DM Sans"
+          },
+          "fontSize": {
+            "value": 13
+          },
+          "fontWeight": {
+            "value": 700
+          },
+          "fill": {
+            "value": "#173D34"
+          }
+        },
+        "update": {
+          "text": {
+            "signal": "activeFamily !== '' ? \"SPECIES COLOUR KEY  \\u00b7  Recorded threat status\" : ''"
+          }
+        }
+      }
+    },
+    {
+      "type": "rect",
+      "interactive": false,
+      "from": {
+        "data": "speciesLegend"
+      },
+      "encode": {
+        "enter": {
+          "x": {
+            "signal": "16 + datum.x"
+          },
+          "y": {
+            "value": 599
+          },
+          "width": {
+            "value": 19
+          },
+          "height": {
+            "value": 19
+          },
+          "cornerRadius": {
+            "value": 3
+          }
+        },
+        "update": {
+          "fill": {
+            "field": "color"
+          },
+          "opacity": {
+            "signal": "activeFamily !== '' ? 1 : 0"
+          }
+        }
+      }
+    },
+    {
+      "type": "text",
+      "interactive": false,
+      "from": {
+        "data": "speciesLegend"
+      },
+      "encode": {
+        "enter": {
+          "x": {
+            "signal": "43 + datum.x"
+          },
+          "y": {
+            "value": 609
+          },
+          "baseline": {
+            "value": "middle"
+          },
+          "font": {
+            "value": "DM Sans"
+          },
+          "fontSize": {
+            "value": 12
+          },
+          "fill": {
+            "value": "#243B32"
+          }
+        },
+        "update": {
+          "text": {
+            "field": "label"
+          },
+          "opacity": {
+            "signal": "activeFamily !== '' ? 1 : 0"
+          }
+        }
+      }
+    }
+  ]
+}

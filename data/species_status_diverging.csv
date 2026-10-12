@@ -1,0 +1,17 @@
+group,status,count,group_total,percentage,start_pct,end_pct
+Birds,Near Threatened,8,73,11.0,-41.1,-30.1
+Birds,Vulnerable,22,73,30.1,-30.1,0.0
+Birds,Endangered,33,73,45.2,0.0,45.2
+Birds,Critically Endangered,10,73,13.7,45.2,58.9
+Mammals,Near Threatened,17,92,18.5,-58.7,-40.2
+Mammals,Vulnerable,37,92,40.2,-40.2,0.0
+Mammals,Endangered,29,92,31.5,0.0,31.5
+Mammals,Critically Endangered,9,92,9.8,31.5,41.3
+Plants,Near Threatened,2,178,1.1,-27.5,-26.4
+Plants,Vulnerable,47,178,26.4,-26.4,0.0
+Plants,Endangered,77,178,43.3,0.0,43.3
+Plants,Critically Endangered,52,178,29.2,43.3,72.5
+Reptiles & Amphibians,Near Threatened,2,52,3.8,-23.0,-19.2
+Reptiles & Amphibians,Vulnerable,10,52,19.2,-19.2,0.0
+Reptiles & Amphibians,Endangered,19,52,36.5,0.0,36.5
+Reptiles & Amphibians,Critically Endangered,21,52,40.4,36.5,76.9

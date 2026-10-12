@@ -1,0 +1,98 @@
+level,family,name,scientific,status,count,highRisk,highRiskPct,x0,y0,x1,y1
+family,Dasyuridae,Dasyuridae,,,16,9,56.2,0.0,0.0,377.02702702702703,273.5483870967742
+species,Dasyuridae,Bindjulang,Dasyurus maculatus,Endangered,1,1,100.0,0.0,0.0,168.75,176.66666666666666
+species,Dasyuridae,Black-tailed Antechinus,Antechinus arktos,Endangered,1,1,100.0,0.0,176.66666666666666,168.75,353.3333333333333
+species,Dasyuridae,Brush-tailed Phascogale,Phascogale tapoatafa,Near Threatened,1,0,0.0,0.0,353.3333333333333,168.75,530.0
+species,Dasyuridae,Carpentarian Pseudantechinus,Pseudantechinus mimulus,Near Threatened,1,0,0.0,168.75,0.0,337.5,176.66666666666666
+species,Dasyuridae,Chuditch,Dasyurus geoffroii,Vulnerable,1,0,0.0,168.75,176.66666666666666,337.5,353.3333333333333
+species,Dasyuridae,Crest-tailed Mulgara,Dasycercus cristicauda,Near Threatened,1,0,0.0,168.75,353.3333333333333,337.5,530.0
+species,Dasyuridae,Dibbler,Parantechinus apicalis,Endangered,1,1,100.0,337.5,0.0,506.25,176.66666666666666
+species,Dasyuridae,Digul,Dasyurus hallucatus,Endangered,1,1,100.0,337.5,176.66666666666666,506.25,353.3333333333333
+species,Dasyuridae,Eastern Quoll,Dasyurus viverrinus,Endangered,1,1,100.0,337.5,353.3333333333333,506.25,530.0
+species,Dasyuridae,Fawn Antechinus,Antechinus bellus,Vulnerable,1,0,0.0,506.25,0.0,703.125,151.42857142857142
+species,Dasyuridae,Julia Creek Dunnart,Sminthopsis douglasi,Vulnerable,1,0,0.0,703.125,0.0,900.0,151.42857142857142
+species,Dasyuridae,Kangaroo Island Dunnart,Sminthopsis fuliginosus,Critically Endangered,1,1,100.0,506.25,151.42857142857142,663.75,340.71428571428567
+species,Dasyuridae,Kowari,Dasyuroides byrnei,Endangered,1,1,100.0,506.25,340.71428571428567,663.75,530.0
+species,Dasyuridae,Red-tailed Phascogale,Phascogale calura,Vulnerable,1,0,0.0,663.75,151.42857142857142,900.0,277.6190476190476
+species,Dasyuridae,Silver-headed Antechinus,Antechinus argentus,Endangered,1,1,100.0,663.75,277.6190476190476,900.0,403.8095238095238
+species,Dasyuridae,Tasmanian Devil,Sarcophilus harrisii,Endangered,1,1,100.0,663.75,403.8095238095238,900.0,530.0
+family,Muridae,Muridae,,,15,4,26.7,0.0,273.5483870967742,377.02702702702703,530.0
+species,Muridae,Arnhem Land Rock-rat,Zyzomys maini,Vulnerable,1,0,0.0,0.0,0.0,180.0,176.66666666666666
+species,Muridae,Black-footed Tree-rat,Mesembriomys gouldii,Endangered,1,1,100.0,0.0,176.66666666666666,180.0,353.3333333333333
+species,Muridae,Broad-toothed Rat,Mastacomys fuscus,Near Threatened,1,0,0.0,0.0,353.3333333333333,180.0,530.0
+species,Muridae,Brush-tailed Rabbit-rat,Conilurus penicillatus,Vulnerable,1,0,0.0,180.0,0.0,360.0,176.66666666666666
+species,Muridae,Dusky Hopping-mouse,Notomys fuscus,Vulnerable,1,0,0.0,180.0,176.66666666666666,360.0,353.3333333333333
+species,Muridae,False Water-rat,Xeromys myoides,Vulnerable,1,0,0.0,180.0,353.3333333333333,360.0,530.0
+species,Muridae,Golden-backed Tree-rat,Mesembriomys macrurus,Near Threatened,1,0,0.0,360.0,0.0,540.0,176.66666666666666
+species,Muridae,Greater Stick-nest Rat,Leporillus conditor,Vulnerable,1,0,0.0,360.0,176.66666666666666,540.0,353.3333333333333
+species,Muridae,Hastings River Mouse,Pseudomys oralis,Endangered,1,1,100.0,360.0,353.3333333333333,540.0,530.0
+species,Muridae,Heath Rat,Pseudomys shortridgei,Endangered,1,1,100.0,540.0,0.0,720.0,176.66666666666666
+species,Muridae,Kakadu Pebble-mound Mouse,Pseudomys calabyi,Vulnerable,1,0,0.0,720.0,0.0,900.0,176.66666666666666
+species,Muridae,Konoom,Pseudomys fumeus,Endangered,1,1,100.0,540.0,176.66666666666666,720.0,353.33333333333337
+species,Muridae,New Holland Mouse,Pseudomys novaehollandiae,Vulnerable,1,0,0.0,540.0,353.33333333333337,720.0,530.0
+species,Muridae,Plains Rat,Pseudomys australis,Vulnerable,1,0,0.0,720.0,176.66666666666666,900.0,353.33333333333326
+species,Muridae,Shark Bay Mouse,Pseudomys fieldi,Vulnerable,1,0,0.0,720.0,353.33333333333326,899.9999999999999,530.0
+family,Macropodidae,Macropodidae,,,7,3,42.9,377.02702702702703,0.0,592.3688394276629,209.53488372093025
+species,Macropodidae,Banded Hare-wallaby,Lagostrophus fasciatus,Vulnerable,1,0,0.0,0.0,0.0,257.14285714285717,265.0
+species,Macropodidae,Black-flanked Rock-wallaby,Petrogale lateralis,Endangered,1,1,100.0,0.0,265.0,257.14285714285717,530.0
+species,Macropodidae,Bridled Nailtail Wallaby,Onychogalea fraenata,Endangered,1,1,100.0,257.14285714285717,0.0,514.2857142857143,265.0
+species,Macropodidae,Mala,Lagorchestes hirsutus,Endangered,1,1,100.0,257.14285714285717,265.0,514.2857142857143,530.0
+species,Macropodidae,Sharman's Rock-wallaby,Petrogale sharmani,Vulnerable,1,0,0.0,514.2857142857143,0.0,707.1428571428572,353.3333333333333
+species,Macropodidae,Warabi,Petrogale burbidgei,Near Threatened,1,0,0.0,707.1428571428572,0.0,900.0000000000001,353.3333333333333
+species,Macropodidae,Yellow-footed Rock-wallaby,Petrogale xanthopus,Vulnerable,1,0,0.0,514.2857142857143,353.3333333333333,900.0,530.0
+family,Potoroidae,Potoroidae,,,6,3,50.0,592.3688394276629,0.0,776.9475357710651,209.53488372093025
+species,Potoroidae,Burrowing Bettong,Bettongia lesueur,Vulnerable,1,0,0.0,0.0,0.0,300.0,265.0
+species,Potoroidae,Long-footed Potoroo,Potorous longipes,Endangered,1,1,100.0,0.0,265.0,300.0,530.0
+species,Potoroidae,Long-nosed Potoroo,Potorous tridactylus,Vulnerable,1,0,0.0,300.0,0.0,600.0,265.0
+species,Potoroidae,Northern Bettong,Bettongia tropica,Endangered,1,1,100.0,300.0,265.0,600.0,530.0
+species,Potoroidae,Tasmanian Bettong,Bettongia gaimardi,Near Threatened,1,0,0.0,600.0,0.0,900.0,265.0
+species,Potoroidae,Woylie,Bettongia penicillata,Critically Endangered,1,1,100.0,600.0,265.0,900.0,530.0
+family,Peramelidae,Peramelidae,,,4,2,50.0,776.9475357710651,0.0,899.9999999999999,209.53488372093025
+species,Peramelidae,Eastern Barred Bandicoot,Perameles gunnii,Vulnerable,1,0,0.0,0.0,0.0,450.0,265.0
+species,Peramelidae,Golden Bandicoot,Isoodon auratus,Vulnerable,1,0,0.0,0.0,265.0,450.0,530.0
+species,Peramelidae,Southern Brown Bandicoot,Isoodon obesulus,Endangered,1,1,100.0,450.0,0.0,900.0,265.0
+species,Peramelidae,Western Barred Bandicoot,Perameles bougainville,Endangered,1,1,100.0,450.0,265.0,900.0,530.0
+family,Pteropodidae,Pteropodidae,,,3,2,66.7,377.02702702702703,209.53488372093025,497.7130977130977,369.76744186046517
+species,Pteropodidae,Christmas Island Flying Fox,Pteropus natalis,Critically Endangered,1,1,100.0,0.0,0.0,300.0,530.0
+species,Pteropodidae,Grey-headed Flying-fox,Pteropus poliocephalus,Vulnerable,1,0,0.0,300.0,0.0,600.0,530.0
+species,Pteropodidae,Spectacled Flying-fox,Pteropus conspicillatus,Endangered,1,1,100.0,600.0,0.0,900.0,530.0
+family,Vespertilionidae,Vespertilionidae,,,3,1,33.3,377.02702702702703,369.76744186046517,497.7130977130977,530.0
+species,Vespertilionidae,Eastern False Pipistrelle,Falsistrellus tasmaniensis,Vulnerable,1,0,0.0,0.0,0.0,300.0,530.0
+species,Vespertilionidae,Large Pied Bat,Chalinolobus dwyeri,Endangered,1,1,100.0,300.0,0.0,600.0,530.0
+species,Vespertilionidae,Little Pied Bat,Chalinolobus picatus,Near Threatened,1,0,0.0,600.0,0.0,900.0,530.0
+family,Delphinidae,Delphinidae,,,2,0,0.0,497.7130977130977,209.53488372093025,618.3991683991684,316.35658914728685
+species,Delphinidae,Australian Hump-backed Dolphin,Sousa sahulensis,Vulnerable,1,0,0.0,0.0,0.0,450.0,530.0
+species,Delphinidae,Australian Snubfin Dolphin,Orcaella heinsohni,Vulnerable,1,0,0.0,450.0,0.0,900.0,530.0
+family,Otariidae,Otariidae,,,2,2,100.0,497.7130977130977,316.35658914728685,618.3991683991684,423.1782945736434
+species,Otariidae,Australian Sea-lion,Neophoca cinerea,Endangered,1,1,100.0,0.0,0.0,450.0,530.0
+species,Otariidae,Subantarctic Fur-seal,Arctocephalus tropicalis,Endangered,1,1,100.0,450.0,0.0,900.0,530.0
+family,Petauridae,Petauridae,,,2,1,50.0,497.7130977130977,423.1782945736434,618.3991683991684,530.0
+species,Petauridae,Leadbeater's Possum,Gymnobelideus leadbeateri,Critically Endangered,1,1,100.0,0.0,0.0,450.0,530.0
+species,Petauridae,Yellow-bellied Glider,Petaurus australis,Near Threatened,1,0,0.0,450.0,0.0,900.0,530.0
+family,Pseudocheiridae,Pseudocheiridae,,,2,2,100.0,618.3991683991684,209.53488372093025,759.1995841995841,301.0963455149502
+species,Pseudocheiridae,Southern Greater Glider,Petauroides volans,Endangered,1,1,100.0,0.0,0.0,450.0,530.0
+species,Pseudocheiridae,Western Ringtail Possum,Pseudocheirus occidentalis,Critically Endangered,1,1,100.0,450.0,0.0,900.0,530.0
+family,Balaenidae,Balaenidae,,,1,1,100.0,759.1995841995841,209.53488372093025,829.599792099792,301.0963455149502
+species,Balaenidae,Southern Right Whale,Eubalaena australis,Endangered,1,1,100.0,0.0,0.0,900.0,530.0
+family,Balaenopteridae,Balaenopteridae,,,1,1,100.0,829.599792099792,209.53488372093025,899.9999999999999,301.0963455149502
+species,Balaenopteridae,Blue Whale,Balaenoptera musculus,Endangered,1,1,100.0,0.0,0.0,900.0,530.0
+family,Burramyidae,Burramyidae,,,1,1,100.0,618.3991683991684,301.0963455149502,702.8794178794178,377.39756367663347
+species,Burramyidae,Mountain Pygmy-possum,Burramys parvus,Critically Endangered,1,1,100.0,0.0,0.0,900.0,530.0
+family,Dugongidae,Dugongidae,,,1,0,0.0,618.3991683991684,377.39756367663347,702.8794178794178,453.69878183831673
+species,Dugongidae,Dugong,Dugong dugon,Vulnerable,1,0,0.0,0.0,0.0,900.0,530.0
+family,Miniopteridae,Miniopteridae,,,1,1,100.0,618.3991683991684,453.69878183831673,702.8794178794178,530.0
+species,Miniopteridae,Southern Bent-winged Bat,Miniopterus orianae,Critically Endangered,1,1,100.0,0.0,0.0,900.0,530.0
+family,Myrmecobiidae,Myrmecobiidae,,,1,1,100.0,702.8794178794178,301.0963455149502,768.5862785862785,399.19791172282874
+species,Myrmecobiidae,Numbat,Myrmecobius fasciatus,Endangered,1,1,100.0,0.0,0.0,900.0,530.0
+family,Ornithorhynchidae,Ornithorhynchidae,,,1,0,0.0,768.5862785862785,301.0963455149502,834.2931392931391,399.19791172282874
+species,Ornithorhynchidae,Platypus,Ornithorhynchus anatinus,Near Threatened,1,0,0.0,0.0,0.0,900.0,530.0
+family,Phascolarctidae,Phascolarctidae,,,1,1,100.0,834.2931392931391,301.0963455149502,899.9999999999998,399.19791172282874
+species,Phascolarctidae,Koala,Phascolarctos cinereus,Endangered,1,1,100.0,0.0,0.0,900.0,530.0
+family,Phocidae,Phocidae,,,1,0,0.0,702.8794178794178,399.19791172282874,801.4397089397089,464.59895586141437
+species,Phocidae,Southern Elephant Seal,Mirounga leonina,Vulnerable,1,0,0.0,0.0,0.0,900.0,530.0
+family,Tachyglossidae,Tachyglossidae,,,1,1,100.0,702.8794178794178,464.59895586141437,801.4397089397089,530.0
+species,Tachyglossidae,Kangaroo Island Echidna,Tachyglossus aculeatus,Endangered,1,1,100.0,0.0,0.0,900.0,530.0
+family,Thylacomyidae,Thylacomyidae,,,1,0,0.0,801.4397089397089,399.19791172282874,899.9999999999998,464.5989558614145
+species,Thylacomyidae,Bilby,Macrotis lagotis,Vulnerable,1,0,0.0,0.0,0.0,900.0,530.0
+family,Vombatidae,Vombatidae,,,1,1,100.0,801.4397089397089,464.5989558614145,900.0000000000002,530.0
+species,Vombatidae,Northern Hairy-nosed Wombat,Lasiorhinus krefftii,Critically Endangered,1,1,100.0,0.0,0.0,900.0,530.0

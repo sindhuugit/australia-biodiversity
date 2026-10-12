@@ -1,0 +1,494 @@
+state,region,latitude,longitude,species_count,monitoring_records
+Australian Capital Territory,Murrumbateman,-34.994500,149.068200,8,421
+Australian Capital Territory,Bondo,-35.587310,148.342500,3,19
+Australian Capital Territory,Snowy Mountains,-36.256470,148.377300,3,10
+Australian Capital Territory,Murrumbateman,-35.434017,149.060159,1,1
+New South Wales,Karuah Manning,-32.366024,152.297298,13,93
+New South Wales,Clarence Lowlands,-29.245888,153.259392,12,130
+New South Wales,Illawarra,-34.661806,150.878298,12,59
+New South Wales,Hunter,-32.520139,151.189047,11,81
+New South Wales,Jervis,-35.265236,150.660022,10,33
+New South Wales,Sydney Cataract,-34.224707,151.005180,10,33
+New South Wales,Bateman,-35.955036,150.245108,9,31
+New South Wales,Burringbar-Conondale Ranges,-28.419633,153.611240,9,31
+New South Wales,Lower Slopes,-34.135480,147.298900,9,194
+New South Wales,Macleay Hastings,-31.231609,152.797961,9,34
+New South Wales,Pittwater,-33.686822,151.315819,9,49
+New South Wales,Sunshine Coast-Gold Coast Lowlands,-28.169513,153.679722,9,21
+New South Wales,Wyong,-33.207138,151.558107,9,29
+New South Wales,Capertee Valley,-32.938190,150.056200,8,106
+New South Wales,Inland Slopes,-34.404290,148.182900,8,493
+New South Wales,Lachlan Plains,-33.648600,146.385100,8,82
+New South Wales,Monaro,-36.197820,149.076000,8,128
+New South Wales,Murray Fans,-35.637710,144.891900,8,78
+New South Wales,Murrumbateman,-34.994500,149.068200,8,101
+New South Wales,Nymagee,-32.442890,146.625500,8,32
+New South Wales,Pilliga,-31.489190,149.189800,8,69
+New South Wales,Bogan-Macquarie,-31.305620,147.496300,7,30
+New South Wales,Castlereagh-Barwon,-30.006540,148.624200,7,15
+New South Wales,Hunter,-32.485430,151.136100,7,72
+New South Wales,Kerrabee,-32.377100,150.232000,7,110
+New South Wales,Lachlan,-33.709310,144.581000,7,25
+New South Wales,Murrumbidgee,-34.795190,145.154900,7,79
+New South Wales,Murrumbidgee,-34.795186,145.154867,7,10
+New South Wales,South East Coastal Ranges,-36.533242,149.738979,7,27
+New South Wales,Liverpool Plains,-31.060440,150.131300,6,16
+New South Wales,Moss Vale,-34.578210,150.455300,6,45
+New South Wales,Orange,-33.456880,149.131000,6,28
+New South Wales,Peel,-30.622610,150.690200,6,126
+New South Wales,Wollemi,-33.162030,150.389400,6,104
+New South Wales,Armidale Plateau,-30.569880,151.784100,5,19
+New South Wales,Bungonia,-34.871820,149.959300,5,21
+New South Wales,Canbelego Downs,-31.082050,146.421800,5,48
+New South Wales,Cumberland,-33.885090,150.807800,5,46
+New South Wales,Hill End,-33.074870,149.566500,5,10
+New South Wales,Murray Fans,-35.580374,144.921206,5,5
+New South Wales,Murray Scroll Belt,-34.155310,141.069700,5,9
+New South Wales,Narrandool,-29.554550,147.678100,5,14
+New South Wales,Pilliga Outwash,-30.536970,149.136100,5,10
+New South Wales,Robinvale Plains,-34.559760,142.612000,5,15
+New South Wales,Stanthorpe Plateau,-28.727470,151.979800,5,15
+New South Wales,Burragorang,-34.225280,150.322400,4,23
+New South Wales,Darling Depression,-32.419350,144.474000,4,16
+New South Wales,Inverell Basalts,-29.565560,150.925100,4,6
+New South Wales,Jervis,-35.175230,150.513700,4,27
+New South Wales,Menindee,-32.385730,142.642200,4,29
+New South Wales,Severn River Volcanics,-29.474670,151.390700,4,23
+New South Wales,South Olary Plain,-33.564440,142.072100,4,43
+New South Wales,Tenterfield Plateau,-29.119010,151.961300,4,5
+New South Wales,Wyong,-33.130790,151.443900,4,104
+New South Wales,Yengo,-33.101500,150.927600,4,32
+New South Wales,Yuraygir,-29.820684,153.415394,4,23
+New South Wales,Barrington,-32.003200,151.518800,3,24
+New South Wales,Bateman,-35.764220,150.142200,3,14
+New South Wales,Bathurst,-33.524410,149.766600,3,6
+New South Wales,Bundarra Downs,-30.330860,151.200000,3,23
+New South Wales,Clarence Lowlands,-29.298640,153.114700,3,12
+New South Wales,Coffs Coast and Escarpment,-30.472060,152.724100,3,27
+New South Wales,Crookwell,-34.345390,149.536700,3,8
+New South Wales,Cuttaburra-Paroo,-29.339290,144.538700,3,25
+New South Wales,Eastern Nandewars,-30.495570,151.072900,3,14
+New South Wales,Ebor Basalts,-30.391520,152.401900,3,4
+New South Wales,Illawarra,-34.683240,150.703900,3,41
+New South Wales,Kybeyan-Gourock,-36.281730,149.392800,3,16
+New South Wales,Liverpool Range,-31.893870,150.275300,3,15
+New South Wales,Louth Plains,-30.474260,145.168900,3,4
+New South Wales,Macleay Hastings,-31.207090,152.647500,3,66
+New South Wales,Monaro,-36.139655,149.105661,3,3
+New South Wales,Murray Scroll Belt,-34.058870,141.498815,3,3
+New South Wales,Nandewar Northern Complex,-28.755950,151.409200,3,9
+New South Wales,Nebine Plains,-28.258970,146.431400,3,4
+New South Wales,Northern Basalts,-29.322820,150.436000,3,6
+New South Wales,Pittwater,-33.572620,151.199600,3,34
+New South Wales,Scopes Range,-31.819680,142.631400,3,4
+New South Wales,Snowy Mountains,-36.256470,148.377300,3,21
+New South Wales,South East Coastal Ranges,-36.872670,149.062700,3,35
+New South Wales,Sydney Cataract,-34.240240,150.842700,3,32
+New South Wales,Talbragar Valley,-32.206450,148.978500,3,8
+New South Wales,Walcha Plateau,-31.203980,151.670100,3,6
+New South Wales,Yarrowyck-Kentucky Downs,-30.592930,151.391100,3,16
+New South Wales,Barnato Downs,-31.744420,145.295100,2,4
+New South Wales,Barrier Range,-31.784130,141.375100,2,8
+New South Wales,Beardy River Hills,-29.367680,151.553400,2,2
+New South Wales,Bondo,-35.587310,148.342500,2,22
+New South Wales,Burringbar-Conondale Ranges,-27.341830,152.921600,2,12
+New South Wales,Capertee Uplands,-33.142480,149.985000,2,3
+New South Wales,Chaelundi,-30.182460,152.612300,2,6
+New South Wales,Coffs Coast and Escarpment,-30.429537,152.926296,2,9
+New South Wales,Culgoa-Bokhara,-29.243290,147.302900,2,2
+New South Wales,Cumberland,-33.885086,150.807819,2,2
+New South Wales,East Gippsland Lowlands,-37.292570,149.913000,2,6
+New South Wales,East Gippsland Lowlands,-37.292570,149.912991,2,2
+New South Wales,Ellerston,-32.019330,151.044300,2,3
+New South Wales,Ettrema,-34.981890,150.298700,2,9
+New South Wales,Glenn Innes-Guyra Basalts,-29.894650,151.610200,2,6
+New South Wales,Great Darling Anabranch,-33.365930,141.857800,2,4
+New South Wales,Karuah Manning,-32.268730,152.160300,2,25
+New South Wales,Mootwingee Downs,-30.921660,142.435600,2,8
+New South Wales,Mummel Escarpment,-31.797290,151.795100,2,14
+New South Wales,Northeast Forest Lands,-29.576420,152.099300,2,3
+New South Wales,Paroo Overflow,-30.720680,144.040300,2,2
+New South Wales,Pooncarie-Darling,-33.500150,142.296900,2,4
+New South Wales,Robinvale Plains,-34.528614,142.668842,2,2
+New South Wales,Round Mountain,-30.459420,152.220100,2,2
+New South Wales,Scenic Rim,-28.596350,153.188400,2,48
+New South Wales,Scenic Rim,-28.421020,153.015100,2,24
+New South Wales,South Olary Plain,-33.556120,142.548700,2,13
+New South Wales,Upper Hunter,-32.437550,151.512300,2,4
+New South Wales,Upper Manning,-31.108200,152.370300,2,5
+New South Wales,Victorian Riverina,-36.318530,144.929400,2,2
+New South Wales,Warrego Plains,-28.195490,146.058800,2,3
+New South Wales,Warrego Sands,-29.683800,145.482100,2,5
+New South Wales,Washpool,-29.377030,152.377200,2,5
+New South Wales,West Warrego,-27.376540,144.860300,2,26
+New South Wales,Yarrowyck-Kentucky Downs,-30.592933,151.391140,2,2
+New South Wales,Binghi Plateau,-29.241110,151.609900,1,2
+New South Wales,Bondo,-35.593850,148.317400,1,3
+New South Wales,Bulloo,-29.299110,142.805700,1,29
+New South Wales,Bulloo,-28.899600,142.858300,1,1
+New South Wales,Central Depression,-29.990120,142.395100,1,1
+New South Wales,Coffs Coast and Escarpment,-30.429540,152.926300,1,11
+New South Wales,Comboyne Plateau,-31.510350,152.237400,1,9
+New South Wales,Core Ranges,-29.765280,141.795700,1,1
+New South Wales,Deepwater Downs,-29.499630,151.800500,1,2
+New South Wales,East Gippsland Lowlands,-37.598330,148.835300,1,1
+New South Wales,Illawarra,-34.661810,150.878300,1,1
+New South Wales,Inland Slopes,-34.138235,148.376394,1,1
+New South Wales,Inland Slopes,-34.138230,148.376400,1,91
+New South Wales,Jervis,-35.265240,150.660000,1,4
+New South Wales,Kaputar,-30.217330,150.108700,1,2
+New South Wales,Karuah Manning,-32.366020,152.297300,1,1
+New South Wales,Macleay Gorges,-30.888470,152.029600,1,1
+New South Wales,Menindee,-32.385733,142.642225,1,1
+New South Wales,Moonie-Barwon Interfluve,-28.419680,149.178600,1,1
+New South Wales,Northern Outwash,-29.392320,149.933700,1,1
+New South Wales,South East Coastal Ranges,-36.533240,149.739000,1,1
+New South Wales,Strzelecki Desert,-29.301460,140.250100,1,2
+New South Wales,Sturt Stony Desert,-26.384010,140.452100,1,8
+New South Wales,Sunshine Coast-Gold Coast Lowlands,-27.110500,153.123400,1,2
+New South Wales,Tingha Plateau,-29.949820,151.176500,1,1
+New South Wales,Tomalla,-31.833060,151.240900,1,1
+New South Wales,White Cliffs Plateau,-30.505030,143.127400,1,2
+New South Wales,Wilcannia Plains,-31.350570,143.978100,1,1
+New South Wales,Woodenbong,-28.669090,152.613900,1,6
+New South Wales,Yuraygir,-29.786350,153.248600,1,1
+Northern Territory,Darwin Coastal,-12.724213,131.177492,12,131
+Northern Territory,Atartinga,-22.675620,134.146786,11,17
+Northern Territory,Maningrida,-11.989315,134.578961,11,22
+Northern Territory,Nhulunbuy,-12.674025,136.409317,7,9
+Northern Territory,McDonnell,-23.676734,132.549847,4,4
+Northern Territory,Atartinga,-22.675620,134.146800,2,8
+Northern Territory,Birdum,-15.675260,132.718100,2,3
+Northern Territory,Daly Basin,-14.287890,131.646400,2,10
+Northern Territory,Darwin Coastal,-12.938720,131.190100,2,9
+Northern Territory,Gregory,-16.176210,130.682300,2,6
+Northern Territory,Henbury,-24.687730,133.257200,2,20
+Northern Territory,Keep,-15.491100,129.682900,2,22
+Northern Territory,Lake Bennett,-22.822670,131.546000,2,15
+Northern Territory,Limmen,-16.050400,136.597000,2,5
+Northern Territory,Mackay,-22.330000,127.180200,2,14
+Northern Territory,McArthur,-16.061050,135.454900,2,10
+Northern Territory,McDonnell,-23.676730,132.549800,2,32
+Northern Territory,Newcastle,-16.918250,133.613600,2,3
+Northern Territory,Pine Creek,-13.420080,132.024800,2,33
+Northern Territory,Simpson Desert,-24.845190,136.875700,2,2
+Northern Territory,Tanami Desert,-20.052300,130.845400,2,4
+Northern Territory,Watarrka,-24.194810,132.309500,2,6
+Northern Territory,Alligator,-12.962890,133.073800,1,5
+Northern Territory,Andado,-24.309610,134.814400,1,2
+Northern Territory,Angalarri,-15.504210,130.298000,1,1
+Northern Territory,Ashburton Range,-19.113260,134.044300,1,2
+Northern Territory,Darwin Coastal,-12.724210,131.177500,1,1
+Northern Territory,Davenport,-20.831970,135.087100,1,2
+Northern Territory,Finke River,-25.312740,133.483800,1,7
+Northern Territory,Hartz Range,-23.419590,134.722800,1,2
+Northern Territory,Keep,-15.351370,130.139200,1,1
+Northern Territory,Mann-Musgrave Block,-25.522520,129.159800,1,2
+Northern Territory,McArthur,-15.927570,135.271300,1,4
+Northern Territory,Mount Chapple,-23.367700,132.782100,1,11
+Northern Territory,Nhulunbuy,-12.736500,136.227500,1,1
+Northern Territory,Purnululu,-17.323600,128.671100,1,2
+Northern Territory,South Kimberley Interzone,-17.891180,128.947600,1,1
+Northern Territory,Tieyon,-25.946000,132.926500,1,1
+Northern Territory,Wilton,-13.439020,134.757200,1,2
+Northern Territory,Wycliffe,-19.881610,133.833900,1,1
+Queensland,Burnett-Curtis Coastal Lowlands,-25.101184,152.814138,12,453
+Queensland,Burnett-Curtis Hills and Ranges,-24.229471,151.772338,12,291
+Queensland,Innisfail,-17.276876,146.072859,12,44
+Queensland,Karumba Plains,-16.688698,140.414536,12,89
+Queensland,Marlborough Plains,-22.673009,150.546246,12,157
+Queensland,Proserpine-Sarina Lowlands,-21.092027,149.383901,12,356
+Queensland,Sunshine Coast-Gold Coast Lowlands,-27.205168,153.337492,12,739
+Queensland,Townsville Plains,-19.599363,147.355172,12,286
+Queensland,Herbert,-18.762983,146.454418,11,57
+Queensland,Manifold,-22.598620,150.901360,11,11
+Queensland,Coastal Plains,-14.306483,141.877541,8,14
+Queensland,Starke Coastal Lowlands,-14.726842,145.105940,8,12
+Queensland,Tully,-18.175274,146.208349,8,12
+Queensland,Nandewar Northern Complex,-28.755950,151.409200,6,93
+Queensland,Cape-Campaspe Plains,-20.576593,146.000964,5,5
+Queensland,Bogie River Hills,-20.414755,147.914849,4,4
+Queensland,Eastern Darling Downs,-27.290620,151.427200,4,36
+Queensland,Inglewood Sandstones,-27.770990,150.908100,4,15
+Queensland,Nebine Plains,-28.258970,146.431400,4,9
+Queensland,Southern Downs,-26.133370,148.135500,4,12
+Queensland,Warrambool-Moonie,-29.011240,148.352900,4,16
+Queensland,Warrego Plains,-28.195490,146.058800,4,45
+Queensland,Culgoa-Bokhara,-29.243290,147.302900,3,4
+Queensland,Cuttaburra-Paroo,-29.339290,144.538700,3,29
+Queensland,Eastern Mulga Plains,-27.228120,147.463700,3,4
+Queensland,Goneaway Tablelands,-24.109640,142.172400,3,5
+Queensland,Moreton Basin,-27.759950,152.608100,3,32
+Queensland,Mount Isa,-20.581637,139.743741,3,3
+Queensland,Stanthorpe Plateau,-28.727470,151.979800,3,5
+Queensland,Weribone High,-27.564740,149.278900,3,3
+Queensland,West Warrego,-27.376540,144.860300,3,21
+Queensland,Arcadia,-24.952600,148.702900,2,5
+Queensland,Armraynald Plains,-18.561880,139.603900,2,5
+Queensland,Barakula,-25.947830,150.596900,2,8
+Queensland,Buckland Basalts,-24.729610,148.019700,2,2
+Queensland,Burringbar-Conondale Ranges,-27.341830,152.921600,2,58
+Queensland,Castlereagh-Barwon,-30.006540,148.624200,2,3
+Queensland,Central Downs,-22.063460,143.419800,2,4
+Queensland,Cooper-Diamantina Plains,-25.879260,141.219900,2,3
+Queensland,Donors Plateau,-19.456480,140.573200,2,2
+Queensland,Inglewood Sandstones,-27.770768,150.908037,2,2
+Queensland,Moreton Basin,-27.759953,152.608104,2,2
+Queensland,Mount Isa,-20.581640,139.743700,2,16
+Queensland,Mount Morgan Ranges,-24.251500,150.787800,2,2
+Queensland,Scenic Rim,-28.421020,153.015100,2,14
+Queensland,Scenic Rim,-28.138940,152.792500,2,25
+Queensland,Southern Wooded Downs,-24.617040,144.891800,2,2
+Queensland,Tenterfield Plateau,-29.119010,151.961300,2,3
+Queensland,Thorntonia,-19.201280,138.506500,2,4
+Queensland,Urisino Sandplains,-29.071620,143.759600,2,5
+Queensland,Anakie Inlier,-23.043180,147.484300,1,1
+Queensland,Banana-Auburn Ranges,-25.416600,150.798600,1,4
+Queensland,Barkly Tableland,-19.546620,136.712000,1,1
+Queensland,Bogie River Hills,-20.414750,147.914800,1,1
+Queensland,Brisbane-Barambah Volcanics,-26.334860,152.081500,1,7
+Queensland,Bulloo,-28.899600,142.858300,1,1
+Queensland,Burnett-Curtis Coastal Lowlands,-25.668440,153.035900,1,7
+Queensland,Burnett-Curtis Coastal Lowlands,-25.301630,152.461600,1,10
+Queensland,Burnett-Curtis Hills and Ranges,-24.596770,151.511900,1,8
+Queensland,Burringbar-Conondale Ranges,-27.153433,152.824309,1,1
+Queensland,Callide Creek Downs,-24.179130,150.367100,1,2
+Queensland,Cape-Campaspe Plains,-20.576590,146.001000,1,1
+Queensland,Carnarvon Ranges,-25.267050,148.219500,1,1
+Queensland,Clarke-Connors Ranges,-21.478330,148.926000,1,10
+Queensland,Claude River Downs,-24.324270,147.132900,1,1
+Queensland,Coongie,-27.609950,140.101700,1,1
+Queensland,Dawson River Downs,-24.614690,149.749300,1,2
+Queensland,Doomadgee Plains,-17.563290,138.638400,1,1
+Queensland,Georgina Limestone,-22.308440,138.419100,1,1
+Queensland,Gympie Block,-25.703470,152.277400,1,16
+Queensland,Hodgkinson Basin,-16.452600,144.733600,1,1
+Queensland,Isaac-Comet Downs,-23.156970,148.745500,1,4
+Queensland,Karumba Plains,-17.039600,140.325400,1,1
+Queensland,Laura Lowlands,-14.799386,143.968030,1,2
+Queensland,Manifold,-22.728550,150.722200,1,2
+Queensland,Marlborough Plains,-22.926080,150.248200,1,3
+Queensland,Marlborough Plains,-22.673010,150.546200,1,13
+Queensland,McArthur,-16.061050,135.454900,1,2
+Queensland,Moonie-Commoron Floodout,-28.127270,150.322300,1,1
+Queensland,North Eastern Plains,-26.134780,146.650100,1,1
+Queensland,Northern Bowen Basin,-21.718330,148.131900,1,1
+Queensland,Proserpine-Sarina Lowlands,-21.040500,148.922600,1,6
+Queensland,South Burnett,-26.670230,151.871600,1,16
+Queensland,Southwestern Downs,-23.095900,140.399300,1,1
+Queensland,Strzelecki Desert,-29.301460,140.250100,1,1
+Queensland,Sturt Stony Desert,-26.384010,140.452100,1,1
+Queensland,Sunshine Coast-Gold Coast Lowlands,-27.110500,153.123400,1,32
+Queensland,Townsville Plains,-19.734490,147.117700,1,1
+Queensland,Townsville Plains,-19.599360,147.355200,1,23
+Queensland,West Balonne Plains,-27.986930,147.820000,1,3
+Queensland,West Bulloo,-26.606510,143.533500,1,6
+Queensland,Woorabinda,-24.027270,149.356300,1,1
+South Australia,Bridgewater,-37.349310,140.026790,12,140
+South Australia,Eyre Mallee,-32.764226,134.494529,12,111
+South Australia,St Vincent,-33.913923,137.938153,12,230
+South Australia,Talia,-33.798455,134.793488,12,107
+South Australia,Kangaroo Island,-35.929209,137.243782,11,86
+South Australia,Murray Lakes and Coorong,-35.774659,139.217793,11,150
+South Australia,Southern Yorke,-34.957488,137.474381,10,74
+South Australia,Myall Plains,-32.762950,136.945482,7,14
+South Australia,South Olary Plain,-33.564440,142.072100,7,328
+South Australia,Gawler Lakes,-31.730273,136.545474,6,8
+South Australia,Mount Lofty Ranges,-34.887664,138.762303,5,7
+South Australia,Murray Mallee,-35.005180,141.324700,5,110
+South Australia,Murray Scroll Belt,-34.155310,141.069700,5,93
+South Australia,Broughton,-33.598530,138.730100,4,89
+South Australia,Fleurieu,-35.149550,138.813000,4,87
+South Australia,Lowan Mallee,-35.620610,141.181700,4,8
+South Australia,Mount Lofty Ranges,-34.887660,138.762300,4,112
+South Australia,Murray Scroll Belt,-34.199777,140.534345,4,11
+South Australia,Eyre Hills,-33.743000,136.256500,3,14
+South Australia,Gawler Volcanics,-32.109820,135.742500,3,11
+South Australia,Lucindale,-36.953190,140.406100,3,17
+South Australia,Lucindale,-36.953187,140.406113,3,3
+South Australia,Murray Lakes and Coorong,-35.575350,139.235500,3,5
+South Australia,South Olary Plain,-33.593240,140.423100,3,39
+South Australia,Southern Flinders,-32.483320,138.265400,3,59
+South Australia,Tintinara,-35.971580,139.987500,3,16
+South Australia,Yellabinna,-30.900320,133.057700,3,4
+South Australia,Bimbowrie,-32.006710,140.124100,2,7
+South Australia,Braemer,-33.213300,140.027200,2,8
+South Australia,Breakaways,-28.413410,134.673400,2,5
+South Australia,Central Flinders,-31.722480,138.683200,2,46
+South Australia,Coongie,-27.609950,140.101700,2,5
+South Australia,Everard Block,-27.121870,133.055400,2,9
+South Australia,Eyre Hills,-34.257400,136.251100,2,8
+South Australia,Eyre Hills,-34.257398,136.251111,2,4
+South Australia,Kintore,-27.080790,130.485000,2,3
+South Australia,Lowan Mallee,-35.640060,140.610000,2,4
+South Australia,Mann-Musgrave Block,-25.522520,129.159800,2,4
+South Australia,Maralinga,-28.425690,129.976900,2,4
+South Australia,Murnpeowie,-29.646170,138.729700,2,10
+South Australia,Murray Lakes and Coorong,-35.774660,139.217800,2,39
+South Australia,Myall Plains,-32.732910,136.898100,2,11
+South Australia,Northern Flinders,-30.567040,138.798000,2,14
+South Australia,Olary Spur,-32.626830,139.556200,2,13
+South Australia,St Vincent,-33.963650,138.147700,2,9
+South Australia,Strzelecki Desert,-29.301460,140.250100,2,5
+South Australia,Talia,-33.798460,134.793500,2,9
+South Australia,Talia,-33.461320,135.004200,2,6
+South Australia,Arcoona Plateau,-31.319430,137.235500,1,2
+South Australia,Barrier Range,-31.784130,141.375100,1,1
+South Australia,Carlisle,-29.740980,127.053800,1,1
+South Australia,Eyre Mallee,-32.879960,135.015400,1,5
+South Australia,Eyre Mallee,-32.764230,134.494500,1,5
+South Australia,Fleurieu,-35.331311,138.668376,1,1
+South Australia,Gawler Lakes,-31.722010,136.534600,1,6
+South Australia,Glenelg Plain,-37.707320,141.115600,1,1
+South Australia,Kangaroo Island,-35.827630,137.241900,1,6
+South Australia,Kingoonya,-30.577850,134.623300,1,2
+South Australia,Maralinga,-28.699620,130.878500,1,1
+South Australia,Murray Mallee,-34.755164,139.932176,1,2
+South Australia,Murray Mallee,-34.755160,139.932200,1,7
+South Australia,Nullarbor Plain,-31.080790,127.685300,1,5
+South Australia,Peake-Dennison Inlier,-28.484640,135.981100,1,1
+South Australia,Pedirka,-26.773670,134.283400,1,1
+South Australia,Roxby,-30.472770,136.308400,1,14
+South Australia,Southern Yorke,-34.957490,137.474400,1,1
+South Australia,Southern Yorke,-34.837820,137.478600,1,1
+South Australia,Tallaringa,-28.510350,133.288300,1,2
+South Australia,Tieyon,-25.946000,132.926500,1,1
+South Australia,Wimmera,-36.552030,142.086800,1,1
+South Australia,Witjira,-26.367710,135.078900,1,1
+South Australia,Yalata,-31.428750,132.117600,1,1
+Tasmania,King,-40.448008,144.531449,12,99
+Tasmania,Flinders,-40.435666,147.821082,11,82
+Tasmania,South East,-42.655998,147.751975,11,55
+Tasmania,West,-42.566152,145.621181,3,3
+Tasmania,Ben Lomond,-41.358230,147.691600,1,1
+Tasmania,Central Highlands,-41.883480,146.308100,1,4
+Tasmania,Flinders,-40.686070,147.809200,1,3
+Tasmania,King,-40.669710,144.740800,1,14
+Tasmania,King,-40.448010,144.531400,1,1
+Tasmania,Northern Slopes,-41.343900,146.170900,1,12
+Tasmania,Northern Slopes,-41.281971,146.145160,1,1
+Tasmania,South East,-42.479260,147.531400,1,43
+Tasmania,Southern Ranges,-43.133010,146.742900,1,2
+Tasmania,Southern Ranges,-42.867620,146.657900,1,16
+Tasmania,West,-42.566150,145.621200,1,1
+Tasmania,West,-42.363130,145.688500,1,1
+Victoria,Otway Plain,-38.321009,144.240225,13,166
+Victoria,Gippsland Plain,-38.386432,146.260393,12,531
+Victoria,Victorian Volcanic Plain,-37.847048,143.251756,11,193
+Victoria,Warrnambool Plain,-38.512146,142.539262,11,62
+Victoria,East Gippsland Lowlands,-37.750608,148.929326,10,26
+Victoria,Murray Mallee,-35.005180,141.324700,9,209
+Victoria,Goldfields,-36.857920,143.908700,8,712
+Victoria,Lowan Mallee,-35.620610,141.181700,8,103
+Victoria,Murray Fans,-35.637710,144.891900,8,55
+Victoria,Bridgewater,-38.385515,141.301596,7,12
+Victoria,Central Victorian Uplands,-37.039610,145.888900,7,285
+Victoria,Greater Grampians,-37.256780,142.382300,7,96
+Victoria,Inland Slopes,-34.404290,148.182900,7,358
+Victoria,Victorian Riverina,-36.318530,144.929400,7,206
+Victoria,Wimmera,-36.552030,142.086800,7,280
+Victoria,Dundas Tablelands,-37.463780,141.887600,6,48
+Victoria,Victorian Riverina,-36.318805,144.927803,6,41
+Victoria,Victorian Volcanic Plain,-37.847050,143.251800,6,70
+Victoria,Highlands-Southern Fall,-37.671630,146.411700,5,124
+Victoria,Murray Mallee,-35.186246,142.333115,5,17
+Victoria,Murray Scroll Belt,-34.155310,141.069700,5,14
+Victoria,Robinvale Plains,-34.559760,142.612000,5,47
+Victoria,Murray Fans,-35.837622,144.789927,4,11
+Victoria,Murray Mallee,-35.186250,142.333100,4,79
+Victoria,Dundas Tablelands,-37.463784,141.887585,3,4
+Victoria,Glenelg Plain,-37.707320,141.115600,3,27
+Victoria,Goldfields,-36.857916,143.908702,3,3
+Victoria,Highlands-Northern Fall,-37.039610,145.888900,3,64
+Victoria,Lowan Mallee,-35.607280,141.573400,3,52
+Victoria,Wimmera,-36.543457,142.168875,3,17
+Victoria,Central Victorian Uplands,-37.219707,144.884134,2,2
+Victoria,East Gippsland Lowlands,-37.750610,148.929300,2,80
+Victoria,East Gippsland Lowlands,-37.598330,148.835300,2,54
+Victoria,Gippsland Plain,-38.224210,146.374500,2,133
+Victoria,Kybeyan-Gourock,-36.281730,149.392800,2,2
+Victoria,Monaro,-36.197820,149.076000,2,6
+Victoria,Otway Plain,-38.350920,143.972200,2,70
+Victoria,Otway Ranges,-38.615450,143.671200,2,20
+Victoria,South East Coastal Ranges,-36.872670,149.062700,2,14
+Victoria,Strzelecki Ranges,-38.426100,146.155900,2,15
+Victoria,Warrnambool Plain,-38.410680,142.749400,2,5
+Victoria,Wilsons Promontory,-38.971560,146.387700,2,4
+Victoria,Inland Slopes,-36.266948,146.828410,1,1
+Victoria,Robinvale Plains,-34.606860,142.526027,1,1
+Victoria,Victorian Alps,-37.208990,146.845300,1,4
+Victoria,Wimmera,-36.543460,142.168900,1,5
+Western Australia,Perth,-31.915348,115.491609,14,464
+Western Australia,Southern Jarrah Forest,-34.150508,116.649832,13,74
+Western Australia,Pindanland,-18.311146,122.316321,12,635
+Western Australia,Roebourne,-20.660528,117.079597,12,67
+Western Australia,Warren,-34.695515,116.157410,12,47
+Western Australia,Wooramel,-25.015348,114.411437,12,211
+Western Australia,Cape Range,-22.405063,114.419566,11,161
+Western Australia,Carlisle,-29.728781,126.694018,11,11
+Western Australia,Edel,-26.875509,114.310369,11,12
+Western Australia,Geraldton Hills,-28.357429,114.441385,11,32
+Western Australia,Recherche,-33.894986,122.596852,10,98
+Western Australia,Timor Sea Coral Islands,-15.714100,120.831531,8,8
+Western Australia,Lesueur Sandplain,-29.906942,115.382982,6,10
+Western Australia,Hampton,-32.065957,127.551053,5,5
+Western Australia,Katanning,-32.413329,117.179276,5,14
+Western Australia,Eastern Murchison,-28.183850,120.388400,3,32
+Western Australia,Merredin,-30.685700,117.479600,3,37
+Western Australia,Pentecost,-16.862440,126.746400,3,32
+Western Australia,Southern Cross,-31.080860,119.905300,3,47
+Western Australia,Augustus,-24.665090,117.925000,2,9
+Western Australia,Carnegie,-25.747560,121.901200,2,2
+Western Australia,Central,-27.777990,125.370600,2,2
+Western Australia,Dandaragan Plateau,-30.798327,115.855972,2,3
+Western Australia,Dirk Hartog Island,-25.751670,113.004459,2,2
+Western Australia,Eastern Goldfield,-31.343570,122.346700,2,10
+Western Australia,Fitzgerald,-34.230741,119.150439,2,3
+Western Australia,Geraldton Hills,-28.199960,114.804000,2,5
+Western Australia,Hamersley,-22.612490,117.484800,2,5
+Western Australia,Keep,-15.612198,128.477110,2,2
+Western Australia,Keep,-15.491100,129.682900,2,27
+Western Australia,Mitchell,-15.533110,125.633700,2,16
+Western Australia,Northern Jarrah Forest,-32.440770,116.400400,2,125
+Western Australia,Northern Jarrah Forest,-32.440767,116.400391,2,165
+Western Australia,Pindanland,-18.350350,122.576000,2,8
+Western Australia,Purnululu,-17.323600,128.671100,2,11
+Western Australia,Tallering,-28.793850,116.942000,2,16
+Western Australia,Western Mallee,-33.057920,119.026100,2,4
+Western Australia,Western Murchison,-26.652630,116.999800,2,16
+Western Australia,Wooramel,-24.985000,114.581200,2,18
+Western Australia,Ashburton,-23.514790,116.740900,1,2
+Western Australia,Cape Range,-22.620370,114.543500,1,4
+Western Australia,Chichester,-21.491270,119.314800,1,17
+Western Australia,Dandaragan Plateau,-30.798330,115.856000,1,1
+Western Australia,Dirk Hartog Island,-25.751670,113.004500,1,1
+Western Australia,Dorre Island,-24.989240,113.108800,1,8
+Western Australia,Eastern Mallee,-33.007280,122.447400,1,3
+Western Australia,Edel,-26.953180,114.533000,1,1
+Western Australia,Fitzgerald,-34.230740,119.150400,1,5
+Western Australia,Fitzgerald,-34.074990,119.134600,1,17
+Western Australia,Fitzroy Trough,-17.856910,124.601100,1,7
+Western Australia,Fortescue,-22.602110,119.523900,1,3
+Western Australia,Geraldton Hills,-28.357430,114.441400,1,2
+Western Australia,Hampton,-31.941530,127.574200,1,2
+Western Australia,Hart,-17.914910,127.221800,1,3
+Western Australia,Katanning,-32.413330,117.179300,1,20
+Western Australia,Keep,-15.612200,128.477100,1,17
+Western Australia,Lateritic Plain,-24.493400,125.618900,1,1
+Western Australia,Lesueur Sandplain,-29.944130,115.516900,1,6
+Western Australia,Mackay,-22.330000,127.180200,1,1
+Western Australia,Mann-Musgrave Block,-25.522520,129.159800,1,3
+Western Australia,Maralinga,-28.425690,129.976900,1,1
+Western Australia,Mardabilla,-32.440060,123.884100,1,2
+Western Australia,McLarty,-20.007020,123.913900,1,1
+Western Australia,Perth,-31.915350,115.491600,1,140
+Western Australia,Perth,-31.903590,115.644100,1,53
+Western Australia,Recherche,-33.683610,122.202600,1,1
+Western Australia,Roebourne,-20.936070,117.307000,1,5
+Western Australia,Rudall,-22.503280,122.253800,1,5
+Western Australia,Shield,-29.019770,123.543200,1,1
+Western Australia,South Kimberley Interzone,-17.891180,128.947600,1,1
+Western Australia,Southern Jarrah Forest,-34.132770,116.668800,1,42
+Western Australia,TSX marine region WA,-26.643510,119.065100,1,4
+Western Australia,Trainor,-24.105630,122.310000,1,4
+Western Australia,Warren,-34.580730,116.224200,1,32

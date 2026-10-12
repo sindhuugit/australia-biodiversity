@@ -1,42 +1,235 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Australia's Biodiversity</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+
+  <!-- CSS Styling -->
   <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
 
+  <!-- WEBSITE HEADER -->
   <header>
     <h1>Australia's Biodiversity</h1>
 
     <p>
-      Exploring Australia's wildlife, threatened
+      Exploring Australia's unique wildlife, threatened
       species and conservation efforts.
+    </p>
+    <p>
+      By Sindhu Modugu
     </p>
   </header>
 
+  <!-- MAIN CONTENT -->
   <main>
-    <section>
-      <h2>Australia's Unique Wildlife</h2>
-      <p>Our first visualisation will go here.</p>
+
+    <!-- SECTION 1: PROTECTED AREAS -->
+    <section class="map-section">
+
+      <h2>How Much of Australia Is Protected?</h2>
+
+      <p>
+        Australia's protected areas play an important role
+        in conserving natural habitats and ecosystems.
+        However, the proportion of protected land varies
+        significantly across states and territories.
+      </p>
+
+      <p class="map-instruction">
+        Hover over a state or territory to explore
+        its protected land coverage.
+      </p>
+
+      <!-- Interactive Vega-Lite Map -->
+      <div id="protected_land_map"></div>
+
+      <!-- Key Finding -->
+      <p class="key-finding">
+        <strong>Key Finding:</strong>
+        The ACT has the highest percentage of protected
+        land at 55.9%, followed by Tasmania at 42.8%.
+        Queensland has the lowest among the eight main
+        jurisdictions, at 9.4%.
+      </p>
+
+      <!-- Data Source -->
+      <p class="source">
+        Source: CAPAD 2024, Australian Government.
+        Geographic boundaries: ABS ASGS 2021.
+      </p>
+
     </section>
 
-    <section>
-      <h2>Threatened Species</h2>
-      <p>Our second visualisation will go here.</p>
+        
+    <!-- SECTION 2: THREATENED SPECIES TRENDS -->
+    <section class="trend-section">
+
+      <h2>Australia's Disappearing Wildlife</h2>
+
+      <p>
+        Australia is home to an extraordinary range of native
+        species, but many face increasing threats to their survival.
+        The Australian Threatened Species Index tracks changes
+        in the relative abundance of monitored threatened species
+        over time.
+      </p>
+
+      <p class="chart-instruction">
+        Select a species group using the dropdown menu to explore
+        how its index has changed between 1985 and 2022.
+        Hover over the line to see the index for a particular year.
+      </p>
+
+      
+      <!-- Species group dropdown -->
+      <div id="tsx_controls"></div>
+
+      <!-- Chart explanation -->
+      <p class="chart-note">
+        The index is relative to 1985 (1985 = 1).
+        A value of 0.5 indicates an estimated abundance
+        half that of the reference year for the monitored
+        species represented in the index.
+        The shaded area shows published uncertainty bounds
+        for the official TSX groups.
+      </p>
+
+      <!-- Interactive chart -->
+      <div id="tsx_trend_chart"></div>
+
+      <p class="key-finding">
+        <strong>Key Finding:</strong>
+        The overall threatened species index declined
+        from 1.00 in 1985 to approximately 0.25 in 2022,
+        representing a decrease of around 75%.
+        This indicates a substantial decline in the
+        relative abundance of monitored threatened species.
+      </p>
+
+
+      <p class="source">
+        Source: Australian Threatened Species Index 2025.
+        Data period: 1985–2022.
+      </p>
+
     </section>
 
-    <section>
-      <h2>Conservation Efforts</h2>
-      <p>Our third visualisation will go here.</p>
+    
+    <!-- SECTION 3: SPECIES EXPLORER -->
+    <section class="species-section">
+
+      <h2>Beyond the Numbers: Exploring Threatened Species</h2>
+
+      <p>
+        Australia's threatened wildlife includes an extraordinary
+        diversity of birds, mammals, plants, reptiles and amphibians.
+        While the overall Threatened Species Index reveals long-term
+        changes, each group has its own story to tell.
+      </p>
+
+      <p class="chart-instruction">
+        Select a species group below to explore its data.
+      </p>
+
+      <!-- SPECIES ICON BUTTONS -->
+      <div class="species-icons">
+
+        <button class="species-btn active"
+                data-species="all">
+          <i data-lucide="globe"></i>
+          <span>All Species</span>
+        </button>
+
+        <button class="species-btn"
+                data-species="birds">
+          <i data-lucide="bird"></i>
+          <span>Birds</span>
+        </button>
+
+        <button class="species-btn"
+                data-species="mammals">
+          <i data-lucide="paw-print"></i>
+          <span>Mammals</span>
+        </button>
+
+        <button class="species-btn"
+                data-species="plants">
+          <i data-lucide="flower-2"></i>
+          <span>Plants</span>
+        </button>
+
+        <button class="species-btn"
+                data-species="reptiles">
+          <i data-lucide="turtle"></i>
+          <span>Reptiles &amp; Amphibians</span>
+        </button>
+
+      </div>
+
+      <!-- SELECTED SPECIES VISUALISATION -->
+      <div class="species-display">
+
+        <h3 id="species-chart-title">
+          Threat Levels Across Species Groups
+        </h3>
+
+        <p id="species-chart-description">
+          Explore the distribution of recorded threat
+          categories among monitored species groups.
+        </p>
+
+        
+        <!-- Controls for the selected species visualisation -->
+        <div id="species_controls"></div>
+
+        <!-- Selected Vega-Lite visualisation -->
+        <div id="species_chart"></div>
+
+
+        <p id="species-chart-finding" class="key-finding">
+          Reptiles & Amphibians (76.9%) and Plants (72.5%) have 
+          the highest proportions of Endangered or Critically Endangered species 
+          in the monitoring dataset, suggesting that these groups face particularly 
+          severe extinction risks. In contrast, Mammals have the largest proportion 
+          classified as Vulnerable (40.2%). This highlights how the severity of 
+          threats differs across species groups, rather than affecting all wildlife equally.
+        </p>
+
+        <p class="source" id="species-chart-source">
+          Source: Australian Threatened Species Index 2025.
+          Counts of distinct species in the monitoring extract.
+        </p>
+
+      </div>
+
     </section>
+
+
+
   </main>
 
+  <!-- VEGA LIBRARIES -->
+  <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+
+  <!-- YOUR JAVASCRIPT -->
   <script src="script.js"></script>
+
 </body>
 </html>

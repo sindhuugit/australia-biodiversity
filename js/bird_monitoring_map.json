@@ -1,0 +1,176 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Threatened bird species monitored by region centroid, TSX 2025 monitoring extract. Counts of distinct TaxonID values; not population abundance or bird sightings.",
+  "title": {
+    "text": "Threatened Bird Monitoring Across Australia",
+    "subtitle": "Circle size represents the number of distinct threatened bird species monitored in each region."
+  },
+  
+"width": 750,
+"height": 450,
+"projection": {
+  "type": "mercator",
+  "center": [134, -28],
+  "scale": 590,
+  "translate": [375, 225]
+},
+
+  "params": [
+    {
+      "name": "chosenState",
+      "value": "All states",
+      "bind": {
+        "input": "select",
+        "options": [
+          "All states",
+          "New South Wales",
+          "Victoria",
+          "Queensland",
+          "Western Australia",
+          "South Australia",
+          "Tasmania",
+          "Northern Territory",
+          "Australian Capital Territory"
+        ],
+        "name": "Filter by state: "
+      }
+    }
+  ],
+  "layer": [
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/rowanhogan/australian-states/master/states.geojson",
+        "format": {
+          "type": "json",
+          "property": "features"
+        }
+      },
+      "mark": {
+        "type": "geoshape",
+        "fill": "#EEF2E9",
+        "stroke": "#A6B8A8",
+        "strokeWidth": 0.9
+      },
+      "encoding": {
+        "shape": {
+          "field": "geometry",
+          "type": "geojson"
+        }
+      }
+    },
+    {
+      "data": {
+        "url": "data/bird_monitoring_regions.csv",
+        "format": {
+          "type": "csv",
+          "parse": {
+            "species_count": "number",
+            "monitoring_records": "number",
+            "latitude": "number",
+            "longitude": "number"
+          }
+        }
+      },
+      "transform": [
+        {
+          "filter": "chosenState === 'All states' || datum.state === chosenState"
+        }
+      ],
+      "mark": {
+        "type": "circle",
+        "color": "#D77A50",
+        "stroke": "#173D34",
+        "strokeWidth": 0.6,
+        "opacity": 0.73
+      },
+      "encoding": {
+        "longitude": {
+          "field": "longitude",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "latitude",
+          "type": "quantitative"
+        },
+        "size": {
+          "field": "species_count",
+          "type": "quantitative",
+          "title": "Bird species monitored",
+          "scale": {
+            "type": "sqrt",
+            "domain": [
+              1,
+              15
+            ],
+            "range": [
+              30,
+              950
+            ]
+          },
+          "legend": {
+            "orient": "bottom",
+            "symbolFillColor": "#D77A50",
+            "labelFontSize": 12,
+            "titleFontSize": 13
+          }
+        },
+        "tooltip": [
+          {
+            "field": "state",
+            "title": "State"
+          },
+          {
+            "field": "region",
+            "title": "Monitoring region"
+          },
+          {
+            "field": "species_count",
+            "type": "quantitative",
+            "title": "Distinct monitored bird species",
+            "format": ",d"
+          },
+          {
+            "field": "monitoring_records",
+            "type": "quantitative",
+            "title": "Monitoring records",
+            "format": ",d"
+          },
+          {
+            "field": "latitude",
+            "type": "quantitative",
+            "title": "Region centroid latitude",
+            "format": ".2f"
+          },
+          {
+            "field": "longitude",
+            "type": "quantitative",
+            "title": "Region centroid longitude",
+            "format": ".2f"
+          }
+        ]
+      }
+    }
+  ],
+  "config": {
+    "background": "#FFFFFF",
+    "font": "DM Sans",
+    "view": {
+      "stroke": null
+    },
+    "title": {
+      "font": "DM Sans",
+      "fontSize": 19,
+      "fontWeight": 700,
+      "color": "#173D34",
+      "subtitleFont": "DM Sans",
+      "subtitleFontSize": 12,
+      "subtitleColor": "#586D61"
+    },
+    "legend": {
+      "labelFont": "DM Sans",
+      "titleFont": "DM Sans",
+      "labelColor": "#243B32",
+      "titleColor": "#173D34"
+    }
+  }
+}
