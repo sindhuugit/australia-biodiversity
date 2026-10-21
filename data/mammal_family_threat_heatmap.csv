@@ -1,0 +1,93 @@
+family,status,count,family_total,within_family_pct,example_species,rank,count_band
+Muridae,Near Threatened,3,20,15.0,Broad-toothed Rat; Golden-backed Tree-rat; Mastacomys fuscus fuscus,1,2–3
+Muridae,Vulnerable,13,20,65.0,Arnhem Land Rock-rat; Black-footed Tree-rat (Melville Island); Black-footed Tree-rat (north Queensland),1,7+
+Muridae,Endangered,4,20,20.0,Black-footed Tree-rat (Kimberley and mainland Northern Territory); Hastings River Mouse; Heath Rat,1,4–6
+Muridae,Critically Endangered,0,20,0.0,None recorded,1,0
+Dasyuridae,Near Threatened,5,18,27.8,Bindjulang; Brush-tailed Phascogale; Carpentarian Pseudantechinus,2,4–6
+Dasyuridae,Vulnerable,4,18,22.2,Chuditch; Fawn Antechinus; Julia Creek Dunnart,2,4–6
+Dasyuridae,Endangered,8,18,44.4,Black-tailed Antechinus; Dibbler; Digul,2,7+
+Dasyuridae,Critically Endangered,1,18,5.6,Kangaroo Island Dunnart,2,1
+Macropodidae,Near Threatened,2,12,16.7,Warabi; Yellow-footed Rock-wallaby,3,2–3
+Macropodidae,Vulnerable,7,12,58.3,Banded Hare-wallaby; Central Australian Rock-wallaby; Rufous Hare-wallaby (Bernier Island),3,7+
+Macropodidae,Endangered,3,12,25.0,Black-flanked Rock-wallaby; Bridled Nailtail Wallaby; Mala,3,2–3
+Macropodidae,Critically Endangered,0,12,0.0,None recorded,3,0
+Potoroidae,Near Threatened,4,11,36.4,Burrowing Bettong; Long-nosed Potoroo; Potorous tridactylus apicalis,4,4–6
+Potoroidae,Vulnerable,3,11,27.3,Burrowing Bettong (Shark Bay); Long-nosed Potoroo (northern); Long-nosed Potoroo (southern mainland),4,2–3
+Potoroidae,Endangered,2,11,18.2,Long-footed Potoroo; Northern Bettong,4,2–3
+Potoroidae,Critically Endangered,2,11,18.2,Brush-tailed Bettong; Woylie,4,2–3
+Peramelidae,Near Threatened,0,5,0.0,None recorded,5,0
+Peramelidae,Vulnerable,3,5,60.0,Eastern Barred Bandicoot; Golden Bandicoot (Barrow Island); Golden Bandicoot (mainland),5,2–3
+Peramelidae,Endangered,2,5,40.0,Southern Brown Bandicoot (eastern); Western Barred Bandicoot,5,2–3
+Peramelidae,Critically Endangered,0,5,0.0,None recorded,5,0
+Pteropodidae,Near Threatened,0,3,0.0,None recorded,6,0
+Pteropodidae,Vulnerable,1,3,33.3,Grey-headed Flying-fox,6,1
+Pteropodidae,Endangered,1,3,33.3,Spectacled Flying-fox,6,1
+Pteropodidae,Critically Endangered,1,3,33.3,Christmas Island Flying Fox,6,1
+Vespertilionidae,Near Threatened,1,3,33.3,Little Pied Bat,7,1
+Vespertilionidae,Vulnerable,1,3,33.3,Eastern False Pipistrelle,7,1
+Vespertilionidae,Endangered,1,3,33.3,Large Pied Bat,7,1
+Vespertilionidae,Critically Endangered,0,3,0.0,None recorded,7,0
+Delphinidae,Near Threatened,0,2,0.0,None recorded,8,0
+Delphinidae,Vulnerable,2,2,100.0,Australian Hump-backed Dolphin; Australian Snubfin Dolphin,8,2–3
+Delphinidae,Endangered,0,2,0.0,None recorded,8,0
+Delphinidae,Critically Endangered,0,2,0.0,None recorded,8,0
+Otariidae,Near Threatened,0,2,0.0,None recorded,9,0
+Otariidae,Vulnerable,0,2,0.0,None recorded,9,0
+Otariidae,Endangered,2,2,100.0,Australian Sea-lion; Subantarctic Fur-seal,9,2–3
+Otariidae,Critically Endangered,0,2,0.0,None recorded,9,0
+Petauridae,Near Threatened,1,2,50.0,Yellow-bellied Glider,10,1
+Petauridae,Vulnerable,0,2,0.0,None recorded,10,0
+Petauridae,Endangered,0,2,0.0,None recorded,10,0
+Petauridae,Critically Endangered,1,2,50.0,Leadbeater's Possum,10,1
+Pseudocheiridae,Near Threatened,0,2,0.0,None recorded,11,0
+Pseudocheiridae,Vulnerable,0,2,0.0,None recorded,11,0
+Pseudocheiridae,Endangered,1,2,50.0,Southern Greater Glider,11,1
+Pseudocheiridae,Critically Endangered,1,2,50.0,Western Ringtail Possum,11,1
+Balaenidae,Near Threatened,0,1,0.0,None recorded,12,0
+Balaenidae,Vulnerable,0,1,0.0,None recorded,12,0
+Balaenidae,Endangered,1,1,100.0,Southern Right Whale,12,1
+Balaenidae,Critically Endangered,0,1,0.0,None recorded,12,0
+Balaenopteridae,Near Threatened,0,1,0.0,None recorded,13,0
+Balaenopteridae,Vulnerable,0,1,0.0,None recorded,13,0
+Balaenopteridae,Endangered,1,1,100.0,Blue Whale,13,1
+Balaenopteridae,Critically Endangered,0,1,0.0,None recorded,13,0
+Burramyidae,Near Threatened,0,1,0.0,None recorded,14,0
+Burramyidae,Vulnerable,0,1,0.0,None recorded,14,0
+Burramyidae,Endangered,0,1,0.0,None recorded,14,0
+Burramyidae,Critically Endangered,1,1,100.0,Mountain Pygmy-possum,14,1
+Dugongidae,Near Threatened,0,1,0.0,None recorded,15,0
+Dugongidae,Vulnerable,1,1,100.0,Dugong,15,1
+Dugongidae,Endangered,0,1,0.0,None recorded,15,0
+Dugongidae,Critically Endangered,0,1,0.0,None recorded,15,0
+Miniopteridae,Near Threatened,0,1,0.0,None recorded,16,0
+Miniopteridae,Vulnerable,0,1,0.0,None recorded,16,0
+Miniopteridae,Endangered,0,1,0.0,None recorded,16,0
+Miniopteridae,Critically Endangered,1,1,100.0,Southern Bent-winged Bat,16,1
+Myrmecobiidae,Near Threatened,0,1,0.0,None recorded,17,0
+Myrmecobiidae,Vulnerable,0,1,0.0,None recorded,17,0
+Myrmecobiidae,Endangered,1,1,100.0,Numbat,17,1
+Myrmecobiidae,Critically Endangered,0,1,0.0,None recorded,17,0
+Ornithorhynchidae,Near Threatened,1,1,100.0,Platypus,18,1
+Ornithorhynchidae,Vulnerable,0,1,0.0,None recorded,18,0
+Ornithorhynchidae,Endangered,0,1,0.0,None recorded,18,0
+Ornithorhynchidae,Critically Endangered,0,1,0.0,None recorded,18,0
+Phascolarctidae,Near Threatened,0,1,0.0,None recorded,19,0
+Phascolarctidae,Vulnerable,0,1,0.0,None recorded,19,0
+Phascolarctidae,Endangered,1,1,100.0,Koala,19,1
+Phascolarctidae,Critically Endangered,0,1,0.0,None recorded,19,0
+Phocidae,Near Threatened,0,1,0.0,None recorded,20,0
+Phocidae,Vulnerable,1,1,100.0,Southern Elephant Seal,20,1
+Phocidae,Endangered,0,1,0.0,None recorded,20,0
+Phocidae,Critically Endangered,0,1,0.0,None recorded,20,0
+Tachyglossidae,Near Threatened,0,1,0.0,None recorded,21,0
+Tachyglossidae,Vulnerable,0,1,0.0,None recorded,21,0
+Tachyglossidae,Endangered,1,1,100.0,Kangaroo Island Echidna,21,1
+Tachyglossidae,Critically Endangered,0,1,0.0,None recorded,21,0
+Thylacomyidae,Near Threatened,0,1,0.0,None recorded,22,0
+Thylacomyidae,Vulnerable,1,1,100.0,Bilby,22,1
+Thylacomyidae,Endangered,0,1,0.0,None recorded,22,0
+Thylacomyidae,Critically Endangered,0,1,0.0,None recorded,22,0
+Vombatidae,Near Threatened,0,1,0.0,None recorded,23,0
+Vombatidae,Vulnerable,0,1,0.0,None recorded,23,0
+Vombatidae,Endangered,0,1,0.0,None recorded,23,0
+Vombatidae,Critically Endangered,1,1,100.0,Northern Hairy-nosed Wombat,23,1

@@ -1,604 +1,612 @@
+/* AUSTRALIA’S BIODIVERSITY — complete consolidated stylesheet */
 
-/* ==========================================
-   AUSTRALIA'S BIODIVERSITY
-   Colour Palette & Design System
-========================================== */
-
-:root {
-  --dark-green: #173D34;
-  --forest-green: #31765A;
-  --sage-green: #A8C4A0;
-  --light-sage: #E8F0E4;
-  --sandstone: #E9D9BF;
-  --orange: #D77A50;
-  --ivory: #FAF7EF;
-  --white: #FFFFFF;
-  --text: #243B32;
-  --muted-text: #586D61;
-  --border: #E2E8DE;
+:root { --dark-green: #173D34; --forest-green: #31765A; --sage-green: #A8C4A0; --light-sage: #EAF4F0; --sandstone: #E9D9BF; --orange: #D97B55; --ivory: #FAF7EF; --white: #FFFFFF; --text: #204D4E; --muted-text: #5C7974; --border: #D8EAE3; --paper: #F9FDFB; }
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--ivory); color: var(--text); font: 400 16px/1.75 "DM Sans", Arial, sans-serif; }
+h1, h2, h3, h4, p { margin-top: 0; }
+p { margin-bottom: 20px; line-height: 1.75; }
+strong { font-weight: 700; }
+h2 { margin: 0 0 20px; color: var(--dark-green); font: 400 clamp(28px, 3vw, 38px)/1.3 "DM Serif Display", Georgia, serif; }
+h3 { color: var(--dark-green); font-size: 22px; line-height: 1.35; }
+a { color: var(--forest-green); text-underline-offset: 3px; }
+a:hover { color: var(--orange); }
+button, select, input { font-family: "DM Sans", Arial, sans-serif; }
+button { cursor: pointer; }
+:where(button, select, a, input):focus-visible { outline: 3px solid var(--orange); outline-offset: 3px; }
+header { padding: 90px 30px; background: var(--dark-green); color: var(--ivory); text-align: center; }
+header h1 { max-width: 950px; margin: 0 auto; font: 400 clamp(40px, 5vw, 64px)/1.2 "DM Serif Display", Georgia, serif; letter-spacing: -.5px; }
+header p { max-width: 700px; margin: 20px auto 0; color: #D6E5D6; font-size: 17px; line-height: 1.7; }
+main { width: 100%; max-width: 1150px; margin: 0 auto; padding: 55px 24px; }
+main > section { margin-bottom: 44px; padding: 0; overflow: hidden; min-width: 0; background: var(--paper); border: 1px solid var(--border); border-radius: 20px; }
+footer { padding: 35px 24px; background: var(--dark-green); color: #D6E5D6; text-align: center; }
+footer p { margin-bottom: 8px; font-size: 13px; }
+footer a { color: var(--sandstone); }
+.section-divider { height: 1px; margin: 42px 0; background: var(--border); }
+.story-section .story-banner { --banner-start: #173D34; --banner-middle: #20594F; --banner-end: #287E79; position: relative; isolation: isolate; display: grid; grid-template-columns: minmax(0, 1fr) minmax(110px, 165px); align-items: center; gap: clamp(16px, 3vw, 42px); min-height: 260px; padding: clamp(30px, 4.5vw, 55px); overflow: hidden; background: linear-gradient(116deg, var(--banner-start), var(--banner-middle) 57%, var(--banner-end)); color: #FFFFFF; }
+.story-section--wildlife .story-banner { --banner-start: #203E37; --banner-middle: #345F52; --banner-end: #4B8878; }
+.story-section--explorer .story-banner { --banner-start: #173F3C; --banner-middle: #23675E; --banner-end: #388C7E; }
+.story-section .story-banner::before { content: ""; position: absolute; width: 290px; height: 290px; top: -170px; right: -125px; border: 1px solid rgba(216,255,244,.22); border-radius: 50%; pointer-events: none; }
+.story-section .story-banner::after { content: ""; position: absolute; left: -10%; bottom: -57px; width: 120%; height: 92px; background: rgba(211,242,232,.13); border-radius: 50%; transform: rotate(-2deg); pointer-events: none; }
+.story-banner-copy, .story-emblem { position: relative; z-index: 1; }
+.story-section .story-eyebrow, .reef-eyebrow { margin: 0 0 14px; color: #BDE9DE; font: 700 11px/1.6 "DM Sans", sans-serif; letter-spacing: 1.8px; text-transform: uppercase; }
+.story-section .story-banner h2 { max-width: 21ch; margin: 0 0 13px; color: #FFFFFF; font: 400 clamp(31px, 3.55vw, 46px)/1.15 "DM Serif Display", Georgia, serif; }
+.story-section .story-intro { max-width: 70ch; margin: 0; color: #DBEEE8; font: 400 15px/1.75 "DM Sans", sans-serif; }
+.story-section .story-jump, .reef-hero-link { display: inline-flex; gap: 12px; align-items: center; padding: 10px 18px; color: #F3FFFC; background: rgba(255,255,255,.06); border: 1px solid #9BE3D6; border-radius: 100px; font: 700 13px/1.5 "DM Sans", sans-serif; text-decoration: none; transition: background .2s ease, transform .2s ease; }
+.story-jump { margin-top: 20px; }
+.story-jump:hover, .reef-hero-link:hover { background: rgba(255,255,255,.17); color: #FFFFFF; transform: translateY(-2px); }
+.story-section .story-emblem { display: grid; place-items: center; justify-self: center; width: min(100%, 160px); aspect-ratio: 1; background: radial-gradient(circle at 35% 30%, #3D9D91, #16716C 78%); border: 1px solid rgba(183,244,231,.36); border-radius: 50%; box-shadow: 0 0 0 18px rgba(185,243,232,.08); }
+.story-emblem svg { width: 66px; height: 66px; color: #C7F1E5; stroke-width: 1.4; }
+.story-section .story-content { padding: clamp(21px, 3vw, 40px); min-width: 0; }
+.vega-embed { max-width: 100%; }
+.vega-embed :is(canvas, svg) { display: block; max-width: 100%; height: auto; }
+.chart-container { display: flex; justify-content: center; width: 100%; margin: 30px auto; }
+.story-section #protected_land_map, .story-section #tsx_trend_chart, .story-section .conservation-panel, .story-section .species-display, .reef-section .reef-viz-card { min-width: 0; background: #FFFFFF; border: 1px solid var(--border); border-radius: 17px; box-shadow: none; }
+#protected_land_map, #tsx_trend_chart { display: flex; justify-content: center; align-items: flex-start; width: 100%; max-width: 100%; margin: 24px 0; padding: clamp(12px, 2vw, 24px); }
+#tsx_trend_chart .vega-embed { max-width: 100%; }
+#tsx_controls, #species_controls { margin: 12px 0; }
+#species_controls:empty { display: none; }
+#species_chart { width: 100%; max-width: 100%; margin: 24px auto; overflow: visible; }
+#species_chart .vega-embed { max-width: 100%; }
+#species_chart :is(svg, canvas) { display: block; max-width: 100%; height: auto; }
+.source, .chart-source, #species-chart-source { display: none !important; }
+.caption, .annotation { color: var(--muted-text); font-size: 13px; font-style: italic; line-height: 1.65; }
+.story-section .conservation-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; align-items: stretch; margin: 25px 0; }
+.story-section .conservation-panel { display: flex; flex-direction: column; width: 100%; height: 100%; padding: 20px 16px; }
+.conservation-chart, #governance_waffle_chart { display: flex; justify-content: center; align-items: flex-start; flex: 1; width: 100%; min-width: 0; }
+.conservation-chart .vega-embed { max-width: 100%; min-width: 0; }
+#governance_waffle_chart .vega-embed { width: fit-content; max-width: 100%; margin: 0 auto; }
+.species-icons { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 12px; margin: 12px 0 26px; }
+.species-btn { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; min-height: 112px; padding: 18px 10px; background: #EAF6F1; color: #174C49; border: 1px solid #D1E6DC; border-radius: 14px; font: 600 13px/1.4 "DM Sans", sans-serif; cursor: pointer; transition: background .2s ease, border-color .2s ease, transform .2s ease; }
+.species-btn svg { width: 35px; height: 35px; stroke: var(--forest-green); stroke-width: 1.8; }
+.species-btn:hover { background: #DCF0E9; border-color: #8CC5B3; transform: translateY(-3px); }
+.species-btn.active { background: #D7EFE6; border: 2px solid var(--forest-green); }
+.species-btn.active svg { stroke: var(--dark-green); }
+.species-display { padding: clamp(16px, 2.8vw, 30px); margin: 0; overflow: visible; }
+.species-display > h3 { margin: 0 0 12px; color: var(--dark-green); font: 700 22px/1.35 "DM Sans", sans-serif; }
+#species-chart-description { margin-bottom: 15px; }
+#species-chart-instruction[hidden] { display: none !important; }
+button:not(.species-btn) { font-size: 14px; }
+select { max-width: 100%; padding: 9px 12px; border: 1px solid #B8D7CE; border-radius: 9px; background: #F7FCFA; color: #1F5553; font: 600 13px/1.45 "DM Sans", sans-serif; cursor: pointer; }
+#tsx_controls select, #species_controls select { margin-left: 6px; }
+.reef-controls { display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 8px 12px; min-height: 14px; margin: 7px 0 10px; }
+.reef-controls .vega-bindings { color: #315D58; font: 600 13px "DM Sans", sans-serif; }
+.reef-controls select { margin-left: 7px; }
+.key-finding { position: relative; margin: 24px 0 0; padding: 22px 24px 22px 62px; background: var(--light-sage); border: 0; border-left: 6px solid var(--orange); border-radius: 13px; color: var(--text); font: 400 15px/1.75 "DM Sans", sans-serif; }
+.key-finding::before { content: "✦"; position: absolute; top: 21px; left: 25px; color: var(--orange); font-size: 23px; line-height: 1; }
+.key-finding strong, .reef-takeaway strong { color: #123F45; font-weight: 700; }
+.chart-note, .conservation-note, .reef-chart-note, .reef-map-reading > div { position: static; padding: 17px 20px; background: #EAF4F0; border: 1px solid var(--border); border-radius: 13px; color: var(--text); box-shadow: none; font: 400 14px/1.7 "DM Sans", sans-serif; }
+.chart-note::before, .conservation-note::before, .reef-chart-note::before, .reef-map-reading > div::before { content: none; display: none; }
+.chart-note { margin: 14px 0 24px; }
+.conservation-note { margin: auto 0 0; padding: 16px 18px; font-size: 13px; }
+.reef-chart-note { margin: 16px 0 0; font-size: 13px; }
+.reef-map-reading > div { padding: 18px 20px; }
+.reef-map-reading strong, .reef-chart-note strong, .chart-note strong, .conservation-note strong { color: #123F45; font-weight: 700; }
+.reef-map-reading p { margin: 6px 0 0; color: var(--text); font-size: 13px; line-height: 1.7; }
+.map-instruction, .chart-instruction, #species-chart-instruction, .reef-map-instruction { position: static; margin: 8px 0 19px; padding: 13px 17px; color: var(--forest-green); background: #F4FAF7; border: 1px solid #DDECE5; border-radius: 11px; font: italic 500 14px/1.7 "DM Sans", sans-serif; }
+.map-instruction::before, .chart-instruction::before, #species-chart-instruction::before, .reef-map-instruction::before { content: none; display: none; }
+.reef-map-instruction { max-width: 80ch; margin: 9px auto 17px; text-align: center; }
+.reef-data-attribution { margin: 15px 4px 2px; color: #768A84; font: 400 11px/1.6 "DM Sans", sans-serif; }
+.reef-data-attribution::before { content: none; }
+.reef-section { background: #F9FDFB; }
+.reef-hero { position: relative; isolation: isolate; display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, .75fr); align-items: center; gap: 12px; min-height: 385px; padding: clamp(30px, 5vw, 58px); overflow: hidden; color: #F1FFFB; background: linear-gradient(117deg, #063A4C 0%, #065A6B 58%, #0C8B90 100%); }
+.reef-hero::after { content: ""; position: absolute; top: -190px; right: -135px; width: 340px; height: 340px; border: 1px solid #FFFFFF25; border-radius: 50%; pointer-events: none; }
+.reef-hero-content { position: relative; z-index: 2; }
+.reef-section .reef-hero h2 { margin: 0 0 18px; color: #FFFFFF; font: 400 clamp(36px, 4.5vw, 54px)/1.12 "DM Serif Display", Georgia, serif; letter-spacing: -.4px; }
+.reef-hero-lead { max-width: 65ch; margin: 0 0 12px; color: #F5FFFC; font-size: 16px; line-height: 1.75; }
+.reef-hero-sub { max-width: 62ch; margin: 0 0 22px; color: #C0E0DA; font-size: 14px; line-height: 1.75; }
+.reef-eyebrow span { opacity: .55; margin: 0 7px; }
+.reef-art { position: relative; z-index: 1; justify-self: center; width: 100%; max-width: 360px; filter: drop-shadow(0 22px 24px #002B3960); }
+.reef-hero-water { position: absolute; bottom: -40px; left: -15%; width: 130%; height: 95px; border-radius: 50%; background: #DFF3EF; opacity: .12; transform: rotate(-3deg); }
+.reef-kpis { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); padding: 23px 22px; background: #FFFFFF; border-bottom: 1px solid #E2EDE9; }
+.reef-kpi { display: flex; flex-direction: column; align-items: flex-start; gap: 2px; min-width: 0; padding: 9px 17px; border-right: 1px solid #E3EBE6; }
+.reef-kpi:last-child { border-right: 0; }
+.reef-kpi-icon { margin-bottom: 7px; color: #2B9A93; font-size: 23px; line-height: 1; }
+.reef-kpi strong { color: #0A5056; font: 400 clamp(25px, 2.65vw, 36px)/1.15 "DM Serif Display", Georgia, serif; white-space: nowrap; }
+.reef-kpi strong em { color: #3B7977; font: normal 700 15px "DM Sans", sans-serif; }
+.reef-kpi > span:not(.reef-kpi-icon) { color: #345E5D; font-size: 12px; font-weight: 700; }
+.reef-kpi small { color: #78928B; font-size: 11px; }
+.reef-story-header { display: flex; justify-content: space-between; align-items: center; gap: 30px; margin: 48px 40px 19px; }
+.reef-story-compact { margin-top: 46px; }
+.reef-step { margin: 0 0 9px; color: #D0754E; font-size: 11px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; }
+.reef-section .reef-story-header h3 { margin: 0 0 10px; color: var(--dark-green); font: 400 clamp(26px, 3vw, 32px)/1.2 "DM Serif Display", Georgia, serif; }
+.reef-story-header p:last-child { max-width: 780px; margin: 0; color: #5B7570; font-size: 14px; line-height: 1.65; }
+.reef-step-icon { flex-shrink: 0; color: #D0E7E1; font: 400 49px "DM Serif Display", Georgia, serif; white-space: nowrap; }
+.reef-step-icon span { color: #AAC9C0; font: 600 13px "DM Sans", sans-serif; }
+.reef-viz-card { min-width: 0; overflow: hidden; }
+.reef-viz-wide { margin: 0 34px; padding: 21px clamp(18px, 3vw, 35px) 18px; }
+.reef-viz-top { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; margin: 0 0 15px; }
+.reef-viz-label { color: #557A74; font-size: 11px; font-weight: 800; letter-spacing: 1.35px; }
+.reef-viz-chip { padding: 5px 10px; border-radius: 100px; color: #207B75; background: #E7F6F1; font-size: 10px; font-weight: 700; white-space: nowrap; }
+.reef-chart { display: flex; justify-content: center; align-items: flex-start; width: 100%; min-width: 0; overflow: visible; }
+.reef-chart .vega-embed { min-width: 0; max-width: 100%; }
+.reef-chart :is(svg, canvas) { display: block; max-width: 100%; height: auto; }
+.reef-viz-compact { display: flex; flex-direction: column; min-width: 0; padding: 21px 19px 19px; }
+.reef-section .reef-viz-compact h4 { margin: 0 0 9px; color: #174C49; font: 400 23px/1.24 "DM Serif Display", Georgia, serif; }
+.reef-card-deck { margin: 0 0 12px; color: #667E79; font-size: 13px; line-height: 1.6; }
+.reef-viz-compact .reef-chart { flex: 1; }
+.reef-viz-compact > .reef-chart-note { margin-top: auto; }
+.reef-case-layout { display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(0, .92fr); gap: 20px; align-items: stretch; margin: 0 34px 30px; }
+.reef-case-chart { padding: 24px 22px; }
+.reef-case-chart .reef-chart { min-height: 230px; align-items: center; }
+.reef-impact-story { display: flex; flex-direction: column; justify-content: center; padding: clamp(23px, 3vw, 36px); background: linear-gradient(145deg, #E8F7F2 0%, #F7FCF9 100%); border: 1px solid #D2E9E0; border-radius: 18px; }
+.reef-impact-eyebrow { margin: 0 0 12px; color: #257A74; font: 700 11px/1.4 "DM Sans", sans-serif; letter-spacing: 1.6px; }
+.reef-impact-number { margin: 0 0 13px; color: #0F7F7B; font: 400 clamp(56px, 7vw, 88px)/1 "DM Serif Display", Georgia, serif; }
+.reef-impact-number span { color: #DA7D59; font-size: .47em; }
+.reef-impact-story h4 { margin: 0 0 12px; color: #174C49; font: 400 22px/1.3 "DM Serif Display", Georgia, serif; }
+.reef-impact-story p:not(.reef-impact-eyebrow) { margin: 0 0 12px; color: #476C65; font-size: 14px; line-height: 1.7; }
+.reef-impact-story .reef-impact-note { margin-bottom: 0; color: #5C7D76; font-size: 12px; }
+.reef-map-wide { margin: 0 34px 30px; padding: clamp(18px, 3vw, 32px); background: #FCFEFD; }
+.reef-choropleth-card .reef-viz-top { margin-bottom: 12px; }
+.reef-map-status { max-width: 760px; margin: 4px auto 15px; padding: 9px 14px; color: #426F6A; background: #ECF6F3; border-radius: 8px; text-align: center; font-size: 12px; line-height: 1.5; }
+.reef-map-status[data-status="error"] { color: #A34135; background: #FFF0E9; }
+.reef-map-status[data-status="ready"] { background: transparent; color: #667D78; }
+.reef-map-controls { width: fit-content; max-width: 100%; margin: 0 auto 14px; padding: 12px; border: 1px solid #E0F0EB; border-radius: 12px; background: #F2FAF7; }
+.reef-map-controls .vega-bindings { display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 10px 18px; }
+.reef-region-row { display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 10px; margin: 0 auto 22px; color: #275D59; font-size: 13px; font-weight: 600; }
+.reef-region-row select { padding: 9px 14px; background: #EAF6F2; color: #174C49; border: 1px solid #A9D4C7; }
+.reef-region-row select:disabled { opacity: .65; cursor: wait; }
+.reef-full-map { display: flex; justify-content: center; width: 100%; min-width: 0; margin: 0 auto; }
+#reef_coral_choropleth_chart .vega-embed { width: fit-content; max-width: 100%; margin: 0 auto; }
+.reef-map-reading { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; padding-top: 18px; margin-top: 20px; border-top: 1px solid #DBECE7; }
+.reef-takeaway { display: flex; align-items: flex-start; gap: 17px; margin: 16px 34px 22px; padding: 22px 24px; background: var(--light-sage); border: 0; border-left: 6px solid var(--orange); border-radius: 13px; color: var(--text); font: 400 15px/1.75 "DM Sans", sans-serif; }
+.reef-takeaway::before { content: none; }
+.reef-takeaway-icon { flex-shrink: 0; margin-top: 3px; color: var(--orange); font-size: 24px; line-height: 1; }
+@media (max-width: 1050px) {
+  .conservation-grid, .story-section .conservation-grid, .reef-case-layout, .reef-paired-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 850px) {
+  .reef-map-reading { grid-template-columns: 1fr; }
+  .species-icons { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@media (max-width: 720px) {
+  header { padding: 65px 20px; }
+  header p { font-size: 15px; }
+  main { padding: 30px 15px; }
+  main > section { margin-bottom: 30px; }
+  .story-section .story-banner { grid-template-columns: 1fr; min-height: 0; padding: 30px 24px 36px; }
+  .story-section .story-banner h2 { font-size: 34px; }
+  .story-section .story-intro { font-size: 14px; }
+  .story-section .story-emblem { display: none; }
+  .story-section .story-content { padding: 22px 17px; }
+  .species-display { padding: 16px; }
+  .reef-hero { grid-template-columns: 1fr; min-height: 0; padding: 30px 25px 10px; }
+  .reef-art { width: 220px; margin-top: -12px; margin-bottom: -24px; }
+  .reef-kpis { grid-template-columns: repeat(2, minmax(0, 1fr)); padding: 14px; }
+  .reef-kpi:nth-child(2) { border-right: 0; }
+  .reef-kpi:nth-child(-n+2) { border-bottom: 1px solid #E3EBE6; }
+  .reef-story-header { margin: 30px 20px 17px; }
+  .reef-step-icon { display: none; }
+  .reef-viz-wide, .reef-case-layout, .reef-map-wide { margin-left: 14px; margin-right: 14px; }
+  .reef-viz-wide, .reef-case-chart { padding: 16px 13px; }
+  .reef-map-wide { padding: 13px 10px; }
+  .reef-map-controls { width: 100%; }
+  .key-finding { padding: 18px 16px 18px 47px; font-size: 14px; }
+  .key-finding::before { left: 16px; top: 17px; }
+  .reef-takeaway { margin: 12px 14px 18px; padding: 18px; font-size: 14px; }
+  .chart-note, .conservation-note, .reef-chart-note, .reef-map-reading > div { padding: 16px; font-size: 13px; }
+}
+@media (max-width: 500px) {
+  .species-icons { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 450px) {
+  .reef-kpi { padding: 10px; }
+  .reef-kpi strong { font-size: 26px; }
+  .reef-hero-lead { font-size: 14px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .species-btn, .story-jump, .reef-hero-link { transition: none; }
+  .species-btn:hover, .story-jump:hover, .reef-hero-link:hover { transform: none; }
+}
+#tsx_trend_chart { display: block; box-sizing: border-box; width: 100%; max-width: 100%; min-width: 0; margin: 24px 0; padding: 18px 16px 22px; overflow-x: auto; overflow-y: hidden; }
+#tsx_trend_chart .vega-embed { display: block; width: max-content; max-width: none; margin: 0 auto; }
+#tsx_trend_chart .vega-embed svg, #tsx_trend_chart .vega-embed canvas { display: block; width: auto !important; height: auto !important; max-width: none !important; transform: none !important; }
+.story-section--land { --bio-accent: #31765A; --bio-soft: #EAF4ED; }
+.story-section--network { --bio-accent: #247B75; --bio-soft: #E7F4F1; }
+.story-section--wildlife { --bio-accent: #B77050; --bio-soft: #FAEEE7; }
+.story-section--explorer { --bio-accent: #75658C; --bio-soft: #F0ECF6; }
+.story-section .bio-figure-intro { display: flex; align-items: center; justify-content: space-between; gap: 22px; margin: 3px 8px 24px; }
+.story-section .bio-figure-intro > div { min-width: 0; }
+.story-section .bio-step { margin: 0 0 10px; color: var(--bio-accent); font: 800 11px/1.4 "DM Sans", sans-serif; letter-spacing: 1.85px; text-transform: uppercase; }
+.story-section .bio-figure-intro h3 { margin: 0 0 10px; color: #173D34; font: 400 clamp(26px, 3vw, 32px)/1.2 "DM Serif Display", Georgia, serif; }
+.story-section .bio-figure-intro p:not(.bio-step) { max-width: 780px; margin: 0; color: #5B7570; font: 400 14px/1.65 "DM Sans", sans-serif; }
+.story-section .bio-figure-number { flex: none; color: var(--bio-accent); opacity: .22; white-space: nowrap; font: 400 51px/1 "DM Serif Display", Georgia, serif; }
+.story-section .bio-figure-number small { font: 700 13px "DM Sans", sans-serif; }
+.story-section .bio-chart-card { display: flex; flex-direction: column; min-width: 0; margin: 0; padding: clamp(18px, 2.8vw, 33px); overflow: visible; background: #FFFFFF; border: 1px solid #D8EAE3; border-radius: 19px; box-shadow: none; }
+.story-section .bio-card-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-bottom: 22px; }
+.story-section .bio-card-label { color: #567B77; font: 800 11px/1.45 "DM Sans", sans-serif; letter-spacing: 1.5px; text-transform: uppercase; }
+.story-section .bio-card-chip { flex: none; padding: 6px 12px; color: var(--bio-accent); background: var(--bio-soft); border-radius: 999px; font: 700 11px/1.4 "DM Sans", sans-serif; }
+.story-section .bio-chart-card .bio-chart-space { min-width: 0; width: 100%; }
+.story-section .bio-chart-card #protected_land_map, .story-section .bio-chart-card #tsx_trend_chart { width: 100%; min-width: 0; margin: 0 auto 16px; padding: 0; border: 0; border-radius: 0; box-shadow: none; background: transparent; }
+.story-section .bio-chart-card #protected_land_map { display: flex; justify-content: center; overflow-x: auto; }
+.story-section .bio-chart-card #tsx_trend_chart { display: block; overflow-x: auto; overflow-y: hidden; }
+.story-section .bio-chart-card #tsx_trend_chart .vega-embed { width: max-content; max-width: none; margin: 0 auto; }
+.story-section .bio-chart-card #tsx_trend_chart .vega-embed svg, .story-section .bio-chart-card #tsx_trend_chart .vega-embed canvas { width: auto !important; height: auto !important; max-width: none !important; transform: none !important; }
+.story-section .bio-chart-controls { display: flex; justify-content: center; flex-wrap: wrap; align-items: center; margin: 0 0 14px; }
+.story-section .bio-card-note, .story-section .conservation-panel .bio-card-note, .story-section .bio-chart-card .chart-note { position: static; display: block; margin: 18px 0 0; padding: 18px 21px; color: #345E5A; background: #EAF4F0; border: 1px solid #D8EAE3; border-left: 1px solid #D8EAE3; border-radius: 13px; box-shadow: none; text-align: left; font: 400 13px/1.8 "DM Sans", sans-serif; }
+.story-section .bio-card-note::before, .story-section .bio-chart-card .chart-note::before { content: none; display: none; }
+.story-section .bio-chart-card .key-finding { border-left: 6px solid #D97B55; }
+.story-section .bio-double-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: stretch; gap: 18px; margin: 0; }
+.story-section .bio-double-grid > .bio-chart-card { height: 100%; }
+.story-section .bio-double-grid .conservation-chart { display: flex; flex: 1 1 auto; justify-content: center; align-items: flex-start; width: 100%; min-width: 0; }
+.story-section .bio-double-grid .bio-card-note { margin-top: auto; }
+.story-section .bio-double-grid .vega-embed { max-width: 100%; }
+.story-section .bio-chart-card--species .species-icons { width: 100%; margin: 0 0 18px; }
+.story-section .bio-chart-card--species .species-display { padding: 12px 0 0; margin: 0; border: 0; border-top: 1px solid #E2EFEA; border-radius: 0; background: transparent; box-shadow: none; }
+.story-section .bio-chart-card--species #species_chart { margin: 20px auto 8px; }
+.story-section .bio-chart-card--species #species_controls { text-align: center; }
+.story-section .story-content > .key-finding { margin: 25px 0 0; }
+@media (max-width: 1050px) {
+  .story-section .bio-double-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 720px) {
+  .story-section .bio-figure-intro { margin: 0 3px 19px; }
+  .story-section .bio-figure-intro h3 { font-size: 27px; }
+  .story-section .bio-figure-number { display: none; }
+  .story-section .bio-chart-card { padding: 16px 13px; }
+  .story-section .bio-card-label { font-size: 10px; }
+  .story-section .bio-card-top { margin-bottom: 16px; }
+  .story-section .bio-card-note { padding: 14px 15px; }
+}
+main > .species-section:not(.story-section) { padding: clamp(22px, 3.2vw, 40px); background: #F9FDFB; }
+.species-section .bio-step-header { display: flex; align-items: center; justify-content: space-between; gap: 26px; margin: 0 6px 24px; }
+.species-section .bio-step-header > div:first-child { min-width: 0; }
+.species-section .bio-step-label { margin: 0 0 10px; color: #D0754E; font: 800 11px/1.5 "DM Sans", sans-serif; letter-spacing: 1.9px; text-transform: uppercase; }
+.species-section .bio-step-header h2 { margin: 0 0 10px; color: #173D34; font: 400 clamp(26px, 3vw, 32px)/1.2 "DM Serif Display", Georgia, serif; }
+.species-section .bio-step-intro { max-width: 780px; margin: 0; color: #5B7570; font: 400 14px/1.65 "DM Sans", sans-serif; }
+.species-section .bio-step-number { display: flex; align-items: baseline; gap: 9px; flex-shrink: 0; white-space: nowrap; }
+.species-section .bio-step-number-main { color: #CFE3DE; font: 400 52px/1 "DM Serif Display", Georgia, serif; }
+.species-section .bio-step-number-total { color: #A9C9C1; font: 700 13px/1 "DM Sans", sans-serif; }
+.species-section .bio-chart-card.species-card, .species-section .bio-chart-card--species { display: flex; flex-direction: column; width: 100%; min-width: 0; padding: 21px clamp(18px, 3vw, 35px) 18px; margin: 0; border: 1px solid #D8EAE3; border-radius: 19px; background: #FFFFFF; box-shadow: none; overflow: visible; }
+.species-section .bio-chart-card-top, .species-section .bio-card-top { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; margin: 0 0 22px; }
+.species-section .bio-chart-kicker, .species-section .bio-card-label { margin: 0; color: #557A74; font: 800 11px/1.5 "DM Sans", sans-serif; letter-spacing: 1.35px; text-transform: uppercase; }
+.species-section .bio-chart-badge, .species-section .bio-card-chip { display: inline-flex; align-items: center; justify-content: center; flex: none; padding: 6px 12px; border-radius: 999px; background: #F0ECF6; color: #75658C; font: 700 10px/1.4 "DM Sans", sans-serif; }
+.species-section .species-icons { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 12px; margin: 0 0 18px; width: 100%; }
+.species-section .species-btn { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 11px; min-width: 0; min-height: 112px; padding: 16px 9px; border: 1px solid #D1E6DC; border-radius: 14px; background: #EAF6F1; color: #174C49; font: 600 13px/1.4 "DM Sans", sans-serif; cursor: pointer; transition: background .18s ease, border-color .18s ease, transform .18s ease; }
+.species-section .species-btn:hover { background: #DCF0E9; border-color: #81B6A2; transform: translateY(-2px); }
+.species-section .species-btn.active { background: #D7EFE6; border: 2px solid #31765A; }
+.species-section .species-btn svg, .species-section .species-btn i { width: 34px; height: 34px; color: #31765A; stroke: currentColor; stroke-width: 1.8; }
+.species-section .species-btn span { text-align: center; }
+.species-section .species-divider { height: 1px; margin: 0 0 18px; background: #E2EFEA; }
+.species-section .species-display { min-width: 0; width: 100%; margin: 0; padding: 17px 0 0; border: 0; border-top: 1px solid #E2EFEA; border-radius: 0; background: transparent; box-shadow: none; }
+.species-section .species-divider + .species-display { border-top: 0; padding-top: 0; }
+.species-section #species-chart-title { margin: 0 0 10px; color: #173D34; font: 400 clamp(26px, 3vw, 32px)/1.2 "DM Serif Display", Georgia, serif; letter-spacing: 0; }
+.species-section #species-chart-description { max-width: 780px; margin: 0 0 19px; color: #5B7570; font: 400 14px/1.65 "DM Sans", sans-serif; }
+.species-section #species-chart-instruction { margin: 12px 0 18px; padding: 13px 17px; border: 1px solid #DDECE5; border-radius: 11px; background: #F4FAF7; color: #31765A; font: italic 500 13px/1.75 "DM Sans", sans-serif; }
+.species-section #species-chart-instruction[hidden] { display: none !important; }
+.species-section #species_controls { display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 8px 12px; min-height: 0; margin: 8px 0 18px; color: #315D58; font: 600 13px/1.5 "DM Sans", sans-serif; }
+.species-section #species_controls:empty { display: none !important; }
+.species-section #species_controls .vega-bindings { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 8px; }
+.species-section #species_controls select { min-width: 195px; margin-left: 6px; padding: 9px 12px; border: 1px solid #B8D7CE; border-radius: 9px; background: #F7FCFA; color: #1F5553; font: 600 13px/1.45 "DM Sans", sans-serif; }
+.species-section #species_chart { display: block; width: 100%; min-width: 0; min-height: 0; margin: 12px auto 8px; overflow-x: auto; overflow-y: hidden; text-align: center; }
+.species-section #species_chart .vega-embed { display: inline-block; width: max-content; max-width: none; vertical-align: top; text-align: left; }
+.species-section #species_chart .vega-embed svg, .species-section #species_chart .vega-embed canvas { display: block; width: auto !important; height: auto !important; max-width: none !important; transform: none !important; }
+.species-section #species-chart-finding { position: relative; margin: 22px 0 0; padding: 20px 22px 20px 58px; border: 0; border-left: 6px solid #D97B55; border-radius: 13px; background: #EAF4F0; color: #204D4E; font: 400 14px/1.8 "DM Sans", sans-serif; }
+.species-section #species-chart-finding::before { content: "✦"; position: absolute; top: 19px; left: 21px; display: block; color: #D97B55; font-size: 22px; line-height: 1; }
+.species-section #species-chart-finding strong { color: #123F45; font-weight: 700; }
+@media (max-width: 900px) {
+  .species-section .species-icons { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@media (max-width: 720px) {
+  .species-section .bio-step-number { display: none; }
+  .species-section .bio-chart-card.species-card, .species-section .bio-chart-card--species { padding: 17px 14px; }
+  .species-section .bio-step-header { margin: 0 0 20px; }
+  .species-section #species-chart-title { font-size: 26px; }
+  .species-section #species-chart-finding { padding: 17px 15px 17px 47px; }
+  .species-section #species-chart-finding::before { top: 16px; left: 14px; }
+}
+@media (max-width: 510px) {
+  .species-section .species-icons { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .species-section .bio-chart-card-top, .species-section .bio-card-top { align-items: flex-start; }
 }
 
-/* ==========================================
-   GENERAL PAGE STYLING
-========================================== */
 
-* {
-  box-sizing: border-box;
-}
 
-html {
-  scroll-behavior: smooth;
-}
+/* PROTECTED LAND MAP — FIX VERTICAL SPACING */
 
-body {
-  margin: 0;
-  background-color: var(--ivory);
-  color: var(--text);
-  font-family: 'DM Sans', Arial, sans-serif;
-  font-size: 16px;
-  line-height: 1.75;
-}
-
-/* ==========================================
-   HEADER
-========================================== */
-
-header {
-  background-color: var(--dark-green);
-  color: var(--ivory);
-  padding: 90px 30px;
-  text-align: center;
-}
-
-header h1 {
-  font-family: 'DM Serif Display', Georgia, serif;
-  font-size: clamp(40px, 5vw, 64px);
-  font-weight: 400;
-  line-height: 1.2;
-  letter-spacing: -0.5px;
-  margin: 0 auto;
-  max-width: 950px;
-}
-
-header p {
-  font-size: 17px;
-  color: #D6E5D6;
-  max-width: 700px;
-  margin: 20px auto 0;
-  line-height: 1.7;
-}
-
-/* ==========================================
-   MAIN CONTENT LAYOUT
-========================================== */
-
-main {
-  width: 100%;
-  max-width: 1150px;
-  margin: 0 auto;
-  padding: 55px 24px;
-}
-
-section {
-  background-color: var(--white);
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  padding: 45px;
-  margin-bottom: 45px;
-}
-
-/* ==========================================
-   TYPOGRAPHY
-========================================== */
-
-h2 {
-  font-family: 'DM Serif Display', Georgia, serif;
-  font-size: clamp(28px, 3vw, 38px);
-  font-weight: 400;
-  color: var(--dark-green);
-  line-height: 1.3;
-  margin: 0 0 22px;
-}
-
-h3 {
-  font-family: 'DM Sans', Arial, sans-serif;
-  font-size: 22px;
-  font-weight: 700;
-  color: var(--forest-green);
-  margin: 28px 0 12px;
-}
-
-p {
-  font-size: 16px;
-  line-height: 1.8;
-  margin: 0 0 20px;
-}
-
-strong {
-  font-weight: 700;
-}
-
-a {
-  color: var(--forest-green);
-  text-decoration-thickness: 1px;
-  text-underline-offset: 3px;
-}
-
-a:hover {
-  color: var(--orange);
-}
-
-/* ==========================================
-   CHART & MAP CONTAINERS
-========================================== */
-
-.map-section {
-  background-color: var(--white);
-}
-
-.map-instruction {
-  color: var(--forest-green);
-  font-size: 14px;
-  font-style: italic;
-  font-weight: 500;
-  margin: 20px 0 15px;
-}
-
-#protected_land_map {
-  width: 100%;
-  max-width: 100%;
-  margin: 25px auto 35px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-/* Vega-Lite Charts */
-
-.vega-embed {
-  max-width: 100%;
-}
-
-.vega-embed canvas,
-.vega-embed svg {
-  max-width: 100%;
-  height: auto;
-}
-
-/* Other chart containers added later */
-
-.chart-container {
-  width: 100%;
-  max-width: 100%;
-  margin: 30px auto;
-  display: flex;
-  justify-content: center;
-}
-
-/* ==========================================
-   KEY FINDINGS & ANNOTATIONS
-========================================== */
-
-.key-finding {
-  background-color: #F1F5ED;
-  border-left: 4px solid var(--orange);
-  border-radius: 6px;
-  padding: 22px 26px;
-  margin: 30px 0 20px;
-  color: var(--dark-green);
-  font-size: 15px;
-  line-height: 1.8;
-}
-
-.key-finding strong {
-  color: var(--dark-green);
-  font-weight: 700;
-}
-
-/* Supporting notes */
-
-.annotation {
-  color: var(--muted-text);
-  font-size: 14px;
-  font-style: italic;
-  line-height: 1.6;
-}
-
-/* ==========================================
-   DATA SOURCES & CAPTIONS
-========================================== */
-
-.source,
-.chart-source {
-  color: var(--muted-text);
-  font-size: 12px;
-  line-height: 1.6;
-  margin-top: 18px;
-}
-
-.caption {
-  color: var(--muted-text);
-  font-size: 13px;
-  font-style: italic;
-  margin-top: 10px;
-}
-
-/* ==========================================
-   SECTION DIVIDERS
-========================================== */
-
-.section-divider {
-  width: 100%;
-  height: 1px;
-  background-color: var(--border);
-  margin: 45px 0;
-}
-
-/* ==========================================
-   BUTTONS & INTERACTIVE CONTROLS
-========================================== */
-
-button,
-select {
-  font-family: 'DM Sans', Arial, sans-serif;
-  font-size: 14px;
-}
-
-button {
-  background-color: var(--forest-green);
-  color: var(--white);
-  border: none;
-  border-radius: 6px;
-  padding: 11px 20px;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
-}
-
-button:hover {
-  background-color: var(--dark-green);
-}
-
-button:focus-visible,
-select:focus-visible,
-a:focus-visible {
-  outline: 3px solid var(--orange);
-  outline-offset: 3px;
-}
-
-select {
-  background-color: var(--white);
-  color: var(--dark-green);
-  border: 1px solid var(--sage-green);
-  border-radius: 6px;
-  padding: 10px 14px;
-}
-
-/* ==========================================
-   FOOTER
-========================================== */
-
-footer {
-  background-color: var(--dark-green);
-  color: #D6E5D6;
-  padding: 35px 24px;
-  text-align: center;
-  font-size: 13px;
-}
-
-footer p {
-  font-size: 13px;
+/* Reduce gap below the small chart label */
+.map-section .bio-chart-card .bio-card-top {
   margin-bottom: 8px;
 }
 
-footer a {
-  color: var(--sandstone);
+/* Move hover instruction higher and make it more compact */
+.map-section .bio-chart-card .map-hover-note {
+  margin: 0 0 14px !important;
+  padding: 11px 18px;
+  font-size: 13px;
+  line-height: 1.6;
 }
+
+/* Bring map closer to the instructions */
+.map-section .bio-chart-card #protected_land_map {
+  margin: 0 auto 10px;
+  padding: 0;
+}
+
+
+
+/* ==================================================
+   BIODIVERSITY STORYTELLING SYSTEM
+   PROTECT → UNDERSTAND → ACT
+================================================== */
+
+/* ==========================================
+   JOURNEY TRACKER
+========================================== */
+
+.journey-nav {
+  margin: 0 0 38px;
+  padding: 20px 24px 24px;
+
+  background: #F9FDFB;
+  border: 1px solid #D8EAE3;
+  border-radius: 18px;
+}
+
+.journey-eyebrow {
+  margin: 0 0 16px;
+
+  color: #5D7D72;
+  font-family: "DM Sans", sans-serif;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.8px;
+  text-align: center;
+}
+
+.journey-track {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.journey-step {
+  --step-color: #31765A;
+  --step-bg: #EAF4ED;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  min-width: 0;
+  padding: 17px 15px;
+
+  background: var(--step-bg);
+  border: 1px solid #D6E6DE;
+  border-radius: 13px;
+
+  color: #173D34;
+  text-decoration: none;
+
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+.journey-step--understand {
+  --step-color: #B77050;
+  --step-bg: #FAEEE7;
+}
+
+.journey-step--act {
+  --step-color: #247B75;
+  --step-bg: #E7F4F1;
+}
+
+.journey-step:hover {
+  transform: translateY(-3px);
+  border-color: var(--step-color);
+  color: #173D34;
+}
+
+.journey-step-number {
+  align-self: flex-start;
+  color: var(--step-color);
+
+  font-family: "DM Serif Display", Georgia, serif;
+  font-size: 18px;
+  line-height: 1;
+}
+
+.journey-step-icon {
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+
+  width: 38px;
+  height: 38px;
+
+  background: #FFFFFF;
+  border-radius: 11px;
+
+  color: var(--step-color);
+}
+
+.journey-step-icon svg {
+  width: 23px;
+  height: 23px;
+  stroke-width: 1.8;
+}
+
+.journey-step-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+
+.journey-step-copy strong {
+  font-family: "DM Sans", sans-serif;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1px;
+
+  color: var(--step-color);
+}
+
+.journey-step-copy small {
+  color: #53746C;
+
+  font-family: "DM Sans", sans-serif;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.journey-step-arrow {
+  margin-left: auto;
+  align-self: flex-start;
+  color: var(--step-color);
+  font-size: 17px;
+}
+
+
+/* ==========================================
+   FIELD NOTES BETWEEN CHAPTERS
+========================================== */
+
+.field-note {
+  --note-accent: #31765A;
+  --note-bg: #EAF4F0;
+
+  margin: 4px 0 44px;
+  padding: clamp(24px, 3.5vw, 38px);
+
+  background: var(--note-bg);
+  border: 1px solid #D8EAE3;
+  border-radius: 18px;
+}
+
+.field-note--understand {
+  --note-accent: #B77050;
+  --note-bg: #FAEEE7;
+
+  border-color: #EEDACD;
+}
+
+.field-note-top {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  margin-bottom: 15px;
+
+  color: var(--note-accent);
+  font-family: "DM Sans", sans-serif;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.field-note-top svg {
+  width: 19px;
+  height: 19px;
+  stroke-width: 1.8;
+}
+
+.field-note h3 {
+  margin: 0 0 12px;
+
+  color: #173D34;
+  font-family: "DM Serif Display", Georgia, serif;
+  font-size: clamp(24px, 3vw, 32px);
+  font-weight: 400;
+  line-height: 1.25;
+}
+
+.field-note p {
+  max-width: 82ch;
+  margin: 0 0 20px;
+
+  color: #4D6D64;
+  font-family: "DM Sans", sans-serif;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.field-note-next {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  color: var(--note-accent);
+  font-family: "DM Sans", sans-serif;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-decoration: none;
+}
+
+.field-note-next:hover {
+  color: #173D34;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.field-note-next span {
+  font-size: 18px;
+  line-height: 1;
+}
+
+
+/* ==========================================
+   ANCHOR SCROLLING
+========================================== */
+
+#protected-areas,
+#threatened-species,
+#reef-conservation {
+  scroll-margin-top: 24px;
+}
+
 
 /* ==========================================
    RESPONSIVE DESIGN
 ========================================== */
 
-@media (max-width: 768px) {
-
-  header {
-    padding: 65px 20px;
+@media (max-width: 850px) {
+  .journey-track {
+    grid-template-columns: 1fr;
   }
 
-  header h1 {
-    font-size: 40px;
+  .journey-step {
+    padding: 14px 16px;
   }
 
-  header p {
-    font-size: 15px;
+  .journey-step-icon {
+    width: 34px;
+    height: 34px;
+  }
+}
+
+@media (max-width: 600px) {
+  .journey-nav {
+    padding: 17px 14px;
+    margin-bottom: 26px;
   }
 
-  main {
-    padding: 30px 15px;
-  }
-
-  section {
-    padding: 25px 20px;
+  .field-note {
     margin-bottom: 30px;
+    padding: 23px 19px;
   }
 
-  h2 {
-    font-size: 29px;
+  .field-note h3 {
+    font-size: 25px;
   }
 
-  h3 {
-    font-size: 19px;
-  }
-
-  #protected_land_map {
-    margin: 20px auto;
-  }
-
-  .key-finding {
-    padding: 18px;
-  }
-}
-
-@media (max-width: 480px) {
-
-  header h1 {
-    font-size: 34px;
-  }
-
-  section {
-    padding: 20px 15px;
-  }
-
-  h2 {
-    font-size: 26px;
-  }
-
-  p {
-    font-size: 14px;
-  }
-}
-
-
-
-/* ==========================================
-   VISUALISATION 2: THREATENED SPECIES TRENDS
-========================================== */
-
-.trend-section {
-  background-color: var(--white);
-}
-
-.trend-section h2 {
-  font-family: 'DM Serif Display', Georgia, serif;
-  color: var(--dark-green);
-}
-
-.chart-instruction {
-  color: var(--forest-green);
-  font-size: 14px;
-  font-style: italic;
-  margin: 20px 0;
-}
-
-#tsx_trend_chart {
-  width: 100%;
-  min-width: 0;
-  margin: 30px auto;
-}
-
-/* Make the visualisation fill the available width */
-#tsx_trend_chart .vega-embed {
-  width: 100%;
-}
-
-/* Style the species-group dropdown */
-#tsx_trend_chart .vega-bindings {
-  font-family: 'DM Sans', Arial, sans-serif;
-  color: var(--dark-green);
-  font-size: 14px;
-  margin-bottom: 20px;
-}
-
-#tsx_trend_chart select {
-  background-color: var(--ivory);
-  color: var(--dark-green);
-  border: 1px solid var(--sage-green);
-  border-radius: 6px;
-  padding: 9px 14px;
-  margin-left: 10px;
-  font-family: 'DM Sans', Arial, sans-serif;
-  cursor: pointer;
-}
-
-.chart-note {
-  font-size: 13px;
-  color: var(--muted-text);
-  line-height: 1.7;
-  margin-top: 12px;
-}
-
-/* Responsive layout */
-@media (max-width: 700px) {
-  #tsx_trend_chart {
-    margin: 20px auto;
-  }
-
-  #tsx_trend_chart select {
-    max-width: 100%;
-    margin-top: 8px;
-  }
-}
-
-
-/* ==========================================
-   SECTION 3: SPECIES EXPLORER
-========================================== */
-
-.species-section {
-  background-color: var(--white);
-}
-
-.species-icons {
-  display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: 12px;
-  margin: 30px 0;
-}
-
-/* Individual species buttons */
-
-.species-btn {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-
-  min-height: 125px;
-  padding: 18px 10px;
-
-  background-color: #F1F5ED;
-  border: 2px solid transparent;
-  border-radius: 12px;
-
-  color: var(--dark-green);
-  cursor: pointer;
-
-  font-family: 'DM Sans', sans-serif;
-  font-size: 13px;
-  font-weight: 600;
-
-  transition: all 0.2s ease;
-}
-
-/* Icon appearance */
-
-.species-btn svg {
-  width: 35px;
-  height: 35px;
-  stroke: var(--forest-green);
-  stroke-width: 1.8;
-}
-
-/* Hover effect */
-
-.species-btn:hover {
-  background-color: #E3EDE0;
-  border-color: var(--sage-green);
-  transform: translateY(-3px);
-}
-
-/* Selected species */
-
-.species-btn.active {
-  background-color: #E4EFE2;
-  border-color: var(--forest-green);
-}
-
-.species-btn.active svg {
-  stroke: var(--dark-green);
-}
-
-/* Chart display */
-
-.species-display {
-  background-color: #FFFFFF;
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 28px;
-  margin-top: 25px;
-}
-
-.species-display h3 {
-  color: var(--dark-green);
-  font-size: 22px;
-  margin-top: 0;
-}
-
-#species_chart {
-  width: 100%;
-  margin: 25px auto;
-}
-
-/* Responsive layout */
-
-@media (max-width: 800px) {
-  .species-icons {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-}
-
-@media (max-width: 500px) {
-  .species-icons {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .species-display {
-    padding: 15px;
+  .field-note-top {
+    font-size: 10px;
+    letter-spacing: 1px;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .species-btn {
+  .journey-step {
     transition: none;
   }
 
-  .species-btn:hover {
+  .journey-step:hover {
     transform: none;
   }
-}
-
-
-
-/* ==========================================
-   BIRDS PROPORTIONAL SYMBOL MAP
-========================================== */
-
-#species_chart {
-  width: 100%;
-  max-width: 100%;
-  margin: 25px auto;
-  overflow: visible;
-  padding-bottom: 25px;
-}
-
-.species-display {
-  overflow: visible;
-  padding-bottom: 30px;
-}
-
-/* Vega-Lite state filter */
-
-#species_chart .vega-bindings {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 14px;
-  color: var(--dark-green);
-  margin-top: 15px;
-}
-
-#species_chart select {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 14px;
-  background-color: var(--ivory);
-  color: var(--dark-green);
-  border: 1px solid var(--sage-green);
-  border-radius: 7px;
-  padding: 9px 14px;
-  margin-left: 8px;
-}
-
-
-/* Mammals treemap */
-#species_chart {
-  width: 100%;
-  max-width: 100%;
-  overflow: visible;
-}
-
-#species_chart .vega-embed {
-  width: 100%;
-}
-
-#species_chart svg {
-  max-width: 100%;
-  height: auto;
 }

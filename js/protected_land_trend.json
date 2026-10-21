@@ -1,0 +1,199 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Long-term terrestrial protected-area coverage in Australia in published CAPAD reporting years, 2004–2024. Unrounded values supplied by Australian Bureau of Statistics (Measuring What Matters: Protected areas). Observation years are not annual estimates.",
+  "title": {
+    "text": "Growth in Protected Land",
+    "subtitle": [
+      "Share of Australia's landmass protected, 2004–2024",
+      "Points show published CAPAD reporting years"
+    ]
+  },
+  "width": 350,
+  "height": 315,
+  "data": {
+    "url": "data/protected_land_coverage_2004_2024.csv",
+    "format": {
+      "type": "csv",
+      "parse": {
+        "year": "number",
+        "protected_pct": "number"
+      }
+    }
+  },
+  "encoding": {
+    "x": {
+      "field": "year",
+      "type": "quantitative",
+      "scale": {
+        "domain": [
+          2004,
+          2024
+        ],
+        "nice": false
+      },
+      "axis": {
+        "title": "Year",
+        "format": "d",
+        "values": [
+          2004,
+          2008,
+          2012,
+          2016,
+          2020,
+          2024
+        ],
+        "labelAngle": 0,
+        "labelFontSize": 11,
+        "titleFontSize": 12,
+        "grid": false
+      }
+    },
+    "y": {
+      "field": "protected_pct",
+      "type": "quantitative",
+      "scale": {
+        "domain": [
+          0,
+          25
+        ],
+        "nice": false
+      },
+      "axis": {
+        "title": "Protected terrestrial land (% of total land area)",
+        "values": [
+          0,
+          5,
+          10,
+          15,
+          20,
+          25
+        ],
+        "labelFontSize": 11,
+        "titleFontSize": 11,
+        "titleLimit": 500,
+        "titlePadding": 12,
+        "grid": true,
+        "gridColor": "#E8EEE7"
+      }
+    }
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "area",
+        "color": "#83AD9C",
+        "opacity": 0.42,
+        "interpolate": "linear"
+      }
+    },
+    {
+      "mark": {
+        "type": "line",
+        "color": "#216854",
+        "strokeWidth": 3,
+        "interpolate": "linear"
+      }
+    },
+    {
+      "mark": {
+        "type": "point",
+        "filled": true,
+        "color": "#D77A50",
+        "size": 64,
+        "stroke": "#FFFFFF",
+        "strokeWidth": 1.4
+      },
+      "encoding": {
+        "tooltip": [
+          {
+            "field": "year",
+            "type": "quantitative",
+            "format": "d",
+            "title": "CAPAD reference year"
+          },
+          {
+            "field": "protected_pct",
+            "type": "quantitative",
+            "format": ".2f",
+            "title": "Australian land protected (%)"
+          }
+        ]
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.year === 2004"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "color": "#173D34",
+        "fontSize": 11,
+        "fontWeight": 700,
+        "align": "left",
+        "dx": 5,
+        "dy": -14
+      },
+      "encoding": {
+        "text": {
+          "field": "pct_label",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.year === 2024"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "color": "#173D34",
+        "fontSize": 11,
+        "fontWeight": 700,
+        "align": "right",
+        "dx": -5,
+        "dy": -14
+      },
+      "encoding": {
+        "text": {
+          "field": "pct_label",
+          "type": "nominal"
+        }
+      }
+    }
+  ],
+  "config": {
+    "background": "#FFFFFF",
+    "font": "DM Sans",
+    "view": {
+      "stroke": null
+    },
+    "title": {
+      "anchor": "middle",
+      "font": "DM Sans",
+      "fontSize": 17,
+      "fontWeight": 700,
+      "color": "#173D34",
+      "subtitleFont": "DM Sans",
+      "subtitleFontSize": 11,
+      "subtitleColor": "#586D61",
+      "subtitleLineHeight": 17,
+      "offset": 15
+    },
+    "axis": {
+      "labelFont": "DM Sans",
+      "titleFont": "DM Sans",
+      "labelColor": "#243B32",
+      "titleColor": "#173D34"
+    }
+  },
+  "transform": [
+    {
+      "calculate": "format(datum.protected_pct, '.2f') + '%'",
+      "as": "pct_label"
+    }
+  ]
+}

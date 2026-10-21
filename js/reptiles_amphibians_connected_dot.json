@@ -1,0 +1,269 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Connected dot plot of the conservation classification distributions for monitored reptile (24) and amphibian (28) species in TSX 2025. Each unique TaxonID counted once; percentages are group-specific. Lines show the difference between group shares within each classification.",
+  "background": "transparent",
+  "width": 600,
+  "height": 300,
+  "autosize": {
+    "type": "pad",
+    "contains": "padding"
+  },
+  "padding": {
+    "top": 18,
+    "right": 20,
+    "bottom": 18,
+    "left": 5
+  },
+  "title": {
+    "text": "Do Reptiles and Amphibians Face Different Threat Levels?",
+    "subtitle": [
+      "Percentage of monitored species in each conservation category",
+      "24 reptile species · 28 amphibian species · one species counted once"
+    ],
+    "font": "DM Sans",
+    "fontSize": 19,
+    "fontWeight": 700,
+    "color": "#173D34",
+    "subtitleFont": "DM Sans",
+    "subtitleFontSize": 12,
+    "subtitleColor": "#647C6F",
+    "anchor": "middle",
+    "offset": 20
+  },
+  "data": {
+    "url": "data/reptiles_amphibians_connected_dot.csv",
+    "format": {
+      "type": "csv",
+      "parse": {
+        "species_count": "number",
+        "group_total": "number",
+        "percentage": "number",
+        "span_min": "number",
+        "span_max": "number",
+        "difference_pp": "number"
+      }
+    }
+  },
+  "encoding": {
+    "x": {
+      "field": "percentage",
+      "type": "quantitative",
+      "scale": {
+        "domain": [
+          -2.5,
+          53
+        ],
+        "nice": false,
+        "zero": false
+      },
+      "axis": {
+        "title": "Share of monitored species (%)",
+        "values": [
+          0,
+          10,
+          20,
+          30,
+          40,
+          50
+        ],
+        "labelExpr": "datum.value + '%'",
+        "labelFont": "DM Sans",
+        "labelFontSize": 12,
+        "labelColor": "#587370",
+        "labelPadding": 9,
+        "titleFont": "DM Sans",
+        "titleFontSize": 13,
+        "titleColor": "#315B57",
+        "titlePadding": 13,
+        "domain": false,
+        "tickSize": 0,
+        "grid": true,
+        "gridColor": "#E3EEE9",
+        "gridOpacity": 1
+      }
+    },
+    "y": {
+      "field": "threat_status",
+      "type": "ordinal",
+      "sort": [
+        "Near Threatened",
+        "Vulnerable",
+        "Endangered",
+        "Critically Endangered"
+      ],
+      "axis": {
+        "title": null,
+        "labelFont": "DM Sans",
+        "labelFontSize": 12,
+        "labelFontWeight": 600,
+        "labelLimit": 210,
+        "labelColor": "#244D53",
+        "labelPadding": 13,
+        "tickSize": 0,
+        "domain": false
+      }
+    }
+  },
+  "layer": [
+    {
+      "transform": [
+        {
+          "filter": "datum.group === 'Reptiles'"
+        }
+      ],
+      "mark": {
+        "type": "rule",
+        "color": "#9CBAB6",
+        "strokeWidth": 2.5,
+        "opacity": 0.85
+      },
+      "encoding": {
+        "x": {
+          "field": "span_min",
+          "type": "quantitative"
+        },
+        "x2": {
+          "field": "span_max"
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "point",
+        "filled": true,
+        "size": 280,
+        "stroke": "#FFFFFF",
+        "strokeWidth": 2.4,
+        "cursor": "pointer"
+      },
+      "encoding": {
+        "color": {
+          "field": "group",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "Reptiles",
+              "Amphibians"
+            ],
+            "range": [
+              "#18877B",
+              "#527FBA"
+            ]
+          },
+          "legend": {
+            "title": null,
+            "orient": "top",
+            "direction": "horizontal",
+            "symbolType": "circle",
+            "symbolSize": 180,
+            "labelFont": "DM Sans",
+            "labelFontSize": 13,
+            "labelColor": "#345E59",
+            "labelFontWeight": 600,
+            "offset": 12
+          }
+        },
+        "tooltip": [
+          {
+            "field": "group",
+            "type": "nominal",
+            "title": "Species group"
+          },
+          {
+            "field": "threat_status",
+            "type": "nominal",
+            "title": "Conservation status"
+          },
+          {
+            "field": "species_count",
+            "type": "quantitative",
+            "format": ",d",
+            "title": "Monitored species"
+          },
+          {
+            "field": "group_total",
+            "type": "quantitative",
+            "format": ",d",
+            "title": "Total in group"
+          },
+          {
+            "field": "percentage",
+            "type": "quantitative",
+            "format": ".1f",
+            "title": "Share within group (%)"
+          },
+          {
+            "field": "difference_pp",
+            "type": "quantitative",
+            "format": ".1f",
+            "title": "Difference between groups (pp)"
+          },
+          {
+            "field": "higher_share_group",
+            "type": "nominal",
+            "title": "Higher share"
+          }
+        ]
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.group === 'Reptiles'"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "dy": -20,
+        "font": "DM Sans",
+        "fontSize": 12,
+        "fontWeight": 700,
+        "color": "#18877B",
+        "align": "center",
+        "baseline": "middle"
+      },
+      "encoding": {
+        "text": {
+          "field": "percentage_label",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.group === 'Amphibians'"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "dy": 20,
+        "font": "DM Sans",
+        "fontSize": 12,
+        "fontWeight": 700,
+        "color": "#527FBA",
+        "align": "center",
+        "baseline": "middle"
+      },
+      "encoding": {
+        "text": {
+          "field": "percentage_label",
+          "type": "nominal"
+        }
+      }
+    }
+  ],
+  "config": {
+    "view": {
+      "stroke": "transparent"
+    },
+    "axis": {
+      "labelFont": "DM Sans",
+      "titleFont": "DM Sans"
+    },
+    "legend": {
+      "labelFont": "DM Sans",
+      "titleFont": "DM Sans"
+    }
+  }
+}

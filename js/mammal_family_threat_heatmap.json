@@ -1,0 +1,232 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Counts of distinct monitored mammal entries by mammal family and maximum conservation classification from TSX 2025; unique TaxonID, including some subspecies.",
+  "background": "transparent",
+  "width": 690,
+  "height": {
+    "step": 32
+  },
+  "padding": {
+    "top": 13,
+    "right": 14,
+    "bottom": 15,
+    "left": 6
+  },
+  "title": {
+    "text": "How Do Threat Levels Differ Across Mammal Families?",
+    "subtitle": [
+      "Counts of distinct monitored mammal entries by family and threat classification",
+      "Use the dropdown to see all 23 families; hover over a square for more details"
+    ],
+    "font": "DM Sans",
+    "fontSize": 19,
+    "color": "#173D34",
+    "subtitleFont": "DM Sans",
+    "subtitleFontSize": 12,
+    "subtitleColor": "#647C6F",
+    "anchor": "middle",
+    "offset": 17
+  },
+  "data": {
+    "url": "data/mammal_family_threat_heatmap.csv",
+    "format": {
+      "type": "csv",
+      "parse": {
+        "count": "number",
+        "family_total": "number",
+        "within_family_pct": "number",
+        "rank": "number"
+      }
+    }
+  },
+  "params": [
+    {
+      "name": "familyView",
+      "value": "Families with 2+ entries",
+      "bind": {
+        "input": "select",
+        "name": "Show mammal families: ",
+        "options": [
+          "Families with 2+ entries",
+          "All 23 families"
+        ]
+      }
+    }
+  ],
+  "transform": [
+    {
+      "filter": "familyView === 'All 23 families' || datum.family_total >= 2"
+    }
+  ],
+  "encoding": {
+    "x": {
+      "field": "status",
+      "type": "nominal",
+      "title": "Threat classification",
+      "sort": [
+        "Near Threatened",
+        "Vulnerable",
+        "Endangered",
+        "Critically Endangered"
+      ],
+      "axis": {
+        "labelAngle": 0,
+        "labelFontSize": 12,
+        "labelFontWeight": 600,
+        "labelColor": "#4C3A5D",
+        "labelLimit": 185,
+        "labelPadding": 11,
+        "titlePadding": 13,
+        "titleFontSize": 13,
+        "titleColor": "#3B2F4A",
+        "tickSize": 0,
+        "domain": false
+      }
+    },
+    "y": {
+      "field": "family",
+      "type": "nominal",
+      "title": "Mammal family",
+      "sort": {
+        "field": "rank",
+        "op": "min",
+        "order": "ascending"
+      },
+      "axis": {
+        "labelFontSize": 12,
+        "labelColor": "#3B2F4A",
+        "labelPadding": 10,
+        "labelLimit": 155,
+        "titlePadding": 14,
+        "titleFontSize": 13,
+        "tickSize": 0,
+        "domain": false
+      }
+    },
+    "tooltip": [
+      {
+        "field": "family",
+        "type": "nominal",
+        "title": "Mammal family"
+      },
+      {
+        "field": "status",
+        "type": "nominal",
+        "title": "Threat classification"
+      },
+      {
+        "field": "count",
+        "type": "quantitative",
+        "title": "Monitored entries",
+        "format": ",d"
+      },
+      {
+        "field": "family_total",
+        "type": "quantitative",
+        "title": "Total in this family",
+        "format": ",d"
+      },
+      {
+        "field": "within_family_pct",
+        "type": "quantitative",
+        "title": "Within-family percentage",
+        "format": ".1f"
+      },
+      {
+        "field": "example_species",
+        "type": "nominal",
+        "title": "Examples in this cell"
+      }
+    ]
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "rect",
+        "cornerRadius": 4,
+        "stroke": "#FFFFFF",
+        "strokeWidth": 3,
+        "cursor": "pointer"
+      },
+      "encoding": {
+        "color": {
+          "field": "count_band",
+          "type": "ordinal",
+          "title": "Monitored entries in each cell",
+          "scale": {
+            "domain": [
+              "0",
+              "1",
+              "2–3",
+              "4–6",
+              "7+"
+            ],
+            "range": [
+              "#F3EFF7",
+              "#E1D5EE",
+              "#B7A0D2",
+              "#8767AD",
+              "#573679"
+            ]
+          },
+          "legend": {
+            "orient": "bottom",
+            "direction": "horizontal",
+            "columns": 5,
+            "symbolType": "square",
+            "symbolSize": 165,
+            "labelFontSize": 12,
+            "titleFontSize": 12,
+            "labelLimit": 95,
+            "titleLimit": 360,
+            "offset": 15
+          }
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.count > 0"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "font": "DM Sans",
+        "fontSize": 13,
+        "fontWeight": 700,
+        "cursor": "pointer"
+      },
+      "encoding": {
+        "text": {
+          "field": "count",
+          "type": "quantitative",
+          "format": "d"
+        },
+        "color": {
+          "condition": {
+            "test": "datum.count >= 4",
+            "value": "#FFFFFF"
+          },
+          "value": "#443451"
+        }
+      }
+    }
+  ],
+  "config": {
+    "view": {
+      "stroke": "transparent"
+    },
+    "axis": {
+      "labelFont": "DM Sans",
+      "titleFont": "DM Sans",
+      "grid": false
+    },
+    "legend": {
+      "labelFont": "DM Sans",
+      "titleFont": "DM Sans",
+      "labelColor": "#4C3A5D",
+      "titleColor": "#3B2F4A"
+    }
+  }
+}

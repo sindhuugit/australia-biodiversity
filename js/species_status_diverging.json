@@ -1,11 +1,16 @@
+
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "description": "Distribution of recorded TSX threat categories among distinct monitored species. The diverging axis separates lower and higher severity statuses.",
+
+  "description": "Distribution of recorded threat categories among distinct monitored species. The diverging chart separates lower and higher threat severity categories.",
+
   "title": {
-    "text": "Share of monitored species by recorded threat status"
+    "text": "Share of Monitored Species by Recorded Threat Status"
   },
+
   "width": 720,
-  "height": 260,
+  "height": 250,
+
   "data": {
     "url": "data/species_status_diverging.csv",
     "format": {
@@ -19,6 +24,14 @@
       }
     }
   },
+
+  "transform": [
+    {
+      "calculate": "format(datum.percentage, '.1f') + '%'",
+      "as": "percentage_label"
+    }
+  ],
+
   "layer": [
     {
       "mark": {
@@ -27,6 +40,7 @@
         "stroke": "#FFFFFF",
         "strokeWidth": 1
       },
+
       "encoding": {
         "y": {
           "field": "group",
@@ -40,21 +54,25 @@
           ],
           "axis": {
             "labelFontSize": 13,
-            "labelLimit": 190
+            "labelLimit": 200,
+            "labelPadding": 8
           }
         },
+
         "x": {
           "field": "start_pct",
           "type": "quantitative",
-          "title": "Share of monitored species within each group (%)",
+          "title": "Threat status (% of monitored species in each group)",
+
           "scale": {
-            "domain": [
-              -60,
-              80
-            ]
+            "domain": [-80, 80],
+            "nice": false,
+            "zero": true
           },
+
           "axis": {
             "values": [
+              -80,
               -60,
               -40,
               -20,
@@ -65,16 +83,25 @@
               80
             ],
             "labelExpr": "abs(datum.value) + '%'",
-            "gridColor": "#E8EEE7"
+            "labelFontSize": 12,
+            "labelPadding": 6,
+            "titleFontSize": 13,
+            "titlePadding": 12,
+            "grid": true,
+            "gridColor": "#E8EEE7",
+            "gridOpacity": 0.8
           }
         },
+
         "x2": {
           "field": "end_pct"
         },
+
         "color": {
           "field": "status",
           "type": "nominal",
           "title": "Recorded threat status",
+
           "scale": {
             "domain": [
               "Near Threatened",
@@ -89,16 +116,24 @@
               "#B54A3A"
             ]
           },
+
           "legend": {
             "orient": "bottom",
             "direction": "horizontal",
             "columns": 2,
-            "labelFontSize": 14,
-            "titleFontSize": 15,
+            "labelFont": "DM Sans",
+            "labelFontSize": 13,
+            "labelLimit": 220,
+            "titleFont": "DM Sans",
+            "titleFontSize": 14,
+            "symbolType": "square",
             "symbolSize": 180,
-            "offset": 14
+            "offset": 16,
+            "rowPadding": 4,
+            "columnPadding": 20
           }
         },
+
         "tooltip": [
           {
             "field": "group",
@@ -108,27 +143,34 @@
           {
             "field": "status",
             "type": "nominal",
-            "title": "Threat status"
+            "title": "Recorded threat status"
           },
           {
             "field": "count",
             "type": "quantitative",
-            "title": "Distinct monitored species"
+            "title": "Monitored species",
+            "format": ",d"
           },
           {
-            "field": "percentage",
+            "field": "percentage_label",
+            "type": "nominal",
+            "title": "Percentage of group"
+          },
+          {
+            "field": "group_total",
             "type": "quantitative",
-            "title": "Share of group",
-            "format": ".1f"
+            "title": "Total monitored species in group",
+            "format": ",d"
           }
         ]
       }
     },
+
     {
       "mark": {
         "type": "rule",
         "stroke": "#173D34",
-        "strokeWidth": 1.5
+        "strokeWidth": 1.8
       },
       "encoding": {
         "x": {
@@ -137,26 +179,31 @@
       }
     }
   ],
+
   "config": {
     "background": "#FFFFFF",
     "font": "DM Sans",
+
     "view": {
       "stroke": null
     },
+
     "title": {
       "font": "DM Sans",
       "fontSize": 19,
       "fontWeight": 700,
       "color": "#173D34",
-      "subtitleFont": "DM Sans",
-      "subtitleColor": "#586D61"
+      "anchor": "middle",
+      "offset": 16
     },
+
     "axis": {
       "labelFont": "DM Sans",
       "titleFont": "DM Sans",
       "labelColor": "#243B32",
       "titleColor": "#173D34"
     },
+
     "legend": {
       "labelFont": "DM Sans",
       "titleFont": "DM Sans",

@@ -1,0 +1,350 @@
+
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Great Barrier Reef reef-marine-bioregion choropleth: official bioregion boundaries and reef-level AIMS hard-coral-cover estimates. Geography and summarized data inserted by script.js.",
+  "background": "transparent",
+  "width": 830,
+  "height": 720,
+  "padding": {
+    "top": 8,
+    "left": 6,
+    "right": 6,
+    "bottom": 14
+  },
+  "title": {
+    "text": "How Does Coral Cover Vary Across Reef Bioregions?",
+    "subtitle": [
+      "Great Barrier Reef · AIMS Long-Term Monitoring Program",
+      "Coloured areas = mean of monitored reef estimates within each bioregion"
+    ],
+    "anchor": "middle",
+    "font": "DM Sans",
+    "fontSize": 21,
+    "color": "#153F4A",
+    "subtitleFont": "DM Sans",
+    "subtitleFontSize": 12,
+    "subtitleColor": "#647D7D",
+    "offset": 16
+  },
+  "projection": {
+    "type": "mercator",
+    "center": [147.75, -18.1],
+    "scale": 3020,
+    "translate": [415, 362]
+  },
+  "params": [
+    {
+      "name": "selectedPeriod",
+      "value": "2016–2025",
+      "bind": {
+        "input": "select",
+        "name": "Reporting period: ",
+        "options": [
+          "1986–1995",
+          "1996–2005",
+          "2006–2015",
+          "2016–2025"
+        ]
+      }
+    },
+    {
+      "name": "showSurveySites",
+      "value": false,
+      "bind": {
+        "input": "checkbox",
+        "name": "Show surveyed reefs"
+      }
+    }
+  ],
+  "layer": [
+    {
+      "data": {
+        "url": "https://cdn.jsdelivr.net/npm/world-atlas@2/land-50m.json",
+        "format": {
+          "type": "topojson",
+          "feature": "land"
+        }
+      },
+      "mark": {
+        "type": "geoshape",
+        "fill": "#EAF2EC",
+        "stroke": "#A7C4B5",
+        "strokeWidth": 0.65,
+        "clip": true
+      }
+    },
+    {
+      "data": {
+        "values": []
+      },
+      "transform": [
+        {
+          "calculate": "'No matched AIMS reef observations for the selected period'",
+          "as": "coverage_note"
+        }
+      ],
+      "mark": {
+        "type": "geoshape",
+        "fill": "#F1F5F1",
+        "stroke": "#C8DED6",
+        "strokeWidth": 0.38,
+        "opacity": 0.88,
+        "clip": true
+      },
+      "encoding": {
+        "shape": {
+          "field": "geometry",
+          "type": "geojson"
+        },
+        "tooltip": [
+          {
+            "field": "region_name",
+            "title": "Marine reef bioregion",
+            "type": "nominal"
+          },
+          {
+            "field": "coverage_note",
+            "type": "nominal",
+            "title": "Coverage"
+          }
+        ]
+      }
+    },
+    {
+      "data": {
+        "values": []
+      },
+      "transform": [
+        {
+          "calculate": "datum.region_key + '|' + selectedPeriod",
+          "as": "join_key"
+        },
+        {
+          "lookup": "join_key",
+          "from": {
+            "data": {
+              "values": []
+            },
+            "key": "join_key",
+            "fields": [
+              "mean_coral_cover_pct",
+              "reef_count",
+              "cover_band",
+              "latest_year",
+              "earliest_year"
+            ]
+          }
+        },
+        {
+          "filter": "isValid(datum.mean_coral_cover_pct) && datum.reef_count > 0"
+        },
+        {
+          "calculate": "'Not an estimate for every reef in this polygon'",
+          "as": "interpretation_note"
+        }
+      ],
+      "mark": {
+        "type": "geoshape",
+        "stroke": "#FFFFFF",
+        "strokeWidth": 0.6,
+        "opacity": 0.97,
+        "clip": true
+      },
+      "encoding": {
+        "shape": {
+          "field": "geometry",
+          "type": "geojson"
+        },
+        "color": {
+          "field": "cover_band",
+          "type": "ordinal",
+          "title": "Mean live hard coral cover of surveyed reefs (%)",
+          "scale": {
+            "domain": [
+              "0–<10%",
+              "10–<20%",
+              "20–<30%",
+              "30–<40%",
+              "40–<50%",
+              "50%+"
+            ],
+            "range": [
+              "#DFF2EE",
+              "#B4DDD8",
+              "#7CC2C0",
+              "#44A4AD",
+              "#217D97",
+              "#154E74"
+            ]
+          },
+          "legend": {
+            "orient": "bottom",
+            "direction": "horizontal",
+            "columns": 6,
+            "symbolType": "square",
+            "symbolSize": 200,
+            "labelFontSize": 12,
+            "titleFontSize": 13,
+            "labelLimit": 100,
+            "titleLimit": 650,
+            "offset": 16
+          }
+        },
+        "tooltip": [
+          {
+            "field": "region_name",
+            "type": "nominal",
+            "title": "Reef bioregion"
+          },
+          {
+            "field": "reef_count",
+            "type": "quantitative",
+            "title": "Monitored reefs in bioregion",
+            "format": ",d"
+          },
+          {
+            "field": "mean_coral_cover_pct",
+            "type": "quantitative",
+            "title": "Mean of reef estimates (%)",
+            "format": ".1f"
+          },
+          {
+            "field": "earliest_year",
+            "type": "quantitative",
+            "title": "Earliest reporting year",
+            "format": "d"
+          },
+          {
+            "field": "latest_year",
+            "type": "quantitative",
+            "title": "Latest reporting year",
+            "format": "d"
+          },
+          {
+            "field": "interpretation_note",
+            "type": "nominal",
+            "title": "Interpretation"
+          }
+        ]
+      }
+    },
+    {
+      "data": {
+        "url": "data/reef_coral_latest_sites_by_period.csv",
+        "format": {
+          "type": "csv",
+          "parse": {
+            "longitude": "number",
+            "latitude": "number",
+            "coral_pct": "number",
+            "report_year": "number"
+          }
+        }
+      },
+      "transform": [
+        {
+          "filter": "showSurveySites && datum.period === selectedPeriod"
+        }
+      ],
+      "mark": {
+        "type": "circle",
+        "size": 24,
+        "fill": "#183F45",
+        "stroke": "#FFFFFF",
+        "strokeWidth": 0.8,
+        "opacity": 0.9,
+        "clip": true
+      },
+      "encoding": {
+        "longitude": {
+          "field": "longitude",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "latitude",
+          "type": "quantitative"
+        },
+        "tooltip": [
+          {
+            "field": "reef_name",
+            "title": "AIMS reef",
+            "type": "nominal"
+          },
+          {
+            "field": "coral_pct",
+            "type": "quantitative",
+            "title": "Median hard coral cover (%)",
+            "format": ".1f"
+          },
+          {
+            "field": "report_year",
+            "title": "Reporting year",
+            "type": "quantitative",
+            "format": "d"
+          },
+          {
+            "field": "sector",
+            "title": "AIMS monitoring sector",
+            "type": "nominal"
+          }
+        ]
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "longitude": 144.35,
+            "latitude": -16.1,
+            "label": "QUEENSLAND"
+          },
+          {
+            "longitude": 146.8,
+            "latitude": -19.2,
+            "label": "Townsville"
+          },
+          {
+            "longitude": 148.3,
+            "latitude": -20.2,
+            "label": "Whitsundays"
+          }
+        ]
+      },
+      "mark": {
+        "type": "text",
+        "font": "DM Sans",
+        "fontSize": 12,
+        "fontWeight": 600,
+        "color": "#648685",
+        "opacity": 0.84,
+        "clip": true
+      },
+      "encoding": {
+        "longitude": {
+          "field": "longitude"
+        },
+        "latitude": {
+          "field": "latitude"
+        },
+        "text": {
+          "field": "label"
+        }
+      }
+    }
+  ],
+  "config": {
+    "view": {
+      "stroke": "transparent"
+    },
+    "legend": {
+      "labelFont": "DM Sans",
+      "titleFont": "DM Sans",
+      "labelColor": "#315B60",
+      "titleColor": "#104958"
+    },
+    "axis": {
+      "labelFont": "DM Sans",
+      "titleFont": "DM Sans"
+    }
+  }
+}

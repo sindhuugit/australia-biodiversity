@@ -1,0 +1,36 @@
+hex_id,center_longitude,center_latitude,all_species,reptiles_species,amphibians_species,all_time_series,reptiles_time_series,amphibians_time_series,all_examples,reptiles_examples,amphibians_examples
+H_-8_-6,106.455507,-10.140401,1,1,0,1,1,0,Christmas Island Snake-eye Skink,Christmas Island Snake-eye Skink,
+H_-1_-11,115.467733,-21.987575,2,2,0,2,2,0,Green Sea Turtle; Loggerhead Sea Turtle,Green Sea Turtle; Loggerhead Sea Turtle,
+H_-1_-8,119.8802,-16.335053,3,3,0,3,3,0,Dusky Sea Snake; Leaf-scaled Sea Snake; Short-nosed Sea Snake,Dusky Sea Snake; Leaf-scaled Sea Snake; Short-nosed Sea Snake,
+H_+0_-13,114.880825,-25.973418,1,1,0,2,2,0,Loggerhead Sea Turtle,Loggerhead Sea Turtle,
+H_+1_-9,123.361195,-18.650488,1,1,0,1,1,0,Flatback Turtle,Flatback Turtle,
+H_+2_-16,115.292922,-32.094701,1,1,0,2,2,0,Western Swamp Turtle,Western Swamp Turtle,
+H_+3_-17,116.377549,-34.240261,3,0,3,35,0,35,Orange-bellied Frog; Sunset Frog; White-bellied Frog,,Orange-bellied Frog; Sunset Frog; White-bellied Frog
+H_+3_-11,125.611035,-22.821669,1,1,0,1,1,0,Great Desert Skink,Great Desert Skink,
+H_+3_-7,130.804116,-14.84327,2,2,0,2,2,0,Mertens's Water Goanna; Mitchell's Water Goanna,Mertens's Water Goanna; Mitchell's Water Goanna,
+H_+3_-6,132.0,-12.788989,2,2,0,2,2,0,Flatback Turtle; Mertens's Water Goanna,Flatback Turtle; Mertens's Water Goanna,
+H_+5_-11,130.721183,-22.961166,1,1,0,3,3,0,Great Desert Skink,Great Desert Skink,
+H_+7_-5,142.402162,-10.270874,1,1,0,1,1,0,Hawkesbill Sea Turtle,Hawkesbill Sea Turtle,
+H_+8_-7,142.737915,-14.400043,1,1,0,1,1,0,Green Sea Turtle,Green Sea Turtle,
+H_+10_-16,137.597407,-32.905874,1,1,0,2,2,0,Pygmy Bluetongue,Pygmy Bluetongue,
+H_+10_-9,145.545012,-18.243793,2,0,2,4,0,4,Australian Lace-lid; Common Mist Frog,,Australian Lace-lid; Common Mist Frog
+H_+10_-8,146.524643,-16.089452,4,0,4,12,0,12,Armoured Mist Frog; Common Mist Frog; Kuranda Tree Frog; Northern Tinker Frog,,Armoured Mist Frog; Common Mist Frog; Kuranda Tree Frog; Northern Tinker Frog
+H_+12_-18,140.719498,-36.81355,1,1,0,15,15,0,Striped Legless Lizard,Striped Legless Lizard,
+H_+12_-16,143.173407,-32.600841,1,0,1,4,0,4,Southern Bell Frog,,Southern Bell Frog
+H_+12_-11,148.532267,-21.987575,2,1,1,8,1,7,Eungella Dayfrog; Flatback Turtle,Flatback Turtle,Eungella Dayfrog
+H_+13_-19,142.370831,-38.759498,2,1,1,206,60,146,Southern Bell Frog; Striped Legless Lizard,Striped Legless Lizard,Southern Bell Frog
+H_+13_-18,143.612,-36.627021,2,1,1,9,4,5,Southern Bell Frog; Striped Legless Lizard,Striped Legless Lizard,Southern Bell Frog
+H_+13_-17,144.803066,-34.499167,2,1,1,24,5,19,Grey Snake; Southern Bell Frog,Grey Snake,Southern Bell Frog
+H_+13_-11,151.040644,-21.664505,1,1,0,3,3,0,Flatback Turtle,Flatback Turtle,
+H_+14_-19,145.314873,-38.540797,3,0,3,57,0,57,Baw Baw Frog; Green and Golden Bell Frog; Southern Bell Frog,,Baw Baw Frog; Green and Golden Bell Frog; Southern Bell Frog
+H_+14_-18,146.492615,-36.387847,3,0,3,47,0,47,Alpine Tree Frog; Baw Baw Frog; Spotted Tree Frog,,Alpine Tree Frog; Baw Baw Frog; Spotted Tree Frog
+H_+14_-17,147.622451,-34.240261,2,0,2,3,0,3,Booroolong Frog; Southern Bell Frog,,Booroolong Frog; Southern Bell Frog
+H_+14_-13,151.713998,-25.640511,4,4,0,5,5,0,Flatback Turtle; Loggerhead Sea Turtle; Mary River Turtle; Nangur Spiny Skink,Flatback Turtle; Loggerhead Sea Turtle; Mary River Turtle; Nangur Spiny Skink,
+H_+14_-12,152.641273,-23.474204,4,2,2,9,5,4,Green Sea Turtle; Kroombit Tinker Frog; Kroombit Tree Frog; Loggerhead Sea Turtle,Green Sea Turtle; Loggerhead Sea Turtle,Kroombit Tinker Frog; Kroombit Tree Frog
+H_+15_-21,145.869135,-42.645621,2,1,1,3,1,2,Pedra Branca Skink; Tasmanian Tree Frog,Pedra Branca Skink,Tasmanian Tree Frog
+H_+15_-18,149.358509,-36.096502,12,4,8,217,26,191,Booroolong Frog; Canberra Grassland Earless Dragon; Green and Golden Bell Frog; Guthega Skink; Northern Corroboree Frog; … (+7 more),Canberra Grassland Earless Dragon; Guthega Skink; Pink-tailed Worm-lizard; Striped Legless Lizard,Booroolong Frog; Green and Golden Bell Frog; Northern Corroboree Frog; Southern Bell Frog; Southern Corroboree Frog; … (+3 more)
+H_+15_-17,150.426627,-33.930601,4,1,3,60,3,57,Broad-headed Snake; Green and Golden Bell Frog; Northern Heath Frog; Southern Heath Frog,Broad-headed Snake,Green and Golden Bell Frog; Northern Heath Frog; Southern Heath Frog
+H_+15_-16,151.451751,-31.767182,2,1,1,115,8,107,Green and Golden Bell Frog; Manning River Saw-Shelled Turtle,Manning River Saw-Shelled Turtle,Green and Golden Bell Frog
+H_+15_-15,152.436301,-29.603076,4,1,3,12,3,9,Bellinger River Saw-Shelled Turtle; Green and Golden Bell Frog; Richmond Range Mountain Frog; Wallum Sedge Frog,Bellinger River Saw-Shelled Turtle,Green and Golden Bell Frog; Richmond Range Mountain Frog; Wallum Sedge Frog
+H_+15_-14,153.382528,-27.435331,5,1,4,22,1,21,Flatback Turtle; Fleay's Barred Frog; Giant Barred Frog; Red and Yellow Mountain Frog; Wallum Sedge Frog,Flatback Turtle,Fleay's Barred Frog; Giant Barred Frog; Red and Yellow Mountain Frog; Wallum Sedge Frog
+H_+16_-16,154.178449,-31.390681,1,0,1,1,0,1,Green and Golden Bell Frog,,Green and Golden Bell Frog

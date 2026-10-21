@@ -1,0 +1,195 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "background": "transparent",
+  "width": 395,
+  "height": 180,
+  "padding": {
+    "top": 30,
+    "left": 2,
+    "right": 10,
+    "bottom": 5
+  },
+  "data": {
+    "url": "data/reef_john_brewer_before_after.csv",
+    "format": {
+      "type": "csv",
+      "parse": {
+        "starfish_per_survey": "number"
+      }
+    }
+  },
+  "layer": [
+    {
+      "transform": [
+        {
+          "aggregate": [
+            {
+              "op": "min",
+              "field": "starfish_per_survey",
+              "as": "min_value"
+            },
+            {
+              "op": "max",
+              "field": "starfish_per_survey",
+              "as": "max_value"
+            }
+          ],
+          "groupby": [
+            "reef"
+          ]
+        }
+      ],
+      "mark": {
+        "type": "rule",
+        "strokeWidth": 5,
+        "color": "#9CC9C4",
+        "strokeCap": "round"
+      },
+      "encoding": {
+        "x": {
+          "field": "min_value",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              0,
+              4.2
+            ]
+          },
+          "axis": {
+            "title": "Crown-of-thorns starfish per manta tow",
+            "values": [
+              0,
+              1,
+              2,
+              3,
+              4
+            ],
+            "grid": true,
+            "titleLimit": 395
+          }
+        },
+        "x2": {
+          "field": "max_value"
+        },
+        "y": {
+          "field": "reef",
+          "type": "nominal",
+          "axis": null
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "point",
+        "filled": true,
+        "size": 450,
+        "stroke": "white",
+        "strokeWidth": 2
+      },
+      "encoding": {
+        "x": {
+          "field": "starfish_per_survey",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "reef",
+          "type": "nominal"
+        },
+        "color": {
+          "field": "stage",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "Before control",
+              "During control"
+            ],
+            "range": [
+              "#D67853",
+              "#188C89"
+            ]
+          },
+          "legend": {
+            "title": null,
+            "orient": "bottom",
+            "direction": "horizontal",
+            "symbolSize": 130,
+            "labelLimit": 160
+          }
+        },
+        "tooltip": [
+          {
+            "field": "reef",
+            "title": "Reef"
+          },
+          {
+            "field": "stage",
+            "title": "Stage"
+          },
+          {
+            "field": "date_label",
+            "title": "Survey date"
+          },
+          {
+            "field": "starfish_per_survey",
+            "title": "Starfish per manta tow",
+            "format": ".2f"
+          }
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "dy": -20,
+        "font": "DM Sans",
+        "fontWeight": "bold",
+        "fontSize": 13,
+        "color": "#244E4B"
+      },
+      "encoding": {
+        "x": {
+          "field": "starfish_per_survey",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "reef",
+          "type": "nominal"
+        },
+        "text": {
+          "field": "starfish_per_survey",
+          "type": "quantitative",
+          "format": ".2f"
+        }
+      }
+    }
+  ],
+  "config": {
+    "view": {
+      "stroke": "transparent"
+    },
+    "axis": {
+      "labelFont": "DM Sans",
+      "titleFont": "DM Sans",
+      "labelColor": "#5C776D",
+      "titleColor": "#254C46",
+      "gridColor": "#E4EEEA",
+      "domain": false,
+      "tickColor": "#B6CAC3",
+      "labelFontSize": 12,
+      "titleFontSize": 12
+    },
+    "legend": {
+      "labelFont": "DM Sans",
+      "titleFont": "DM Sans",
+      "labelColor": "#2B514A",
+      "titleColor": "#254C46",
+      "labelFontSize": 12,
+      "titleFontSize": 12
+    },
+    "title": {
+      "font": "DM Sans",
+      "fontSize": 16,
+      "color": "#163F40"
+    }
+  }
+}

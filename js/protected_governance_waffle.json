@@ -1,0 +1,138 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "100-square approximation of CAPAD 2024 area share by governance; exact percentages and hectares appear in tooltips. Largest-remainder rounding gives 50, 38, 6, 6 squares.",
+  "title": {
+    "text": "Who Manages Protected Land Today?",
+    "subtitle": [
+      "2024 share of the terrestrial protected-area estate",
+      "Each square ≈ 1%; hover for precise percentages"
+    ]
+  },
+  "width": 350,
+  "height": 315,
+  "data": {
+    "url": "data/protected_governance_waffle_2024.csv",
+    "format": {
+      "type": "csv",
+      "parse": {
+        "square_id": "number",
+        "col": "number",
+        "row": "number",
+        "area_ha": "number",
+        "area_mha": "number",
+        "share_pct": "number",
+        "squares_of_100": "number"
+      }
+    }
+  },
+  "mark": {
+    "type": "rect",
+    "stroke": "#FFFFFF",
+    "strokeWidth": 2,
+    "cornerRadius": 2
+  },
+  "encoding": {
+    "x": {
+      "field": "col",
+      "type": "ordinal",
+      "sort": "ascending",
+      "axis": null,
+      "scale": {
+        "paddingInner": 0.02,
+        "paddingOuter": 0.01
+      }
+    },
+    "y": {
+      "field": "row",
+      "type": "ordinal",
+      "sort": "ascending",
+      "axis": null,
+      "scale": {
+        "paddingInner": 0.02,
+        "paddingOuter": 0.01
+      }
+    },
+    "color": {
+      "field": "governance",
+      "type": "nominal",
+      "scale": {
+        "domain": [
+          "Community",
+          "Government",
+          "Joint",
+          "Private"
+        ],
+        "range": [
+          "#367B64",
+          "#83AD9C",
+          "#E0B96C",
+          "#D77A50"
+        ]
+      },
+      "legend": {
+        "title": "Governance type",
+        "orient": "bottom",
+        "direction": "horizontal",
+        "columns": 2,
+        "symbolSize": 160,
+        "symbolType": "square",
+        "labelFontSize": 12,
+        "titleFontSize": 13,
+        "titleLimit": 400,
+        "offset": 12
+      }
+    },
+    "tooltip": [
+      {
+        "field": "governance",
+        "type": "nominal",
+        "title": "Governance"
+      },
+      {
+        "field": "share_pct",
+        "type": "quantitative",
+        "format": ".2f",
+        "title": "Share of 2024 protected land (%)"
+      },
+      {
+        "field": "area_mha",
+        "type": "quantitative",
+        "format": ".2f",
+        "title": "Protected land (million ha)"
+      },
+      {
+        "field": "squares_of_100",
+        "type": "quantitative",
+        "title": "Approximate squares out of 100",
+        "format": "d"
+      }
+    ]
+  },
+  "config": {
+    "background": "#FFFFFF",
+    "font": "DM Sans",
+    "view": {
+      "stroke": null
+    },
+    "title": {
+      "font": "DM Sans",
+      "fontSize": 17,
+      "fontWeight": 700,
+      "color": "#173D34",
+      "subtitleFont": "DM Sans",
+      "subtitleFontSize": 11,
+      "subtitleColor": "#586D61",
+      "subtitleLineHeight": 16
+    },
+    "legend": {
+      "labelFont": "DM Sans",
+      "titleFont": "DM Sans",
+      "labelColor": "#243B32",
+      "titleColor": "#173D34"
+    }
+  },
+  "autosize": {
+    "type": "pad",
+    "contains": "padding"
+  }
+}

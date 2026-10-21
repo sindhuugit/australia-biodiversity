@@ -1,0 +1,325 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Butterfly chart comparing marginal distributions of Australian EPBC and IUCN classification for the same 34 distinct plant entries in TSX 2025. Does not depict entry-level agreement.",
+  "background": "transparent",
+  "width": 760,
+  "height": 262,
+  "padding": {
+    "top": 20,
+    "bottom": 24,
+    "left": 10,
+    "right": 10
+  },
+  "autosize": {
+    "type": "pad",
+    "contains": "padding"
+  },
+  "data": {
+    "url": "data/plant_epbc_iucn_butterfly.csv",
+    "format": {
+      "type": "csv",
+      "parse": {
+        "count": "number",
+        "sample_total": "number",
+        "percentage": "number",
+        "bar_start": "number",
+        "bar_end": "number",
+        "label_x": "number"
+      }
+    }
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "bar",
+        "size": 40,
+        "cornerRadius": 5,
+        "cursor": "pointer"
+      },
+      "encoding": {
+        "x": {
+          "field": "bar_end",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              -26,
+              26
+            ],
+            "nice": false,
+            "zero": false
+          },
+          "axis": {
+            "title": "Number of monitored plant entries",
+            "values": [
+              -21,
+              -16,
+              -11,
+              11,
+              16,
+              21
+            ],
+            "labelExpr": "abs(datum.value) - 6",
+            "labelColor": "#647C6F",
+            "labelFontSize": 12,
+            "labelPadding": 9,
+            "titlePadding": 14,
+            "titleFontSize": 12,
+            "titleColor": "#42645A",
+            "domain": false,
+            "ticks": false,
+            "grid": false
+          }
+        },
+        "x2": {
+          "field": "bar_start"
+        },
+        "y": {
+          "field": "status",
+          "type": "nominal",
+          "sort": [
+            "Critically Endangered",
+            "Endangered",
+            "Vulnerable"
+          ],
+          "axis": null,
+          "scale": {
+            "paddingInner": 0.34,
+            "paddingOuter": 0.25
+          }
+        },
+        "color": {
+          "field": "system",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "EPBC (Australia)",
+              "IUCN (Global)"
+            ],
+            "range": [
+              "#4A9A78",
+              "#D77A50"
+            ]
+          },
+          "legend": {
+            "title": null,
+            "orient": "top",
+            "direction": "horizontal",
+            "symbolType": "square",
+            "symbolSize": 150,
+            "labelFontSize": 13,
+            "labelFontWeight": 600,
+            "labelColor": "#31574F",
+            "offset": 13
+          }
+        },
+        "tooltip": [
+          {
+            "field": "system",
+            "type": "nominal",
+            "title": "Classification system"
+          },
+          {
+            "field": "status",
+            "type": "nominal",
+            "title": "Threat status"
+          },
+          {
+            "field": "count",
+            "type": "quantitative",
+            "format": ",d",
+            "title": "Monitored plant entries"
+          },
+          {
+            "field": "percentage",
+            "type": "quantitative",
+            "format": ".1f",
+            "title": "Share of 34 entries (%)"
+          }
+        ]
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.system === 'EPBC (Australia)'"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "font": "DM Sans",
+        "fontWeight": 700,
+        "fontSize": 14,
+        "align": "right",
+        "baseline": "middle",
+        "color": "#275C4C"
+      },
+      "encoding": {
+        "x": {
+          "field": "label_x",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "status",
+          "type": "nominal",
+          "sort": [
+            "Critically Endangered",
+            "Endangered",
+            "Vulnerable"
+          ],
+          "axis": null,
+          "scale": {
+            "paddingInner": 0.34,
+            "paddingOuter": 0.25
+          }
+        },
+        "text": {
+          "field": "count",
+          "type": "quantitative",
+          "format": "d"
+        },
+        "tooltip": [
+          {
+            "field": "system",
+            "type": "nominal",
+            "title": "Classification system"
+          },
+          {
+            "field": "status",
+            "type": "nominal",
+            "title": "Threat status"
+          },
+          {
+            "field": "count",
+            "type": "quantitative",
+            "format": ",d",
+            "title": "Monitored plant entries"
+          },
+          {
+            "field": "percentage",
+            "type": "quantitative",
+            "format": ".1f",
+            "title": "Share of 34 entries (%)"
+          }
+        ]
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.system === 'IUCN (Global)'"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "font": "DM Sans",
+        "fontWeight": 700,
+        "fontSize": 14,
+        "align": "left",
+        "baseline": "middle",
+        "color": "#9A563D"
+      },
+      "encoding": {
+        "x": {
+          "field": "label_x",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "status",
+          "type": "nominal",
+          "sort": [
+            "Critically Endangered",
+            "Endangered",
+            "Vulnerable"
+          ],
+          "axis": null,
+          "scale": {
+            "paddingInner": 0.34,
+            "paddingOuter": 0.25
+          }
+        },
+        "text": {
+          "field": "count",
+          "type": "quantitative",
+          "format": "d"
+        },
+        "tooltip": [
+          {
+            "field": "system",
+            "type": "nominal",
+            "title": "Classification system"
+          },
+          {
+            "field": "status",
+            "type": "nominal",
+            "title": "Threat status"
+          },
+          {
+            "field": "count",
+            "type": "quantitative",
+            "format": ",d",
+            "title": "Monitored plant entries"
+          },
+          {
+            "field": "percentage",
+            "type": "quantitative",
+            "format": ".1f",
+            "title": "Share of 34 entries (%)"
+          }
+        ]
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.system === 'EPBC (Australia)'"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "font": "DM Sans",
+        "fontWeight": 700,
+        "fontSize": 13,
+        "align": "center",
+        "baseline": "middle",
+        "color": "#173D34"
+      },
+      "encoding": {
+        "x": {
+          "datum": 0,
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "status",
+          "type": "nominal",
+          "sort": [
+            "Critically Endangered",
+            "Endangered",
+            "Vulnerable"
+          ],
+          "axis": null,
+          "scale": {
+            "paddingInner": 0.34,
+            "paddingOuter": 0.25
+          }
+        },
+        "text": {
+          "field": "status",
+          "type": "nominal"
+        }
+      }
+    }
+  ],
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelFont": "DM Sans",
+      "titleFont": "DM Sans"
+    },
+    "legend": {
+      "labelFont": "DM Sans",
+      "titleFont": "DM Sans"
+    }
+  }
+}

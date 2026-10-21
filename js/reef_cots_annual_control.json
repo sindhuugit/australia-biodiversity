@@ -1,0 +1,168 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "background": "transparent",
+  "width": 795,
+  "height": 270,
+  "padding": {
+    "top": 15,
+    "left": 8,
+    "right": 18,
+    "bottom": 8
+  },
+  "data": {
+    "url": "data/reef_cots_annual_control.csv",
+    "format": {
+      "type": "csv",
+      "parse": {
+        "starfish_removed": "number",
+        "underwater_hours": "number"
+      }
+    }
+  },
+  "params": [
+    {
+      "name": "metric",
+      "value": "Starfish culled",
+      "bind": {
+        "input": "select",
+        "name": "Show: ",
+        "options": [
+          "Starfish culled",
+          "Underwater culling hours"
+        ]
+      }
+    }
+  ],
+  "transform": [
+    {
+      "calculate": "metric === 'Starfish culled' ? datum.starfish_removed : datum.underwater_hours",
+      "as": "shown_value"
+    },
+    {
+      "calculate": "metric === 'Starfish culled' ? datum.starfish_display : format(datum.underwater_hours, ',d')",
+      "as": "shown_label"
+    },
+    {
+      "calculate": "metric === 'Starfish culled' && datum.count_type === 'lower bound' ? 'Reported lower bound' : 'Reported value'",
+      "as": "accuracy"
+    },
+    {
+      "calculate": "metric === 'Starfish culled' && datum.count_type === 'lower bound' ? 'Minimum reported' : 'Official count'",
+      "as": "status_label"
+    }
+  ],
+  "layer": [
+    {
+      "mark": {
+        "type": "bar",
+        "cornerRadiusTopLeft": 6,
+        "cornerRadiusTopRight": 6,
+        "size": 56
+      },
+      "encoding": {
+        "x": {
+          "field": "financial_year",
+          "type": "ordinal",
+          "title": "Financial year",
+          "sort": null,
+          "axis": {
+            "labelAngle": 0,
+            "labelPadding": 12,
+            "labelLimit": 90
+          }
+        },
+        "y": {
+          "field": "shown_value",
+          "type": "quantitative",
+          "title": "Count (selected measure)",
+          "axis": {
+            "format": "~s",
+            "tickCount": 5,
+            "titlePadding": 14
+          },
+          "scale": {
+            "zero": true
+          }
+        },
+        "color": {
+          "condition": {
+            "test": "datum.count_type === 'lower bound' && metric === 'Starfish culled'",
+            "value": "#E6AE65"
+          },
+          "value": "#238F87"
+        },
+        "tooltip": [
+          {
+            "field": "financial_year",
+            "type": "nominal",
+            "title": "Financial year"
+          },
+          {
+            "field": "shown_label",
+            "type": "nominal",
+            "title": "Value"
+          },
+          {
+            "field": "status_label",
+            "type": "nominal",
+            "title": "Reporting status"
+          }
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "dy": -10,
+        "font": "DM Sans",
+        "fontWeight": 600,
+        "fontSize": 12,
+        "color": "#1C514D"
+      },
+      "encoding": {
+        "x": {
+          "field": "financial_year",
+          "type": "ordinal",
+          "sort": null
+        },
+        "y": {
+          "field": "shown_value",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "shown_label",
+          "type": "nominal"
+        }
+      }
+    }
+  ],
+  "config": {
+    "view": {
+      "stroke": "transparent"
+    },
+    "axis": {
+      "labelFont": "DM Sans",
+      "titleFont": "DM Sans",
+      "labelColor": "#5C776D",
+      "titleColor": "#254C46",
+      "gridColor": "#E4EEEA",
+      "domain": false,
+      "tickColor": "#B6CAC3",
+      "labelFontSize": 12,
+      "titleFontSize": 12
+    },
+    "legend": {
+      "labelFont": "DM Sans",
+      "titleFont": "DM Sans",
+      "labelColor": "#2B514A",
+      "titleColor": "#254C46",
+      "labelFontSize": 12,
+      "titleFontSize": 12
+    },
+    "title": {
+      "font": "DM Sans",
+      "fontSize": 16,
+      "color": "#163F40"
+    }
+  }
+}

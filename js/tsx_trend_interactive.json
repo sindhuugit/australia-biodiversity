@@ -1,12 +1,34 @@
+
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "description": "TSX 2025 official group-specific trends with published lower and upper uncertainty bounds; reptiles and amphibians displayed separately.",
+  "description": "TSX trend chart with responsive sizing and nearest-point hover interactions.",
+  "background": "transparent",
+  "width": 830,
+  "height": 420,
+  "autosize": {
+    "type": "pad",
+    "contains": "padding",
+    "resize": false
+  },
+  "padding": {
+    "top": 18,
+    "left": 18,
+    "right": 34,
+    "bottom": 22
+  },
   "title": {
     "text": "How Has Threatened Wildlife Changed?",
-    "subtitle": "Tracking changes in Australia's threatened wildlife populations from 1985 to 2022"
+    "subtitle": "Tracking changes in Australia's threatened wildlife populations from 1985 to 2022",
+    "font": "DM Sans",
+    "fontSize": 20,
+    "fontWeight": 700,
+    "color": "#173D34",
+    "subtitleFont": "DM Sans",
+    "subtitleFontSize": 13,
+    "subtitleColor": "#647C6F",
+    "anchor": "middle",
+    "offset": 18
   },
-  "width": "container",
-  "height": 390,
   "data": {
     "url": "data/tsx_trends_for_visualisation.csv",
     "format": {
@@ -25,56 +47,104 @@
       "value": "All Species",
       "bind": {
         "input": "select",
+        "name": "Species group: ",
         "options": [
           "All Species",
           "Birds",
           "Mammals",
           "Plants",
-          "Reptiles",
-          "Amphibians"
-        ],
-        "name": "Species group: "
+          "Reptiles & Amphibians"
+        ]
       }
     }
   ],
   "transform": [
     {
       "filter": "datum.group === selectedGroup"
+    },
+    {
+      "calculate": "'Shaded area = uncertainty range around estimated trend'",
+      "as": "uncertaintyLabel"
     }
   ],
+  "encoding": {
+    "x": {
+      "field": "year",
+      "type": "quantitative",
+      "scale": {
+        "domain": [1984.1, 2023],
+        "nice": false,
+        "zero": false
+      },
+      "axis": {
+        "title": "Year",
+        "values": [
+          1985,
+          1990,
+          1995,
+          2000,
+          2005,
+          2010,
+          2015,
+          2020,
+          2022
+        ],
+        "format": "d",
+        "labelAngle": 0,
+        "labelFlush": false,
+        "labelOverlap": false,
+        "labelPadding": 10,
+        "titlePadding": 12,
+        "grid": true,
+        "gridColor": "#E5ECE5"
+      }
+    }
+  },
   "layer": [
     {
       "mark": {
         "type": "area",
-        "color": "#A8C4A0",
-        "opacity": 0.45
+        "opacity": 0.4,
+        "clip": true
       },
       "encoding": {
-        "x": {
-          "field": "year",
-          "type": "quantitative",
-          "scale": {
-            "domain": [
-              1985,
-              2022
-            ]
-          },
-          "axis": {
-            "title": "Year",
-            "format": "d",
-            "tickMinStep": 1
-          }
-        },
         "y": {
           "field": "low",
           "type": "quantitative",
           "title": "Relative abundance index",
           "scale": {
-            "zero": true
+            "zero": false
+          },
+          "axis": {
+            "grid": true,
+            "gridColor": "#E5ECE5",
+            "titlePadding": 14
           }
         },
         "y2": {
           "field": "high"
+        },
+        "color": {
+          "field": "uncertaintyLabel",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "Shaded area = uncertainty range around estimated trend"
+            ],
+            "range": ["#A8C4A0"]
+          },
+          "legend": {
+            "title": null,
+            "orient": "bottom",
+            "direction": "horizontal",
+            "symbolType": "square",
+            "symbolSize": 140,
+            "labelFont": "DM Sans",
+            "labelFontSize": 12,
+            "labelColor": "#48645A",
+            "labelLimit": 800,
+            "offset": 14
+          }
         }
       }
     },
@@ -82,13 +152,12 @@
       "mark": {
         "type": "line",
         "color": "#173D34",
-        "strokeWidth": 3
+        "strokeWidth": 3.5,
+        "strokeCap": "round",
+        "strokeJoin": "round",
+        "clip": true
       },
       "encoding": {
-        "x": {
-          "field": "year",
-          "type": "quantitative"
-        },
         "y": {
           "field": "value",
           "type": "quantitative"
@@ -96,20 +165,57 @@
       }
     },
     {
+      "transform": [
+        {
+          "filter": "datum.year === 1985 || datum.year === 2022 || datum.year % 5 === 0"
+        }
+      ],
       "mark": {
         "type": "point",
         "filled": true,
+        "size": 115,
         "color": "#D77A50",
-        "size": 52,
-        "opacity": 1,
         "stroke": "#FFFFFF",
-        "strokeWidth": 1
+        "strokeWidth": 1.8,
+        "opacity": 1,
+        "clip": false
       },
       "encoding": {
-        "x": {
-          "field": "year",
+        "y": {
+          "field": "value",
           "type": "quantitative"
-        },
+        }
+      }
+    },
+    {
+      "description": "Nearest-point hover layer",
+      "transform": [
+        {
+          "filter": "datum.year === 1985 || datum.year === 2022 || datum.year % 5 === 0"
+        }
+      ],
+      "params": [
+        {
+          "name": "hoveredTsxYear",
+          "select": {
+            "type": "point",
+            "fields": ["year"],
+            "nearest": true,
+            "on": "pointerover",
+            "clear": "pointerout"
+          }
+        }
+      ],
+      "mark": {
+        "type": "point",
+        "filled": true,
+        "size": 110,
+        "opacity": 0.001,
+        "strokeWidth": 0,
+        "cursor": "pointer",
+        "clip": false
+      },
+      "encoding": {
         "y": {
           "field": "value",
           "type": "quantitative"
@@ -135,38 +241,36 @@
           {
             "field": "low",
             "type": "quantitative",
-            "title": "Lower bound",
-            "format": ".3f"
+            "format": ".3f",
+            "title": "Lower bound"
           },
           {
             "field": "high",
             "type": "quantitative",
-            "title": "Upper bound",
-            "format": ".3f"
+            "format": ".3f",
+            "title": "Upper bound"
           }
         ]
       }
     }
   ],
   "config": {
-    "background": "#FFFFFF",
-    "font": "DM Sans",
     "view": {
-      "stroke": null
-    },
-    "title": {
-      "font": "DM Sans",
-      "fontSize": 19,
-      "fontWeight": 700,
-      "color": "#173D34",
-      "subtitleFont": "DM Sans",
-      "subtitleFontSize": 12,
-      "subtitleColor": "#586D61"
+      "stroke": "transparent"
     },
     "axis": {
       "labelFont": "DM Sans",
       "titleFont": "DM Sans",
-      "gridColor": "#E8EEE7"
+      "labelColor": "#536C60",
+      "titleColor": "#173D34",
+      "labelFontSize": 12,
+      "titleFontSize": 13,
+      "domain": false,
+      "tickColor": "#A8C4A0"
+    },
+    "legend": {
+      "labelFont": "DM Sans",
+      "titleFont": "DM Sans"
     }
   }
 }
