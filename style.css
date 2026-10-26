@@ -4069,3 +4069,68 @@ header.site-hero {
     justify-content: safe center;
   }
 }
+
+
+/* ==========================================================
+   SPECIES EXPLORER — PRECISE CHART CENTRING
+   Overrides earlier inline-block and left-alignment rules.
+   Applies to Birds, Mammals, Plants, and Reptiles/Amphibians
+   as they all render inside #species_chart.
+   ========================================================== */
+
+/* Centre the complete Vega chart (including axes, labels and
+   legend), rather than centring only the SVG inside its wrapper. */
+.species-section #species_chart {
+  display: flex !important;
+  flex-direction: row;
+  justify-content: safe center !important;
+  align-items: flex-start !important;
+  flex-wrap: nowrap !important;
+  box-sizing: border-box;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0;
+  margin: 16px auto 12px !important;
+  padding: 0 !important;
+  overflow-x: auto;
+  overflow-y: hidden;
+  text-align: initial !important;
+}
+
+/* Let the Vega wrapper take only as much width as the chart
+   actually needs, then centre it in the available row. */
+.species-section #species_chart > .vega-embed {
+  display: block !important;
+  box-sizing: content-box;
+  flex: 0 0 auto !important;
+  width: max-content !important;
+  min-width: 0;
+  max-width: none !important;
+  margin-inline: auto !important;
+  padding: 0 !important;
+  text-align: left !important;
+}
+
+/* Keep Vega-Lite's computed chart dimensions intact. */
+.species-section #species_chart > .vega-embed > svg,
+.species-section #species_chart > .vega-embed > canvas {
+  display: block !important;
+  width: auto !important;
+  height: auto !important;
+  max-width: none !important;
+  margin: 0 !important;
+  transform: none !important;
+}
+
+/* The dropdown is outside the chart SVG and stays centred. */
+.species-section #species_controls,
+.species-section #species_controls .vega-bindings {
+  display: flex;
+  justify-content: center !important;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.species-section #species_controls:empty {
+  display: none !important;
+}
