@@ -1,0 +1,372 @@
+{
+  "$schema": "https://vega.github.io/schema/vega/v5.json",
+  "description": "Radial bars on a shared A$60 million reference scale; funding is selected announced NSW Koala Strategy 2021–26 allocations, not spending or delivered results.",
+  "width": 820,
+  "height": 380,
+  "padding": {
+    "top": 65,
+    "right": 10,
+    "bottom": 20,
+    "left": 10
+  },
+  "autosize": "pad",
+  "background": "transparent",
+  "title": {
+    "text": "Where Is Koala Conservation Funding Directed?",
+    "subtitle": "Selected announced NSW Koala Strategy allocations, 2021–26 · A$ million",
+    "anchor": "start",
+    "font": "DM Sans",
+    "fontSize": 20,
+    "fontWeight": "bold",
+    "color": "#173D34",
+    "subtitleFont": "DM Sans",
+    "subtitleFontSize": 13,
+    "subtitleColor": "#5C7974",
+    "offset": 20
+  },
+  "data": [
+    {
+      "name": "funding",
+      "url": "data/koala_funding_flows.csv",
+      "format": {
+        "type": "csv",
+        "parse": {
+          "value": "number",
+          "target_ha": "number"
+        }
+      },
+      "transform": [
+        {
+          "type": "formula",
+          "expr": "datum.target === 'National park additions' ? 0 : datum.target === 'Private land protection' ? 1 : datum.target === 'Box-gum woodland restoration' ? 2 : 3",
+          "as": "ringIndex"
+        },
+        {
+          "type": "formula",
+          "expr": "142 - datum.ringIndex * 30",
+          "as": "outerR"
+        },
+        {
+          "type": "formula",
+          "expr": "datum.outerR - 19",
+          "as": "innerR"
+        },
+        {
+          "type": "formula",
+          "expr": "2 * PI * datum.value / 60",
+          "as": "arcEnd"
+        },
+        {
+          "type": "formula",
+          "expr": "'A$' + format(datum.value, '.1f') + 'm'",
+          "as": "money"
+        },
+        {
+          "type": "formula",
+          "expr": "format(datum.target_ha, ',d') + ' ha target'",
+          "as": "hectares"
+        }
+      ]
+    }
+  ],
+  "scales": [
+    {
+      "name": "ringColor",
+      "type": "ordinal",
+      "domain": [
+        "National park additions",
+        "Private land protection",
+        "Box-gum woodland restoration",
+        "Coordinated habitat restoration"
+      ],
+      "range": [
+        "#31765A",
+        "#5C9675",
+        "#D77A50",
+        "#D1B36A"
+      ]
+    }
+  ],
+  "marks": [
+    {
+      "type": "arc",
+      "from": {
+        "data": "funding"
+      },
+      "encode": {
+        "enter": {
+          "x": {
+            "value": 190
+          },
+          "y": {
+            "value": 184
+          },
+          "startAngle": {
+            "value": 0
+          },
+          "endAngle": {
+            "value": 6.283185307179586
+          },
+          "innerRadius": {
+            "field": "innerR"
+          },
+          "outerRadius": {
+            "field": "outerR"
+          },
+          "fill": {
+            "value": "#E6EFEB"
+          }
+        }
+      }
+    },
+    {
+      "type": "arc",
+      "from": {
+        "data": "funding"
+      },
+      "encode": {
+        "enter": {
+          "x": {
+            "value": 190
+          },
+          "y": {
+            "value": 184
+          },
+          "startAngle": {
+            "value": 0
+          },
+          "endAngle": {
+            "field": "arcEnd"
+          },
+          "innerRadius": {
+            "field": "innerR"
+          },
+          "outerRadius": {
+            "field": "outerR"
+          },
+          "fill": {
+            "scale": "ringColor",
+            "field": "target"
+          },
+          "tooltip": {
+            "signal": "{'Action': datum.target, 'Announced allocation (A$ million)': datum.value, 'Habitat target (ha)': datum.target_ha}"
+          }
+        },
+        "hover": {
+          "fillOpacity": {
+            "value": 0.72
+          }
+        }
+      }
+    },
+    {
+      "type": "text",
+      "encode": {
+        "enter": {
+          "x": {
+            "value": 190
+          },
+          "y": {
+            "value": 176
+          },
+          "align": {
+            "value": "center"
+          },
+          "baseline": {
+            "value": "middle"
+          },
+          "text": {
+            "value": "A$102.1m"
+          },
+          "font": {
+            "value": "DM Sans"
+          },
+          "fontWeight": {
+            "value": "bold"
+          },
+          "fontSize": {
+            "value": 23
+          },
+          "fill": {
+            "value": "#173D34"
+          }
+        }
+      }
+    },
+    {
+      "type": "text",
+      "encode": {
+        "enter": {
+          "x": {
+            "value": 190
+          },
+          "y": {
+            "value": 199
+          },
+          "align": {
+            "value": "center"
+          },
+          "baseline": {
+            "value": "middle"
+          },
+          "text": {
+            "value": "Selected total"
+          },
+          "font": {
+            "value": "DM Sans"
+          },
+          "fontSize": {
+            "value": 12
+          },
+          "fill": {
+            "value": "#5C7974"
+          }
+        }
+      }
+    },
+    {
+      "type": "rect",
+      "from": {
+        "data": "funding"
+      },
+      "encode": {
+        "enter": {
+          "x": {
+            "value": 420
+          },
+          "x2": {
+            "value": 434
+          },
+          "y": {
+            "signal": "73 + datum.ringIndex * 73"
+          },
+          "y2": {
+            "signal": "87 + datum.ringIndex * 73"
+          },
+          "cornerRadius": {
+            "value": 3
+          },
+          "fill": {
+            "scale": "ringColor",
+            "field": "target"
+          }
+        }
+      }
+    },
+    {
+      "type": "text",
+      "from": {
+        "data": "funding"
+      },
+      "encode": {
+        "enter": {
+          "x": {
+            "value": 446
+          },
+          "y": {
+            "signal": "85 + datum.ringIndex * 73"
+          },
+          "text": {
+            "field": "target"
+          },
+          "font": {
+            "value": "DM Sans"
+          },
+          "fontSize": {
+            "value": 15
+          },
+          "fontWeight": {
+            "value": "bold"
+          },
+          "fill": {
+            "value": "#173D34"
+          }
+        }
+      }
+    },
+    {
+      "type": "text",
+      "from": {
+        "data": "funding"
+      },
+      "encode": {
+        "enter": {
+          "x": {
+            "value": 446
+          },
+          "y": {
+            "signal": "110 + datum.ringIndex * 73"
+          },
+          "text": {
+            "field": "money"
+          },
+          "font": {
+            "value": "DM Sans"
+          },
+          "fontSize": {
+            "value": 14
+          },
+          "fill": {
+            "value": "#315B57"
+          }
+        }
+      }
+    },
+    {
+      "type": "text",
+      "from": {
+        "data": "funding"
+      },
+      "encode": {
+        "enter": {
+          "x": {
+            "value": 542
+          },
+          "y": {
+            "signal": "110 + datum.ringIndex * 73"
+          },
+          "text": {
+            "field": "hectares"
+          },
+          "font": {
+            "value": "DM Sans"
+          },
+          "fontSize": {
+            "value": 12
+          },
+          "fill": {
+            "value": "#5C7974"
+          }
+        }
+      }
+    },
+    {
+      "type": "text",
+      "encode": {
+        "enter": {
+          "x": {
+            "value": 190
+          },
+          "y": {
+            "value": 367
+          },
+          "align": {
+            "value": "center"
+          },
+          "text": {
+            "value": "All rings use a common A$60m scale"
+          },
+          "font": {
+            "value": "DM Sans"
+          },
+          "fontSize": {
+            "value": 11
+          },
+          "fill": {
+            "value": "#5C7974"
+          }
+        }
+      }
+    }
+  ]
+}

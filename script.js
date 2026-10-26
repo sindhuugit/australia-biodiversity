@@ -143,7 +143,7 @@ const speciesCharts = {
   all: {
     title: "How Severe Are the Threats Facing Different Species Groups?",
     description:
-      "This chart compares threatened birds, mammals, plants, reptiles and amphibians by their recorded level of extinction risk. Each coloured section shows the percentage of monitored species in a particular threat category. Hover over the bars to see the exact percentages and number of species.",
+      "This chart compares the share of monitored species in four recorded threat categories. The lower-severity categories appear to the left of zero and the higher-severity categories to the right. Left-side percentages are not negative: the two sides separate threat levels for comparison. Hover for exact percentages and counts.",
     file: "js/species_status_diverging.json",
     finding:
       "Reptiles & Amphibians (76.9%) and Plants (72.5%) have the highest proportions of Endangered or Critically Endangered species in the monitoring dataset, suggesting that these groups face particularly severe extinction risks. In contrast, Mammals have the largest proportion classified as Vulnerable (40.2%). This highlights how the severity of threats differs across species groups, rather than affecting all wildlife equally."
@@ -152,7 +152,7 @@ const speciesCharts = {
   birds: {
     title: "Where Are Australia's Threatened Birds Being Monitored?",
     description:
-      "This map shows the geographic distribution of threatened bird monitoring across Australia. Each circle represents a monitoring region, with larger circles indicating more distinct monitored bird species recorded in that location.",
+      "Each circle represents a monitoring region. Larger circles mean more distinct monitored threatened bird species were recorded there, not that there are more individual birds. Use the state filter and hover for details.",
     file: "js/bird_monitoring_map.json",
     finding:
       "Threatened bird monitoring is spread across numerous Australian regions, but the number of distinct bird species represented varies between locations. Larger circles identify regions with a greater variety of monitored threatened birds, rather than larger bird populations."
@@ -163,11 +163,7 @@ const speciesCharts = {
     title: "How Do Threat Levels Differ Across Mammal Families?",
 
     description:
-      "Explore how threatened mammals represented in the monitoring dataset " +
-      "are classified across different mammal families. Each heatmap square " +
-      "shows how many distinct monitored entries have a particular threat status. " +
-      "Darker purple means a larger count. Use the dropdown to view all families " +
-      "and hover for counts, percentages and examples.",
+      "Each square compares a mammal family with a threat classification. Darker purple indicates more distinct monitored entries in that family and category; it does not necessarily mean a higher level of extinction risk. Use the dropdown and hover for details.",
 
     file: "js/mammal_family_threat_heatmap.json",
 
@@ -184,11 +180,7 @@ const speciesCharts = {
     title: "How Do Australian and Global Plant Threat Assessments Compare?",
 
     description:
-      "This butterfly chart compares how 34 monitored plant entries are " +
-      "classified under Australia's EPBC system and the global IUCN system. " +
-      "Sage-green bars on the left show EPBC counts, while terracotta bars " +
-      "on the right show IUCN counts. Both sides use the same 34 entries. " +
-      "Hover over a bar to see its exact count and percentage.",
+      "The two sides compare how the same 34 monitored plant entries are classified under Australia's Environment Protection and Biodiversity Conservation (EPBC) system and the International Union for Conservation of Nature (IUCN) global system. Longer bars mean more entries in that category. The chart compares category totals, not which individual assessments agree.",
 
     file: "js/plant_epbc_iucn_butterfly.json",
 
@@ -207,11 +199,7 @@ const speciesCharts = {
     title: "Do Reptiles and Amphibians Face Different Levels of Extinction Risk?",
 
     description:
-      "This connected dot plot compares the percentage of monitored " +
-      "reptile and amphibian species in each conservation category. " +
-      "Teal dots represent reptiles and blue dots represent amphibians. " +
-      "The connecting lines show the percentage-point differences " +
-      "between the groups. Hover over a dot for exact counts and percentages.",
+      "Each pair of dots compares the share of monitored reptile and amphibian species in one threat category. Teal represents reptiles and blue represents amphibians. Longer connecting lines show larger percentage-point differences between the groups. Hover for counts and percentages.",
 
     file: "js/reptiles_amphibians_connected_dot.json",
 
@@ -960,3 +948,34 @@ async function loadCoralBioregionChoropleth() {
 }
 
 loadCoralBioregionChoropleth();
+
+/* ==========================================
+   KOALA CONSERVATION — THREE CHARTS
+   01: CHOROPLETH (ADVANCED)
+   02: DEVIATION LOLLIPOP (ADVANCED)
+   03: FUNDING GROUPED HORIZONTAL BAR CHART (BASIC)
+========================================== */
+
+const koalaCharts = [
+  ["#koala_fire_map_chart", "js/koala_choropleth.json"],
+  ["#koala_exposure_difference_chart", "js/koala_exposure_difference_lollipop.json"],
+  ["#koala_funding_grouped_chart", "js/koala_funding_grouped_bar.json"]
+];
+
+koalaCharts.forEach(([selector, specFile]) => {
+  const container = document.querySelector(selector);
+
+  if (!container) {
+    console.warn("Missing koala chart container:", selector);
+    return;
+  }
+
+  vegaEmbed(container, specFile, {
+    actions: false,
+    renderer: "svg"
+  }).catch(error => {
+    console.error("Koala chart failed:", specFile, error);
+    container.textContent =
+      "This chart could not load. Check the browser console.";
+  });
+});

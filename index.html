@@ -1,1642 +1,1743 @@
-
 <!DOCTYPE html>
-<html lang="en"> <!-- [Sets the language of the website to English.] -->
-
-<head> <!-- [Contains settings, fonts and links to CSS.] -->
-
-  <meta charset="UTF-8"> <!-- [Allows special characters to display.] -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- [Makes the website responsive on different screens.] -->
-
-  <title>Australia's Biodiversity</title> <!-- [Name shown in the browser tab.] -->
-
-  <!-- [Connects to Google Fonts.] -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&display=swap"
-    rel="stylesheet"
-  > <!-- [Loads DM Sans for body text and DM Serif Display for headings.] -->
-
-  <link rel="stylesheet" href="style.css"> <!-- [Connects the HTML to the CSS styling file.] -->
-
-</head>
-
-<body> <!-- [Contains everything visible on the website.] -->
-
-
-  <!-- ==========================================
-       WEBSITE HEADER
-  ========================================== -->
-
-  <header> <!-- [Creates the top section of the website.] -->
-
-    <h1>Australia's Biodiversity</h1> <!-- [Main website title.] -->
-
-    <p>
-      Exploring Australia's unique wildlife,
-      threatened species and conservation efforts.
-    </p> <!-- [Short introduction to the website.] -->
-
-    <p>By Sindhu Modugu</p> <!-- [Displays the author.] -->
-
-  </header>
-
-
-  <main> <!-- [Contains the main content and visualisations.] -->
-
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Australia's Biodiversity</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=DM+Serif+Display&amp;display=swap" rel="stylesheet"/>
+    <link href="style.css" rel="stylesheet"/>
+  </head>
+  <body>
 
     <!-- ==========================================
-         STORYTELLING NAVIGATION
+         WEBSITE INTRODUCTION — FIELD GUIDE HERO
     ========================================== -->
 
-    <nav
-      class="journey-nav"
-      aria-label="Biodiversity story chapters"
-    > <!-- [Creates the navigation linking the three chapters.] -->
+    <header class="site-hero" id="top">
 
-      <p class="journey-eyebrow">
-        FOLLOW THE STORY
-      </p> <!-- [Small label above the navigation.] -->
+      <div class="site-hero-inner">
 
-      <div class="journey-track"> <!-- [Arranges the three navigation cards.] -->
+        <div class="site-hero-copy">
 
-
-        <!-- CHAPTER 1: PROTECT -->
-        <a
-          href="#protected-areas"
-          class="journey-step journey-step--protect"
-        > <!-- [Clicking this jumps to the Protected Areas chapter.] -->
-
-          <span class="journey-step-number">01</span> <!-- [Chapter number.] -->
-
-          <span class="journey-step-icon">
-            <i data-lucide="shield-check"></i>
-          </span> <!-- [Displays a shield icon from Lucide.] -->
-
-          <span class="journey-step-copy">
-            <strong>PROTECT</strong>
-            <small>Protected Areas</small>
-          </span> <!-- [Displays the chapter name and topic.] -->
-
-          <span class="journey-step-arrow" aria-hidden="true">
-            ↗
-          </span> <!-- [Decorative arrow.] -->
-
-        </a>
-
-
-        <!-- CHAPTER 2: UNDERSTAND -->
-        <a
-          href="#threatened-species"
-          class="journey-step journey-step--understand"
-        > <!-- [Clicking this jumps to the Threatened Species chapter.] -->
-
-          <span class="journey-step-number">02</span>
-
-          <span class="journey-step-icon">
-            <i data-lucide="bird"></i>
-          </span> <!-- [Displays a bird icon.] -->
-
-          <span class="journey-step-copy">
-            <strong>UNDERSTAND</strong>
-            <small>Threatened Native Species</small>
-          </span>
-
-          <span class="journey-step-arrow" aria-hidden="true">
-            ↗
-          </span>
-
-        </a>
-
-
-        <!-- CHAPTER 3: ACT -->
-        <a
-          href="#reef-conservation"
-          class="journey-step journey-step--act"
-        > <!-- [Clicking this jumps to the Conservation Programs chapter.] -->
-
-          <span class="journey-step-number">03</span>
-
-          <span class="journey-step-icon">
-            <i data-lucide="waves"></i>
-          </span> <!-- [Displays a wave icon.] -->
-
-          <span class="journey-step-copy">
-            <strong>ACT</strong>
-            <small>Conservation Programs</small>
-          </span>
-
-          <span class="journey-step-arrow" aria-hidden="true">
-            ↗
-          </span>
-
-        </a>
-
-      </div>
-
-    </nav>
-
-
-
-    <!-- ==========================================
-         SECTION 1: PROTECTED LAND
-         CHAPTER 1 — PROTECT (01/02)
-    ========================================== -->
-
-    <section
-      id="protected-areas"
-      class="map-section story-section story-section--land"
-    > <!-- [Starts Section 1 and gives it an ID for navigation.] -->
-
-
-      <!-- INTRODUCTION BANNER -->
-      <div class="story-banner"> <!-- [Creates the coloured introduction banner.] -->
-
-        <div class="story-banner-copy"> <!-- [Groups the banner text together.] -->
-
-          <p class="story-eyebrow">
-            AUSTRALIA'S BIODIVERSITY / PROTECTED HABITATS
-          </p> <!-- [Small topic label.] -->
-
-          <h2>How Much of Australia Is Protected?</h2> <!-- [Section heading.] -->
-
-          <p class="story-intro">
-            Australia's protected areas play an important
-            role in conserving natural habitats and
-            ecosystems. However, the proportion of protected
-            land varies significantly across states
-            and territories.
-          </p> <!-- [Introduces why protected land is important.] -->
-
-          <a
-            class="story-jump"
-            href="#protected_land_map"
-          > <!-- [Link that scrolls directly to the map.] -->
-            Explore the data
-            <span aria-hidden="true">↘</span>
-          </a>
-
-        </div>
-
-        <div class="story-emblem" aria-hidden="true">
-          <i data-lucide="shield-check"></i>
-        </div> <!-- [Decorative icon in the banner.] -->
-
-      </div>
-
-
-      <!-- SECTION CONTENT -->
-      <div class="story-content"> <!-- [Contains the chart heading, map and key finding.] -->
-
-        <div class="bio-figure-intro"> <!-- [Places the heading beside the section number.] -->
-
-          <div>
-
-            <p class="bio-step">
-              01 — PROTECTED HABITATS
-            </p> <!-- [Labels the first part of this chapter.] -->
-
-            <h3>
-              Where Is Australia's Protected Land?
-            </h3> <!-- [Introduces the map.] -->
-
-            <p>
-              Explore protected land across Australia's
-              states and territories, and compare the
-              percentage of each jurisdiction covered.
-            </p>
-
-          </div>
-
-          <span
-            class="bio-figure-number"
-            aria-hidden="true"
-          >
-            01 <small>/ 02</small>
-          </span> <!-- [Shows that this is part 1 of 2 in Protected Areas.] -->
-
-        </div>
-
-
-        <!-- PROTECTED LAND MAP CARD -->
-        <article
-          class="bio-chart-card"
-          aria-label="Protected land map"
-        > <!-- [Creates the white rounded card around the map.] -->
-
-          <div class="bio-card-top"> <!-- [Top row of the chart card.] -->
-
-            <span class="bio-card-label">
-              PROTECTED LAND · CAPAD 2024
-            </span> <!-- [Displays the chart label and data source.] -->
-
-          </div>
-
-
-          <p class="bio-card-note map-hover-note">
-            Hover over a state or territory to see
-            the percentage of its land that is protected.
-          </p> <!-- [Tells users how to interact with the map.] -->
-
-
-          <div
-            id="protected_land_map"
-            class="bio-chart-space"
-          ></div>
-          <!-- [JavaScript inserts the Vega-Lite choropleth map into this empty div.] -->
-
-        </article>
-
-
-        <p class="key-finding"> <!-- [Creates the highlighted key finding box.] -->
-
-          <strong>Key Finding:</strong>
-
-          The ACT has the highest percentage of protected
-          land at 55.9%, followed by Tasmania at 42.8%.
-
-          Queensland has the lowest among the eight main
-          jurisdictions, at 9.4%.
-
-        </p>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- ==========================================
-         SECTION 2: CONSERVATION NETWORK
-         CHAPTER 1 — PROTECT (02/02)
-    ========================================== -->
-
-    <section
-      id="conservation-network"
-      class="conservation-section story-section story-section--network"
-    > <!-- [Starts the second Protected Areas section.] -->
-
-
-      <div class="story-banner"> <!-- [Creates the section introduction banner.] -->
-
-        <div class="story-banner-copy"> <!-- [Contains the title and description.] -->
-
-          <p class="story-eyebrow">
-            AUSTRALIA'S BIODIVERSITY / CONSERVATION NETWORK
+          <p class="site-hero-eyebrow">
+            <span class="site-hero-eyebrow-line" aria-hidden="true"></span>
+            LAND · WILDLIFE · CONSERVATION
           </p>
 
-          <h2>Protecting Australia's Natural Heritage</h2>
+          <h1>
+            Australia's
+            <span>Biodiversity</span>
+          </h1>
 
-          <p class="conservation-intro story-intro">
-            Australia's protected-area network has expanded
-            over the past two decades. Explore the long-term
-            growth in protected land, then discover how
-            this land was managed in 2024.
+          <p class="site-hero-lead">
+            Australia is home to wildlife found nowhere else, but many species
+            are under pressure. Explore where land is protected, how threatened
+            species are faring, and the work being done to conserve habitats
+            on the Great Barrier Reef and in New South Wales.
           </p>
 
-          <a
-            class="story-jump"
-            href="#conservation_growth_chart"
-          > <!-- [Scrolls down to the conservation growth chart.] -->
-            Explore the data
-            <span aria-hidden="true">↘</span>
-          </a>
+          <div class="site-hero-actions">
 
-        </div>
+            <a class="site-hero-button" href="#protected-areas">
+              Explore the story
+              <span aria-hidden="true">↘</span>
+            </a>
 
-        <div class="story-emblem" aria-hidden="true">
-          <i data-lucide="trees"></i>
-        </div> <!-- [Displays a tree icon.] -->
-
-      </div>
-
-
-      <div class="story-content"> <!-- [Contains the two conservation charts.] -->
-
-        <div class="bio-figure-intro"> <!-- [Section heading and number.] -->
-
-          <div>
-
-            <p class="bio-step">
-              02 — CONSERVATION NETWORK
-            </p>
-
-            <h3>
-              How Has Australia's Protected Land Changed?
-            </h3>
-
-            <p>
-              Compare two perspectives: the expansion
-              of protected land over time and who manages
-              the protected-area estate in 2024.
-            </p>
+            <a class="site-hero-text-link" href="#journey">
+              View the chapters
+              <span aria-hidden="true">↓</span>
+            </a>
 
           </div>
 
-          <span
-            class="bio-figure-number"
-            aria-hidden="true"
+          <div class="site-hero-byline">
+            <span class="site-hero-byline-star" aria-hidden="true">✦</span>
+            By Sindhu Modugu
+            <span class="site-hero-byline-divider" aria-hidden="true"></span>
+            Protect · Understand · Act
+          </div>
+
+        </div>
+
+        <!-- Original botanical illustration made with SVG (no extra file needed). -->
+        <div class="site-hero-visual" aria-hidden="true">
+
+          <svg
+            class="site-hero-art"
+            viewBox="0 0 440 440"
+            xmlns="http://www.w3.org/2000/svg"
           >
-            02 <small>/ 02</small>
-          </span> <!-- [Second of two Protected Areas sections.] -->
+
+            <defs>
+              <linearGradient id="hero-botanical-glow" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#6BAE8C" stop-opacity="0.70" />
+                <stop offset="1" stop-color="#1D6258" stop-opacity="0.25" />
+              </linearGradient>
+            </defs>
+
+            <!-- Glowing concentric circles echo the reef and koala chapter art. -->
+            <circle cx="220" cy="214" r="192" fill="url(#hero-botanical-glow)" />
+            <circle cx="220" cy="214" r="154" fill="none" stroke="#C7E8C9" stroke-opacity="0.35" stroke-width="1.5" />
+            <circle cx="220" cy="214" r="112" fill="#173D34" fill-opacity="0.28" stroke="#D6E7C8" stroke-opacity="0.35" stroke-width="1.5" />
+
+            <!-- Warm Australian sun and distant landscape. -->
+            <circle cx="278" cy="142" r="43" fill="#DE9B65" opacity="0.96" />
+            <path d="M84 307 Q141 261 209 291 Q263 238 349 303 L350 345 L89 345 Z" fill="#173D34" opacity="0.35" />
+
+            <!-- Stylised branch and native leaves. -->
+            <path d="M170 336 Q195 258 204 174 Q211 135 226 107" fill="none" stroke="#E8E3BD" stroke-width="9" stroke-linecap="round" />
+            <path d="M192 263 Q151 220 123 204 M201 220 Q236 180 271 170 M205 170 Q172 145 154 127 M178 302 Q224 280 272 288" fill="none" stroke="#E8E3BD" stroke-width="6" stroke-linecap="round" />
+
+            <ellipse cx="138" cy="212" rx="24" ry="10" transform="rotate(38 138 212)" fill="#A8C4A0" />
+            <ellipse cx="160" cy="239" rx="26" ry="11" transform="rotate(30 160 239)" fill="#83B99A" />
+            <ellipse cx="243" cy="181" rx="25" ry="11" transform="rotate(-34 243 181)" fill="#B9D2A9" />
+            <ellipse cx="276" cy="168" rx="24" ry="10" transform="rotate(-24 276 168)" fill="#90BE9F" />
+            <ellipse cx="175" cy="151" rx="24" ry="10" transform="rotate(45 175 151)" fill="#A8C4A0" />
+            <ellipse cx="143" cy="118" rx="23" ry="10" transform="rotate(47 143 118)" fill="#D5E1B8" />
+            <ellipse cx="237" cy="282" rx="25" ry="11" transform="rotate(-18 237 282)" fill="#80B89A" />
+            <ellipse cx="275" cy="285" rx="26" ry="11" transform="rotate(10 275 285)" fill="#B9D2A9" />
+
+            <!-- Flight marks and field-guide dots. -->
+            <path d="M101 132 Q115 120 130 132 Q144 120 158 130" fill="none" stroke="#F6EBDD" stroke-width="3" stroke-linecap="round" opacity="0.85" />
+            <circle cx="84" cy="210" r="5" fill="none" stroke="#D9EFCB" stroke-width="2" />
+            <circle cx="349" cy="187" r="7" fill="none" stroke="#D9EFCB" stroke-width="2" />
+            <circle cx="313" cy="338" r="4" fill="#DE9B65" />
+
+          </svg>
 
         </div>
 
-
-        <div class="conservation-grid bio-double-grid">
-          <!-- [Creates a responsive layout with two chart cards.] -->
-
-
-          <!-- LEFT CHART: PROTECTED LAND GROWTH -->
-          <article class="conservation-panel bio-chart-card">
-            <!-- [Creates the chart card for the time-series visualisation.] -->
-
-            <div class="bio-card-top">
-
-              <span class="bio-card-label">
-                PROTECTED LAND GROWTH · 2004–2024
-              </span>
-
-            </div>
-
-
-            <div
-              id="conservation_growth_chart"
-              class="conservation-chart bio-chart-space"
-            ></div>
-            <!-- [JavaScript loads the protected-land growth chart here.] -->
-
-
-            <p class="conservation-note bio-card-note">
-              CAPAD observations are available for
-              published reporting years.
-
-              The connecting line does not represent
-              separately measured intermediate years.
-            </p> <!-- [Explains a limitation of the time-series data.] -->
-
-          </article>
-
-
-
-          <!-- RIGHT CHART: GOVERNANCE WAFFLE -->
-          <article class="conservation-panel bio-chart-card">
-            <!-- [Creates the chart card for the waffle chart.] -->
-
-            <div class="bio-card-top">
-
-              <span class="bio-card-label">
-                PROTECTED-AREA GOVERNANCE · 2024
-              </span>
-
-            </div>
-
-
-            <div
-              id="governance_waffle_chart"
-              class="conservation-chart bio-chart-space"
-            ></div>
-            <!-- [JavaScript inserts the governance waffle chart here.] -->
-
-
-            <p class="conservation-note bio-card-note">
-              Each square represents approximately 1%
-              of protected terrestrial land.
-
-              Hover to see the precise percentage
-              and area.
-            </p>
-            <!-- [Explains how to read the waffle chart.] -->
-
-          </article>
-
-        </div>
-
-
-        <p class="key-finding"> <!-- [Highlights the main result from both charts.] -->
-
-          <strong>Key Finding:</strong>
-
-          The percentage of Australia's land protected
-          for conservation more than doubled, from
-          10.52% in 2004 to 22.57% in 2024.
-
-          In 2024, community-governed areas accounted
-          for 49.48% of Australia's terrestrial
-          protected-area estate, demonstrating the
-          significant role of community stewardship.
-
-        </p>
-
       </div>
 
-    </section>
+      <div class="site-hero-ground" aria-hidden="true"></div>
 
+    </header>
 
+    <main>
 
-    <!-- ==========================================
-         FIELD NOTE 01
-         PROTECTED AREAS → THREATENED SPECIES
-    ========================================== -->
+      <!-- ==========================================
+           FOLLOW THE STORY — THREE CHAPTERS
+      ========================================== -->
 
-    <aside
-      class="field-note field-note--protect"
-      aria-labelledby="field-note-protect-title"
-    > <!-- [Creates a storytelling box linking the first and second chapters.] -->
-
-      <div class="field-note-top"> <!-- [Displays the Field Note label and icon.] -->
-
-        <i
-          data-lucide="book-open"
-          aria-hidden="true"
-        ></i> <!-- [Book icon represents a field note.] -->
-
-        <span>
-          FIELD NOTE 01 — THE NEXT QUESTION
-        </span>
-
-      </div>
-
-      <h3 id="field-note-protect-title">
-        More land is protected. But what about the wildlife?
-      </h3> <!-- [Introduces the next chapter's main question.] -->
-
-      <p>
-        Australia's protected-area network has expanded
-        over time.
-
-        However, the amount of land protected alone
-        cannot tell us whether threatened wildlife
-        populations are recovering.
-      </p>
-
-      <a
-        href="#threatened-species"
-        class="field-note-next"
+      <nav
+        class="journey-nav"
+        id="journey"
+        aria-label="Biodiversity story chapters"
       >
-        NEXT: THREATENED NATIVE SPECIES
-        <span aria-hidden="true">→</span>
-      </a> <!-- [Takes readers to the Threatened Species chapter.] -->
 
-    </aside>
+        <div class="journey-intro">
 
+          <div class="journey-intro-heading">
 
-
-    <!-- ==========================================
-         SECTION 3: THREATENED SPECIES INDEX
-         CHAPTER 2 — UNDERSTAND (01/02)
-    ========================================== -->
-
-    <section
-      id="threatened-species"
-      class="trend-section story-section story-section--wildlife"
-    > <!-- [Starts Chapter 2 about threatened native species.] -->
-
-
-      <div class="story-banner"> <!-- [Creates the threatened wildlife banner.] -->
-
-        <div class="story-banner-copy"> <!-- [Contains the introductory text.] -->
-
-          <p class="story-eyebrow">
-            AUSTRALIA'S BIODIVERSITY / THREATENED WILDLIFE
-          </p>
-
-          <h2>Australia's Disappearing Wildlife</h2>
-
-          <p class="story-intro">
-            Australia is home to an extraordinary range
-            of native species, but many face increasing
-            threats to their survival.
-
-            The Australian Threatened Species Index
-            tracks changes in the relative abundance
-            of monitored threatened species over time.
-          </p>
-
-          <a
-            class="story-jump"
-            href="#tsx_trend_chart"
-          >
-            Explore the data
-            <span aria-hidden="true">↘</span>
-          </a> <!-- [Scrolls to the Threatened Species Index chart.] -->
-
-        </div>
-
-        <div class="story-emblem" aria-hidden="true">
-          <i data-lucide="trending-down"></i>
-        </div> <!-- [Decorative downward-trend icon.] -->
-
-      </div>
-
-
-      <div class="story-content"> <!-- [Contains the TSX visualisation.] -->
-
-        <div class="bio-figure-intro"> <!-- [Heading and section number.] -->
-
-          <div>
-
-            <p class="bio-step">
-              01 — THREATENED WILDLIFE
+            <p class="journey-eyebrow">
+              <span aria-hidden="true">✦</span>
+              FOLLOW THE STORY
             </p>
 
-            <h3>
-              Tracking Wildlife Populations Over Time
-            </h3>
-
-            <p>
-              Explore how the estimated relative abundance
-              of Australia's monitored threatened wildlife
-              changed between 1985 and 2022.
-            </p>
+            <h2>One continent. Three connected questions.</h2>
 
           </div>
 
-          <span
-            class="bio-figure-number"
-            aria-hidden="true"
-          >
-            01 <small>/ 02</small>
-          </span> <!-- [First of two Threatened Species sections.] -->
+          <p class="journey-intro-description">
+            Start with the land we protect, discover what is happening
+            to native species, then see conservation efforts in action.
+            Choose a chapter below to explore the data.
+          </p>
 
         </div>
 
+        <div class="journey-track">
 
-        <!-- THREATENED SPECIES TREND CARD -->
-        <article
-          class="bio-chart-card"
-          aria-label="Threatened species trend chart"
-        > <!-- [Creates the chart card for the interactive line chart.] -->
+          <!-- CHAPTER 01: PROTECT -->
+          <a class="journey-step journey-step--protect" href="#protected-areas">
 
-          <div class="bio-card-top">
+            <div class="journey-step-top">
 
-            <span class="bio-card-label">
-              THREATENED SPECIES INDEX · 1985–2022
+              <span class="journey-step-number">01</span>
+
+              <span class="journey-step-icon" aria-hidden="true">
+                <i data-lucide="shield-check"></i>
+              </span>
+
+            </div>
+
+            <div class="journey-step-copy">
+
+              <strong>PROTECT</strong>
+
+              <h3>Where are habitats protected?</h3>
+
+              <p>
+                Compare protected land across Australia, explore how
+                coverage has changed and see who manages these areas.
+              </p>
+
+            </div>
+
+            <div class="journey-step-footer">
+              Explore protected areas
+              <span class="journey-step-arrow" aria-hidden="true">↗</span>
+            </div>
+
+          </a>
+
+          <!-- CHAPTER 02: UNDERSTAND -->
+          <a class="journey-step journey-step--understand" href="#threatened-species">
+
+            <div class="journey-step-top">
+
+              <span class="journey-step-number">02</span>
+
+              <span class="journey-step-icon" aria-hidden="true">
+                <i data-lucide="bird"></i>
+              </span>
+
+            </div>
+
+            <div class="journey-step-copy">
+
+              <strong>UNDERSTAND</strong>
+
+              <h3>How is our wildlife changing?</h3>
+
+              <p>
+                Follow threatened-species trends and investigate
+                how extinction risk differs across species groups.
+              </p>
+
+            </div>
+
+            <div class="journey-step-footer">
+              Explore threatened species
+              <span class="journey-step-arrow" aria-hidden="true">↗</span>
+            </div>
+
+          </a>
+
+          <!-- CHAPTER 03: ACT -->
+          <a class="journey-step journey-step--act" href="#reef-conservation">
+
+            <div class="journey-step-top">
+
+              <span class="journey-step-number">03</span>
+
+              <span class="journey-step-icon" aria-hidden="true">
+                <i data-lucide="waves"></i>
+              </span>
+
+            </div>
+
+            <div class="journey-step-copy">
+
+              <strong>ACT</strong>
+
+              <h3>What does conservation look like?</h3>
+
+              <p>
+                Explore crown-of-thorns starfish control on the reef
+                and koala habitat protection after the bushfires.
+              </p>
+
+            </div>
+
+            <div class="journey-step-footer">
+              Explore conservation efforts
+              <span class="journey-step-arrow" aria-hidden="true">↗</span>
+            </div>
+
+          </a>
+
+        </div>
+
+        <p class="journey-help">
+          <i data-lucide="mouse-pointer-2" aria-hidden="true"></i>
+          Interactive tip: hover over charts, try the dropdowns and select
+          different species groups as you follow the story.
+        </p>
+
+      </nav>
+
+      <!-- ==========================================
+                  SECTION 1: PROTECTED LAND
+                  CHAPTER 1 — PROTECT (01/02)
+        ========================================== -->
+
+      <section class="map-section story-section story-section--land" id="protected-areas">
+
+        <!-- INTRODUCTION BANNER -->
+
+        <div class="story-banner">
+          <div class="story-banner-copy">
+            <p class="story-eyebrow">AUSTRALIA'S BIODIVERSITY / PROTECTED HABITATS</p>
+            <h2>How Much of Australia Is Protected?</h2>
+            <p class="story-intro">
+              Australia's protected areas play an important
+                        role in conserving natural habitats and
+                        ecosystems. However, the proportion of protected
+                        land varies significantly across states
+                        and territories.
+            </p>
+
+            <a class="story-jump" href="#protected_land_map">
+              Explore the data
+              <span aria-hidden="true">↘</span>
+            </a>
+          </div>
+
+          <div aria-hidden="true" class="story-emblem">
+            <i data-lucide="shield-check">
+            </i>
+          </div>
+        </div>
+
+        <!-- SECTION CONTENT -->
+
+        <div class="story-content">
+          <div class="bio-figure-intro">
+            <div>
+              <p class="bio-step">01 — PROTECTED HABITATS</p>
+              <h3>Where Is Australia's Protected Land?</h3>
+              <p>
+                Explore protected land across Australia's
+                            states and territories, and compare the
+                            percentage of each jurisdiction covered.
+              </p>
+            </div>
+            <span aria-hidden="true" class="bio-figure-number">
+              01
+              <small>/ 02</small>
             </span>
-
-            <span class="bio-card-chip">
-              Interactive
-            </span> <!-- [Shows that the chart is interactive.] -->
-
           </div>
 
+          <!-- PROTECTED LAND MAP CARD -->
 
-          <div
-            id="tsx_controls"
-            class="bio-chart-controls"
-          ></div>
-          <!-- [Vega-Lite inserts the species-group dropdown here.] -->
+          <article aria-label="Protected land map" class="bio-chart-card">
+            <div class="bio-card-top">
+              <span class="bio-card-label">PROTECTED LAND · CAPAD 2024</span>
+            </div>
 
+            <p class="bio-card-note map-hover-note">
+              Hover over a state or territory to see
+                        the percentage of its land that is protected.
+            </p>
 
-          <div
-            id="tsx_trend_chart"
-            class="bio-chart-space"
-          ></div>
-          <!-- [JavaScript renders the Threatened Species Index line chart here.] -->
+            <div class="bio-chart-space" id="protected_land_map">
+            </div>
 
+            <p class="map-abbreviations">
+              <strong>State abbreviations:</strong>
+              NSW = New South Wales · VIC = Victoria · QLD = Queensland ·
+                        SA = South Australia · WA = Western Australia · TAS = Tasmania ·
+                        NT = Northern Territory · ACT = Australian Capital Territory
+            </p>
+          </article>
 
-          <p class="chart-note bio-card-note">
-            Choose a species group and hover over
-            the chart for details.
+          <p class="key-finding">
+            <strong>Key Finding:</strong>
+            The Australian Capital Territory (ACT) has the highest percentage of protected
+                    land at 55.9%, followed by Tasmania at 42.8%.
+                    Queensland has the lowest among the eight main
+                    jurisdictions, at 9.4%.
+          </p>
+        </div>
+      </section>
 
-            The index starts at 1 in 1985, and
-            the shaded area shows uncertainty
-            around the estimated trend.
-          </p> <!-- [Explains the line chart and uncertainty band.] -->
+      <!-- ==========================================
+                  SECTION 2: CONSERVATION NETWORK
+                  CHAPTER 1 — PROTECT (02/02)
+        ========================================== -->
 
-        </article>
+      <section class="conservation-section story-section story-section--network" id="conservation-network">
+        <div class="story-banner">
+          <div class="story-banner-copy">
+            <p class="story-eyebrow">AUSTRALIA'S BIODIVERSITY / CONSERVATION NETWORK</p>
+            <h2>Protecting Australia's Natural Heritage</h2>
+            <p class="conservation-intro story-intro">
+              Australia's protected-area network has expanded
+                        over the past two decades. Explore the long-term
+                        growth in protected land, then discover how
+                        this land was managed in 2024.
+            </p>
 
+            <a class="story-jump" href="#conservation_growth_chart">
+              Explore the data
+              <span aria-hidden="true">↘</span>
+            </a>
+          </div>
 
-        <p class="key-finding"> <!-- [Highlighted conclusion for the TSX chart.] -->
+          <div aria-hidden="true" class="story-emblem">
+            <i data-lucide="trees">
+            </i>
+          </div>
+        </div>
 
-          <strong>Key Finding:</strong>
+        <div class="story-content">
+          <div class="bio-figure-intro">
+            <div>
+              <p class="bio-step">02 — CONSERVATION NETWORK</p>
+              <h3>How Has Australia's Protected Land Changed?</h3>
+              <p>
+                Compare two perspectives: the expansion
+                            of protected land over time and who manages
+                            the protected-area estate in 2024.
+              </p>
+            </div>
+            <span aria-hidden="true" class="bio-figure-number">
+              02
+              <small>/ 02</small>
+            </span>
+          </div>
 
-          The overall threatened species index
-          declined from 1.00 in 1985 to approximately
-          0.25 in 2022, representing a decrease
-          of around 75%.
+          <div class="conservation-grid bio-double-grid">
 
-          This indicates a substantial decline in
-          the relative abundance of monitored
-          threatened species.
+            <!-- LEFT CHART: PROTECTED LAND GROWTH -->
 
+            <article class="conservation-panel bio-chart-card">
+              <div class="bio-card-top">
+                <span class="bio-card-label">PROTECTED LAND GROWTH · 2004–2024</span>
+              </div>
+
+              <div class="conservation-chart bio-chart-space" id="conservation_growth_chart">
+              </div>
+
+              <p class="conservation-note bio-card-note">
+                <strong>How to read:</strong>
+                The line shows the percentage
+                            of Australia's terrestrial land protected for conservation.
+                            The green area fills the space below the line; it is not
+                            an uncertainty band. Points represent published CAPAD
+                            reporting years, not observations for every intervening year.
+              </p>
+            </article>
+
+            <!-- RIGHT CHART: GOVERNANCE WAFFLE -->
+
+            <article class="conservation-panel bio-chart-card">
+              <div class="bio-card-top">
+                <span class="bio-card-label">PROTECTED-AREA GOVERNANCE · 2024</span>
+              </div>
+
+              <div class="conservation-chart bio-chart-space" id="governance_waffle_chart">
+              </div>
+
+              <div aria-label="Rounded shares of protected areas by governance: 50 percent community, 38 percent government, 6 percent joint, 6 percent private" class="waffle-annotations">
+                <div class="waffle-stat">
+                  <span class="waffle-dot community">
+                  </span>
+                  <strong>50%</strong>
+                  <span>Community</span>
+                </div>
+
+                <div class="waffle-stat">
+                  <span class="waffle-dot government">
+                  </span>
+                  <strong>38%</strong>
+                  <span>Government</span>
+                </div>
+
+                <div class="waffle-stat">
+                  <span class="waffle-dot joint">
+                  </span>
+                  <strong>6%</strong>
+                  <span>Joint</span>
+                </div>
+
+                <div class="waffle-stat">
+                  <span class="waffle-dot private">
+                  </span>
+                  <strong>6%</strong>
+                  <span>Private</span>
+                </div>
+              </div>
+
+              <p class="conservation-note bio-card-note">
+                <strong>How to read:</strong>
+                Each square represents
+                            approximately 1% of Australia's terrestrial protected-area
+                            estate in 2024. Colours show who governs these areas.
+                            The percentages displayed above are rounded; hover over
+                            a square for the precise percentage and protected area.
+              </p>
+            </article>
+          </div>
+
+          <p class="key-finding">
+            <strong>Key Finding:</strong>
+            The percentage of Australia's land protected
+                    for conservation more than doubled, from
+                    10.52% in 2004 to 22.57% in 2024.
+                    In 2024, community-governed areas accounted
+                    for 49.48% of Australia's terrestrial
+                    protected-area estate, demonstrating the
+                    significant role of community stewardship.
+          </p>
+        </div>
+      </section>
+
+      <!-- ==========================================
+                  FIELD NOTE 01
+                  PROTECTED AREAS → THREATENED SPECIES
+        ========================================== -->
+
+      <aside aria-labelledby="field-note-protect-title" class="field-note field-note--protect">
+        <div class="field-note-top">
+          <i aria-hidden="true" data-lucide="book-open">
+          </i>
+          <span>FIELD NOTE 01 — THE NEXT QUESTION</span>
+        </div>
+
+        <h3 id="field-note-protect-title">More land is protected. But what about the wildlife?</h3>
+        <p>
+          Australia's protected-area network has expanded
+                over time.
+                However, the amount of land protected alone
+                cannot tell us whether threatened wildlife
+                populations are recovering.
         </p>
 
-      </div>
+        <a class="field-note-next" href="#threatened-species">
+          NEXT: THREATENED NATIVE SPECIES
+          <span aria-hidden="true">→</span>
+        </a>
+      </aside>
 
-    </section>
+      <!-- ==========================================
+                  SECTION 3: THREATENED SPECIES INDEX
+                  CHAPTER 2 — UNDERSTAND (01/02)
+        ========================================== -->
 
+      <section class="trend-section story-section story-section--wildlife" id="threatened-species">
+        <div class="story-banner">
+          <div class="story-banner-copy">
+            <p class="story-eyebrow">AUSTRALIA'S BIODIVERSITY / THREATENED WILDLIFE</p>
+            <h2>Australia's Disappearing Wildlife</h2>
+            <p class="story-intro">
+              Australia is home to an extraordinary range
+                        of native species, but many face increasing
+                        threats to their survival.
+                        The Australian Threatened Species Index
+                        tracks changes in the relative abundance
+                        of monitored threatened species over time.
+            </p>
 
+            <a class="story-jump" href="#tsx_trend_chart">
+              Explore the data
+              <span aria-hidden="true">↘</span>
+            </a>
+          </div>
 
-    <!-- ==========================================
-         SECTION 4: SPECIES EXPLORER
-         CHAPTER 2 — UNDERSTAND (02/02)
-    ========================================== -->
-
-    <section
-      class="species-section"
-      id="species-explorer"
-    > <!-- [Creates the interactive Species Explorer section.] -->
-
-
-      <div class="bio-step-header"> <!-- [Section title and number.] -->
-
-        <div>
-
-          <p class="bio-step-label">
-            02 — EXPLORE THREATENED WILDLIFE
-          </p>
-
-          <h2>
-            A Closer Look at Australia's Threatened Wildlife
-          </h2>
-
-          <p class="bio-step-intro">
-            Compare the conservation status of threatened
-            species across five groups.
-
-            Choose a group below to explore a different
-            visualisation. Each chart highlights
-            a different part of the story.
-          </p>
-
+          <div aria-hidden="true" class="story-emblem">
+            <i data-lucide="trending-down">
+            </i>
+          </div>
         </div>
 
+        <div class="story-content">
+          <div class="bio-figure-intro">
+            <div>
+              <p class="bio-step">01 — THREATENED WILDLIFE</p>
+              <h3>Tracking Wildlife Populations Over Time</h3>
+              <p>
+                Explore how the estimated relative abundance
+                            of Australia's monitored threatened wildlife
+                            changed between 1985 and 2022.
+              </p>
+            </div>
+            <span aria-hidden="true" class="bio-figure-number">
+              01
+              <small>/ 02</small>
+            </span>
+          </div>
 
-        <div class="bio-step-number" aria-hidden="true">
-          <!-- [Displays this as part 2 of 2 in Threatened Species.] -->
+          <!-- THREATENED SPECIES TREND CARD -->
 
-          <span class="bio-step-number-main">
-            02
-          </span>
+          <article aria-label="Threatened species trend chart" class="bio-chart-card">
+            <div class="bio-card-top">
+              <span class="bio-card-label">THREATENED SPECIES INDEX · 1985–2022</span>
+              <span class="bio-card-chip">Interactive</span>
+            </div>
 
-          <span class="bio-step-number-total">
-            / 02
-          </span>
+            <div class="bio-chart-controls" id="tsx_controls">
+            </div>
 
-        </div>
+            <div class="bio-chart-space" id="tsx_trend_chart">
+            </div>
 
-      </div>
+            <p class="chart-note bio-card-note">
+              <strong>How to read:</strong>
+              The index starts at 1 in 1985.
+                        A value of 0.5 means the estimated relative abundance of
+                        monitored threatened wildlife is half its 1985 level.
+                        The line shows the estimated trend; the shaded band shows
+                        uncertainty around that estimate. A wider band indicates
+                        a less precise estimate, not more wildlife. Select a species
+                        group and hover for details. Where a combined series is
+                        derived rather than officially published, interpret it separately.
+            </p>
+          </article>
 
-
-
-      <article class="bio-chart-card species-card">
-        <!-- [Creates the main interactive Species Explorer chart card.] -->
-
-        <div class="bio-chart-card-top">
-          <!-- [Top row showing the chart category and interactive badge.] -->
-
-          <p class="bio-chart-kicker">
-            EXPLORE THREATENED WILDLIFE · FIVE GROUPS
-          </p>
-
-          <span class="bio-chart-badge">
-            Interactive
-          </span>
-
-        </div>
-
-
-
-        <!-- SPECIES SELECTION BUTTONS -->
-        <div
-          class="species-icons"
-          role="group"
-          aria-label="Choose species group"
-        > <!-- [Groups five clickable buttons used to switch charts.] -->
-
-
-          <button
-            type="button"
-            class="species-btn active"
-            data-species="all"
-          > <!-- [Shows the All Species chart; active means selected.] -->
-            <i data-lucide="globe"></i>
-            <span>All Species</span>
-          </button>
-
-
-          <button
-            type="button"
-            class="species-btn"
-            data-species="birds"
-          > <!-- [JavaScript reads 'birds' to load the bird map.] -->
-            <i data-lucide="bird"></i>
-            <span>Birds</span>
-          </button>
-
-
-          <button
-            type="button"
-            class="species-btn"
-            data-species="mammals"
-          > <!-- [JavaScript reads 'mammals' to load the mammal heatmap.] -->
-            <i data-lucide="paw-print"></i>
-            <span>Mammals</span>
-          </button>
-
-
-          <button
-            type="button"
-            class="species-btn"
-            data-species="plants"
-          > <!-- [JavaScript reads 'plants' to load the plant butterfly chart.] -->
-            <i data-lucide="flower-2"></i>
-            <span>Plants</span>
-          </button>
-
-
-          <button
-            type="button"
-            class="species-btn"
-            data-species="reptiles"
-          > <!-- [JavaScript reads 'reptiles' to load the connected dot plot.] -->
-            <i data-lucide="turtle"></i>
-            <span>Reptiles &amp; Amphibians</span>
-          </button>
-
-        </div>
-
-
-
-        <div
-          class="species-divider"
-          aria-hidden="true"
-        ></div> <!-- [Adds a visual divider between buttons and the chart.] -->
-
-
-
-        <div class="species-display">
-          <!-- [Contains the title, description, controls, chart and finding.] -->
-
-
-          <h3 id="species-chart-title">
-            How Severe Are the Threats Facing
-            Different Species Groups?
-          </h3>
-          <!-- [JavaScript changes this heading when a species button is clicked.] -->
-
-
-          <p id="species-chart-description">
-            Compare monitored species groups by their
-            recorded level of extinction risk.
-
-            Hover over the chart for the exact values.
-          </p>
-          <!-- [JavaScript updates this description for each selected chart.] -->
-
-
-          <p
-            id="species-chart-instruction"
-            class="species-chart-instruction"
-            hidden
-          >
-            Select a state or territory from the
-            dropdown to explore the bird monitoring map.
-
-            Hover over circles for monitoring-region details.
-          </p>
-          <!-- [Bird instructions are initially hidden and shown only for Birds.] -->
-
-
-          <div
-            id="species_controls"
-            class="species-controls"
-          ></div>
-          <!-- [JavaScript displays the selected chart's dropdown controls here.] -->
-
-
-          <div
-            id="species_chart"
-            class="species-chart-frame"
-          ></div>
-          <!-- [Shared chart area where JavaScript loads the selected Vega-Lite chart.] -->
-
-
-          <p
-            id="species-chart-finding"
-            class="key-finding"
-          > <!-- [JavaScript changes the key finding for each species group.] -->
-
+          <p class="key-finding">
             <strong>Key Finding:</strong>
-
-            Reptiles &amp; Amphibians and Plants
-            have high shares of monitored species
-            classified as Endangered or
-            Critically Endangered.
-
+            The overall threatened species index
+                    declined from 1.00 in 1985 to approximately
+                    0.25 in 2022, representing a decrease
+                    of around 75%.
+                    This indicates a substantial decline in
+                    the relative abundance of monitored
+                    threatened species.
           </p>
+        </div>
+      </section>
 
+      <!-- ==========================================
+                  SECTION 4: SPECIES EXPLORER
+                  CHAPTER 2 — UNDERSTAND (02/02)
+        ========================================== -->
+
+      <section class="species-section" id="species-explorer">
+        <div class="bio-step-header">
+          <div>
+            <p class="bio-step-label">02 — EXPLORE THREATENED WILDLIFE</p>
+            <h2>A Closer Look at Australia's Threatened Wildlife</h2>
+            <p class="bio-step-intro">
+              Compare the conservation status of threatened
+                        species across five groups.
+                        Choose a group below to explore a different
+                        visualisation. Each chart highlights
+                        a different part of the story.
+            </p>
+          </div>
+
+          <div aria-hidden="true" class="bio-step-number">
+            <span class="bio-step-number-main">02</span>
+            <span class="bio-step-number-total">/ 02</span>
+          </div>
         </div>
 
-      </article>
+        <article class="bio-chart-card species-card">
+          <div class="bio-chart-card-top">
+            <p class="bio-chart-kicker">EXPLORE THREATENED WILDLIFE · FIVE GROUPS</p>
+            <span class="bio-chart-badge">Interactive</span>
+          </div>
 
-    </section>
+          <!-- SPECIES SELECTION BUTTONS -->
 
+          <div aria-label="Choose species group" class="species-icons" role="group">
+            <button class="species-btn active" data-species="all" type="button">
+              <i data-lucide="globe">
+              </i>
+              <span>All Species</span>
+            </button>
+            <button class="species-btn" data-species="birds" type="button">
+              <i data-lucide="bird">
+              </i>
+              <span>Birds</span>
+            </button>
+            <button class="species-btn" data-species="mammals" type="button">
+              <i data-lucide="paw-print">
+              </i>
+              <span>Mammals</span>
+            </button>
+            <button class="species-btn" data-species="plants" type="button">
+              <i data-lucide="flower-2">
+              </i>
+              <span>Plants</span>
+            </button>
+            <button class="species-btn" data-species="reptiles" type="button">
+              <i data-lucide="turtle">
+              </i>
+              <span>Reptiles &amp; Amphibians</span>
+            </button>
+          </div>
 
+          <div aria-hidden="true" class="species-divider">
+          </div>
 
-    <!-- ==========================================
-         FIELD NOTE 02
-         THREATENED SPECIES → CONSERVATION
-    ========================================== -->
+          <div class="species-display">
+            <h3 id="species-chart-title">
+              How Severe Are the Threats Facing
+                        Different Species Groups?
+            </h3>
 
-    <aside
-      class="field-note field-note--understand"
-      aria-labelledby="field-note-understand-title"
-    > <!-- [Creates a storytelling transition to conservation programs.] -->
+            <p id="species-chart-description">
+              Compare monitored species groups by their
+                        recorded level of extinction risk.
+                        Hover over the chart for the exact values.
+            </p>
 
-      <div class="field-note-top">
+            <p class="species-chart-instruction" hidden="" id="species-chart-instruction">
+              Select a state or territory from the
+                        dropdown to explore the bird monitoring map.
+                        Hover over circles for monitoring-region details.
+            </p>
 
-        <i
-          data-lucide="book-open"
-          aria-hidden="true"
-        ></i>
+            <div class="species-controls" id="species_controls">
+            </div>
 
-        <span>
-          FIELD NOTE 02 — THE NEXT QUESTION
-        </span>
+            <div class="species-chart-frame" id="species_chart">
+            </div>
 
-      </div>
+            <p class="key-finding" id="species-chart-finding">
+              <strong>Key Finding:</strong>
+              Reptiles &amp; Amphibians and Plants
+                        have high shares of monitored species
+                        classified as Endangered or
+                        Critically Endangered.
+            </p>
+          </div>
+        </article>
+      </section>
 
+      <!-- ==========================================
+                  FIELD NOTE 02
+                  THREATENED SPECIES → CONSERVATION
+        ========================================== -->
 
-      <h3 id="field-note-understand-title">
-        Understanding the decline is only part of the story.
-      </h3> <!-- [Connects wildlife decline to conservation responses.] -->
-
-
-      <p>
-        Monitoring reveals major challenges
-        for Australia's threatened wildlife.
-
-        Conservation also involves responding
-        to specific environmental threats
-        through practical action.
-      </p>
-
-
-      <a
-        href="#reef-conservation"
-        class="field-note-next"
-      >
-        NEXT: CONSERVATION IN ACTION
-        <span aria-hidden="true">→</span>
-      </a> <!-- [Link that jumps to the Great Barrier Reef section.] -->
-
-    </aside>
-
-
-
-    <!-- ==========================================
-         SECTION 5: GREAT BARRIER REEF
-         CHAPTER 3 — ACT
-         CONSERVATION PROGRAM 01 / 03
-    ========================================== -->
-
-    <section
-      id="reef-conservation"
-      class="reef-section"
-      aria-labelledby="reef-heading"
-    > <!-- [Creates the Great Barrier Reef conservation section.] -->
-
-
-
-      <!-- REEF HERO -->
-      <div class="reef-hero"> <!-- [Creates the dark teal introduction banner.] -->
-
-        <div class="reef-hero-content">
-          <!-- [Contains the Reef heading and introduction.] -->
-
-          <p class="reef-eyebrow">
-            CONSERVATION PROGRAM 01 / 03
-            <span aria-hidden="true">/</span>
-            THE GREAT BARRIER REEF
-          </p> <!-- [Identifies the Reef as the first conservation program.] -->
-
-
-          <h2 id="reef-heading">
-            A Fight for the Reef
-          </h2>
-
-
-          <p class="reef-hero-lead">
-            Stretching more than 2,300 kilometres
-            along Queensland's coast, the Great
-            Barrier Reef supports extraordinary
-            marine life.
-
-            But one native predator can become
-            a serious threat when its numbers
-            explode: the coral-eating
-            crown-of-thorns starfish.
-          </p> <!-- [Introduces the conservation threat.] -->
-
-
-          <p class="reef-hero-sub">
-            Since 2012, the Crown-of-thorns
-            Starfish Control Program has deployed
-            specialist dive teams to survey reefs,
-            detect outbreaks and remove starfish
-            from priority locations.
-
-            Explore the scale of this work,
-            a documented control case study
-            and historical monitoring patterns.
-          </p> <!-- [Explains the control program and the visualisations.] -->
-
-
-          <a
-            class="reef-hero-link"
-            href="#reef-activity"
-          >
-            Explore the data
-            <span aria-hidden="true">↘</span>
-          </a> <!-- [Scrolls to the first Reef chart.] -->
-
+      <aside aria-labelledby="field-note-understand-title" class="field-note field-note--understand">
+        <div class="field-note-top">
+          <i aria-hidden="true" data-lucide="book-open">
+          </i>
+          <span>FIELD NOTE 02 — THE NEXT QUESTION</span>
         </div>
 
+        <h3 id="field-note-understand-title">Understanding the decline is only part of the story.</h3>
+        <p>
+          Monitoring reveals major challenges
+                for Australia's threatened wildlife.
+                Conservation also involves responding
+                to specific environmental threats
+                through practical action.
+        </p>
 
+        <a class="field-note-next" href="#reef-conservation">
+          NEXT: CONSERVATION IN ACTION
+          <span aria-hidden="true">→</span>
+        </a>
+      </aside>
 
-        <!-- STARFISH ILLUSTRATION -->
-        <svg
-          class="reef-art"
-          viewBox="0 0 350 310"
-          role="img"
-          aria-label="Illustration of coral and a crown-of-thorns starfish"
-        > <!-- [Creates a scalable illustration using SVG shapes.] -->
+      <!-- ==========================================
+                  SECTION 5: GREAT BARRIER REEF
+                  CHAPTER 3 — ACT
+                  CONSERVATION PROGRAM 01 / 02
+        ========================================== -->
 
-          <defs> <!-- [Stores reusable SVG definitions.] -->
+      <section aria-labelledby="reef-heading" class="reef-section" id="reef-conservation">
 
-            <linearGradient
-              id="reef-glow"
-              x1="0"
-              x2="1"
-              y1="0"
-              y2="1"
-            > <!-- [Defines the gradient used for the background glow.] -->
+        <!-- REEF HERO -->
 
-              <stop
-                stop-color="#4DE5D2"
-                stop-opacity=".55"
-              /> <!-- [Starting colour of the gradient.] -->
+        <div class="reef-hero">
+          <div class="reef-hero-content">
+            <p class="reef-eyebrow">
+              CONSERVATION PROGRAM 01 / 02
+              <span aria-hidden="true">/</span>
+              THE GREAT BARRIER REEF
+            </p>
 
-              <stop
-                offset="1"
-                stop-color="#126A79"
-                stop-opacity=".15"
-              /> <!-- [Ending colour of the gradient.] -->
+            <h2 id="reef-heading">A Fight for the Reef</h2>
+            <p class="reef-hero-lead">
+              Stretching more than 2,300 kilometres
+                        along Queensland's coast, the Great
+                        Barrier Reef supports extraordinary
+                        marine life.
+                        But one native predator can become
+                        a serious threat when its numbers
+                        explode: the coral-eating
+                        crown-of-thorns starfish.
+            </p>
 
-            </linearGradient>
+            <p class="reef-hero-sub">
+              Since 2012, the Crown-of-thorns
+                        Starfish Control Program has deployed
+                        specialist dive teams to survey reefs,
+                        detect outbreaks and remove starfish
+                        from priority locations.
+                        Explore the scale of this work,
+                        a documented control case study
+                        and historical monitoring patterns.
+            </p>
 
-          </defs>
+            <a class="reef-hero-link" href="#reef-activity">
+              Explore the data
+              <span aria-hidden="true">↘</span>
+            </a>
+          </div>
 
+          <!-- STARFISH ILLUSTRATION -->
 
-          <!-- BACKGROUND GLOW -->
-          <circle
-            cx="192"
-            cy="142"
-            r="124"
-            fill="url(#reef-glow)"
-          /> <!-- [Draws a large circle using the gradient.] -->
+          <svg aria-label="Illustration of coral and a crown-of-thorns starfish" class="reef-art" role="img" viewbox="0 0 350 310">
+            <defs>
+              <lineargradient id="reef-glow" x1="0" x2="1" y1="0" y2="1">
+                <stop stop-color="#4DE5D2" stop-opacity=".55">
+                </stop>
+                <stop offset="1" stop-color="#126A79" stop-opacity=".15">
+                </stop>
+              </lineargradient>
+            </defs>
 
+            <!-- BACKGROUND GLOW -->
+            <circle cx="192" cy="142" fill="url(#reef-glow)" r="124">
+            </circle>
+            <circle cx="192" cy="142" fill="none" r="92" stroke="#97E8E0" stroke-opacity=".24" stroke-width="1.5">
+            </circle>
 
-          <circle
-            cx="192"
-            cy="142"
-            r="92"
-            fill="none"
-            stroke="#97E8E0"
-            stroke-opacity=".24"
-            stroke-width="1.5"
-          /> <!-- [Draws a circular outline behind the starfish.] -->
-
-
-
-          <!-- CORAL -->
-          <g
-            fill="none"
-            stroke="#83D8BF"
-            stroke-linecap="round"
-            stroke-width="10"
-            opacity=".84"
-          > <!-- [Groups the coral branch shapes.] -->
-
-            <path
-              d="M48 292 Q65 261 54 224
-                 M54 258 L27 237
-                 M56 247 L77 221
-                 M54 276 L84 251"
-            /> <!-- [Draws the left coral branches.] -->
-
-            <path
-              d="M268 305 Q274 266 290 220
-                 M281 254 L311 239
-                 M285 247 L271 221
-                 M274 280 L250 251"
-            /> <!-- [Draws the right coral branches.] -->
-
-          </g>
-
-
-
-          <!-- STARFISH -->
-          <g
-            transform="translate(191,137)"
-            fill="#ECA57B"
-            stroke="#FFD1AE"
-            stroke-width="3"
-            stroke-linejoin="round"
-          > <!-- [Positions and colours the starfish illustration.] -->
-
-            <path
-              d="M0 -85 L19 -44 L48 -71
-                 L46 -30 L87 -33 L55 -7
-                 L91 17 L48 21 L59 63
-                 L20 44 L2 91 L-18 48
-                 L-54 68 L-47 27 L-88 20
-                 L-55 -6 L-88 -37 L-44 -31
-                 L-51 -72 L-18 -47 Z"
-            /> <!-- [Draws the outer starfish shape using coordinates.] -->
-
-
-            <circle
-              r="37"
-              fill="#F2B088"
-              stroke="#FFD2B4"
-            /> <!-- [Creates the circular centre of the starfish.] -->
-
-
-            <g fill="#B96357" stroke="none">
-              <!-- [Groups small decorative spots on the starfish.] -->
-
-              <circle cx="-11" cy="-13" r="4"/>
-              <circle cx="15" cy="-14" r="3"/>
-              <circle cx="-18" cy="12" r="3"/>
-              <circle cx="8" cy="17" r="4"/>
-              <circle cx="26" cy="5" r="2.8"/>
-              <circle cx="-2" cy="-27" r="2.8"/>
-
+            <!-- CORAL -->
+            <g fill="none" opacity=".84" stroke="#83D8BF" stroke-linecap="round" stroke-width="10">
+              <path d="M48 292 Q65 261 54 224
+                                  M54 258 L27 237
+                                  M56 247 L77 221
+                                  M54 276 L84 251">
+              </path>
+              <path d="M268 305 Q274 266 290 220
+                                  M281 254 L311 239
+                                  M285 247 L271 221
+                                  M274 280 L250 251">
+              </path>
             </g>
 
-          </g>
+            <!-- STARFISH -->
+            <g fill="#ECA57B" stroke="#FFD1AE" stroke-linejoin="round" stroke-width="3" transform="translate(191,137)">
+              <path d="M0 -85 L19 -44 L48 -71
+                                  L46 -30 L87 -33 L55 -7
+                                  L91 17 L48 21 L59 63
+                                  L20 44 L2 91 L-18 48
+                                  L-54 68 L-47 27 L-88 20
+                                  L-55 -6 L-88 -37 L-44 -31
+                                  L-51 -72 L-18 -47 Z">
+              </path>
+              <circle fill="#F2B088" r="37" stroke="#FFD2B4">
+              </circle>
+              <g fill="#B96357" stroke="none">
+                <circle cx="-11" cy="-13" r="4">
+                </circle>
+                <circle cx="15" cy="-14" r="3">
+                </circle>
+                <circle cx="-18" cy="12" r="3">
+                </circle>
+                <circle cx="8" cy="17" r="4">
+                </circle>
+                <circle cx="26" cy="5" r="2.8">
+                </circle>
+                <circle cx="-2" cy="-27" r="2.8">
+                </circle>
+              </g>
+            </g>
 
+            <!-- BUBBLES -->
+            <g fill="none" opacity=".65" stroke="#B7F4E7" stroke-width="2">
+              <circle cx="61" cy="112" r="6">
+              </circle>
+              <circle cx="76" cy="87" r="3">
+              </circle>
+              <circle cx="300" cy="101" r="7">
+              </circle>
+              <circle cx="313" cy="75" r="4">
+              </circle>
+              <circle cx="112" cy="40" r="4">
+              </circle>
+            </g>
+          </svg>
 
-
-          <!-- BUBBLES -->
-          <g
-            fill="none"
-            stroke="#B7F4E7"
-            stroke-width="2"
-            opacity=".65"
-          > <!-- [Creates decorative bubbles around the illustration.] -->
-
-            <circle cx="61" cy="112" r="6"/>
-            <circle cx="76" cy="87" r="3"/>
-            <circle cx="300" cy="101" r="7"/>
-            <circle cx="313" cy="75" r="4"/>
-            <circle cx="112" cy="40" r="4"/>
-
-          </g>
-
-        </svg>
-
-
-        <div
-          class="reef-hero-water"
-          aria-hidden="true"
-        ></div> <!-- [Adds a decorative water effect using CSS.] -->
-
-      </div>
-
-
-
-      <!-- ==========================================
-           REEF KPI STRIP
-      ========================================== -->
-
-      <div
-        class="reef-kpis"
-        aria-label="2025 to 2026 control program results"
-      > <!-- [Creates four statistic cards about the control program.] -->
-
-
-        <div class="reef-kpi"> <!-- [First KPI card.] -->
-
-          <span class="reef-kpi-icon" aria-hidden="true">✦</span>
-          <strong>64,879</strong> <!-- [Displays the main statistic.] -->
-          <span>Starfish removed</span>
-          <small>2025–26</small>
-
+          <div aria-hidden="true" class="reef-hero-water">
+          </div>
         </div>
 
-
-        <div class="reef-kpi"> <!-- [Second KPI card.] -->
-
-          <span class="reef-kpi-icon" aria-hidden="true">◉</span>
-          <strong>220</strong>
-          <span>Reefs actioned</span>
-          <small>2025–26</small>
-
-        </div>
-
-
-        <div class="reef-kpi"> <!-- [Third KPI card.] -->
-
-          <span class="reef-kpi-icon" aria-hidden="true">〰</span>
-          <strong>13,210 <em>ha</em></strong>
-          <span>Reef habitat culled</span>
-          <small>2025–26</small>
-
-        </div>
-
-
-        <div class="reef-kpi"> <!-- [Fourth KPI card.] -->
-
-          <span class="reef-kpi-icon" aria-hidden="true">⌁</span>
-          <strong>17,528</strong>
-          <span>Hours spent culling</span>
-          <small>2025–26</small>
-
-        </div>
-
-      </div>
-
-
-
-      <!-- ==========================================
-           REEF CHART 1
-           ANNUAL STARFISH REMOVAL
-      ========================================== -->
-
-      <div
-        class="reef-story-header"
-        id="reef-activity"
-      > <!-- [Introduces the first Reef chart.] -->
-
-        <div>
-
-          <p class="reef-step">
-            01 — CONSERVATION EFFORT
-          </p> <!-- [Identifies the first chart in the Reef program.] -->
-
-          <h3>
-            How Much Action Happens Beneath the Surface?
-          </h3>
-
-          <p>
-            Compare the number of starfish removed
-            each year with the time spent by specialist
-            dive teams.
-
-            Activity depends on outbreak conditions
-            and the resources available.
-          </p>
-
-        </div>
-
-
-        <div
-          class="reef-step-icon"
-          aria-hidden="true"
-        >
-          01 <span>/ 03</span>
-        </div> <!-- [Shows chart 1 of 3 within the Reef program.] -->
-
-      </div>
-
-
-
-      <div class="reef-viz-card reef-viz-wide">
-        <!-- [Creates a wide chart card for annual program activity.] -->
-
-        <div class="reef-viz-top">
-          <!-- [Top row containing the chart label and badge.] -->
-
-          <span class="reef-viz-label">
-            PROGRAM ACTIVITY · 2019–20 TO 2025–26
-          </span>
-
-          <span class="reef-viz-chip">
-            Interactive
-          </span>
-
-        </div>
-
-
-        <div
-          id="reef_activity_controls"
-          class="reef-controls"
-        ></div>
-        <!-- [Vega-Lite inserts the dropdown for choosing a metric here.] -->
-
-
-        <div
-          id="reef_activity_chart"
-          class="reef-chart"
-        ></div>
-        <!-- [JavaScript renders the annual control activity chart here.] -->
-
-
-        <p class="reef-chart-note">
-          The 2022–23 starfish total is reported
-          as <strong>more than 48,200</strong>.
-
-          Its gold bar represents that minimum,
-          not an exact total.
-        </p> <!-- [Explains that this reported value is a lower bound.] -->
-
-      </div>
-
-
-
-      <!-- ==========================================
-           REEF CHART 2
-           JOHN BREWER REEF CASE STUDY
-      ========================================== -->
-
-      <div class="reef-story-header reef-story-compact">
-        <!-- [Introduces the John Brewer Reef case study.] -->
-
-        <div>
-
-          <p class="reef-step">
-            02 — MEASURED CONTROL OUTCOME
-          </p>
-
-          <h3>
-            Can Targeted Removal Reduce Starfish Numbers?
-          </h3>
-
-          <p>
-            John Brewer Reef provides a real
-            before-and-during-control case study.
-
-            This one-reef result shows a reduction
-            in observed starfish, not the impact
-            of the program everywhere.
-          </p>
-
-        </div>
-
-      </div>
-
-
-
-      <div class="reef-case-layout">
-        <!-- [Creates a two-column layout with the chart and explanation.] -->
-
-
-        <!-- LEFT: DUMBBELL CHART -->
-        <article
-          class="reef-viz-card reef-viz-compact reef-case-chart"
-        > <!-- [Creates the card containing the dumbbell chart.] -->
-
-          <div class="reef-viz-top">
-
-            <span class="reef-viz-label">
-              02 · JOHN BREWER REEF
-            </span>
-
-            <span class="reef-viz-chip">
-              2018 / 2019
-            </span>
-
+        <!-- ==========================================
+                      REEF KPI STRIP
+            ========================================== -->
+        <div aria-label="2025 to 2026 control program results" class="reef-kpis">
+          <div class="reef-kpi">
+            <span aria-hidden="true" class="reef-kpi-icon">✦</span>
+            <strong>64,879</strong>
+            <span>Starfish removed</span>
+            <small>2025–26</small>
           </div>
 
+          <div class="reef-kpi">
+            <span aria-hidden="true" class="reef-kpi-icon">◉</span>
+            <strong>220</strong>
+            <span>Reefs actioned</span>
+            <small>2025–26</small>
+          </div>
 
-          <h4>
-            From Outbreak to Suppression
-          </h4>
+          <div class="reef-kpi">
+            <span aria-hidden="true" class="reef-kpi-icon">〰</span>
+            <strong>
+              13,210
+              <em>ha</em>
+            </strong>
+            <span>Reef habitat culled</span>
+            <small>2025–26</small>
+          </div>
 
+          <div class="reef-kpi">
+            <span aria-hidden="true" class="reef-kpi-icon">⌁</span>
+            <strong>17,528</strong>
+            <span>Hours spent culling</span>
+            <small>2025–26</small>
+          </div>
+        </div>
 
-          <p class="reef-card-deck">
-            Starfish observations during targeted
-            crown-of-thorns control at John Brewer Reef.
-          </p> <!-- [Short description of what the chart measures.] -->
+        <!-- ==========================================
+                      REEF CHART 1
+                      ANNUAL STARFISH REMOVAL
+            ========================================== -->
+        <div class="reef-story-header" id="reef-activity">
+          <div>
+            <p class="reef-step">01 — CONSERVATION EFFORT</p>
+            <h3>How Much Action Happens Beneath the Surface?</h3>
+            <p>
+              Compare the number of starfish removed
+                        each year with the time spent by specialist
+                        dive teams.
+                        Activity depends on outbreak conditions
+                        and the resources available.
+            </p>
+          </div>
 
+          <div aria-hidden="true" class="reef-step-icon">
+            01
+            <span>/ 03</span>
+          </div>
+        </div>
 
-          <div
-            id="reef_before_after_chart"
-            class="reef-chart"
-          ></div>
-          <!-- [JavaScript inserts the before-and-after dumbbell chart here.] -->
+        <div class="reef-viz-card reef-viz-wide">
+          <div class="reef-viz-top">
+            <span class="reef-viz-label">PROGRAM ACTIVITY · 2019–20 TO 2025–26</span>
+            <span class="reef-viz-chip">Interactive</span>
+          </div>
 
+          <div class="reef-controls" id="reef_activity_controls">
+          </div>
+
+          <div class="reef-chart" id="reef_activity_chart">
+          </div>
 
           <p class="reef-chart-note">
-            The chart compares November 2018
-            with March 2019.
+            The 2022–23 starfish total is reported
+                    as
+            <strong>more than 48,200</strong>
+            .
+                    Its gold bar represents that minimum,
+                    not an exact total.
+          </p>
+        </div>
 
-            Results apply to this reef only.
-          </p> <!-- [Explains that the case study covers one reef.] -->
+        <!-- ==========================================
+                      REEF CHART 2
+                      JOHN BREWER REEF CASE STUDY
+            ========================================== -->
+        <div class="reef-story-header reef-story-compact">
+          <div>
+            <p class="reef-step">02 — MEASURED CONTROL OUTCOME</p>
+            <h3>Can Targeted Removal Reduce Starfish Numbers?</h3>
+            <p>
+              John Brewer Reef provides a real
+                        before-and-during-control case study.
+                        This one-reef result shows a reduction
+                        in observed starfish, not the impact
+                        of the program everywhere.
+            </p>
+          </div>
+        </div>
 
+        <div class="reef-case-layout">
+
+          <!-- LEFT: DUMBBELL CHART -->
+
+          <article class="reef-viz-card reef-viz-compact reef-case-chart">
+            <div class="reef-viz-top">
+              <span class="reef-viz-label">02 · JOHN BREWER REEF</span>
+              <span class="reef-viz-chip">2018 / 2019</span>
+            </div>
+
+            <h4>From Outbreak to Suppression</h4>
+            <p class="reef-card-deck">
+              Starfish observations during targeted
+                        crown-of-thorns control at John Brewer Reef.
+            </p>
+
+            <div class="reef-chart" id="reef_before_after_chart">
+            </div>
+
+            <p class="reef-chart-note">
+              <strong>How to read:</strong>
+              The two dots compare average crown-of-thorns starfish observed per manta tow in November 2018 and March 2019. This result applies to John Brewer Reef only and does not establish wider reef recovery.
+            </p>
+          </article>
+        </div>
+
+        <!-- ==========================================
+                      REEF CHART 3
+                      CORAL COVER CHOROPLETH
+            ========================================== -->
+        <div class="reef-story-header reef-story-compact" id="reef-coral-condition">
+          <div>
+            <p class="reef-step">03 — THE BIGGER REEF PICTURE</p>
+            <h3>
+              Where Is Live Coral Cover Highest Across
+                        Reef Bioregions?
+            </h3>
+
+            <p>
+              Reef Authority marine bioregions show the
+                        spatial context of the Great Barrier Reef.
+                        Explore how AIMS monitoring estimates vary
+                        between surveyed bioregions over four
+                        reporting periods.
+                        These are coral-cover observations,
+                        not measurements of starfish-control
+                        effectiveness.
+            </p>
+          </div>
+        </div>
+
+        <article class="reef-viz-card reef-map-wide reef-choropleth-card">
+          <p class="reef-map-instruction">Select a reporting period or map view, then hover over regions to explore live coral-cover estimates.</p>
+          <div aria-live="polite" class="reef-map-status" id="reef_choropleth_status" role="status">Loading coral-cover map…</div>
+          <div class="reef-controls reef-map-controls" id="reef_coral_choropleth_controls">
+          </div>
+
+          <div class="reef-region-row">
+            <label for="reef_region_view">Map view:</label>
+            <select id="reef_region_view">
+              <option value="all">Entire Great Barrier Reef</option>
+              <option value="north">Northern Reef</option>
+              <option value="central">Central Reef</option>
+              <option value="south">Southern Reef</option>
+            </select>
+          </div>
+
+          <div class="reef-chart reef-full-map" id="reef_coral_choropleth_chart">
+          </div>
+
+          <p class="reef-map-summary">
+            <strong>How to read:</strong>
+            Darker colours indicate higher average estimated live coral cover among monitored reefs in each marine region. Grey areas have no matched observations for the selected period; this does not mean they lack coral. Estimates represent monitored reefs, not every reef in a region.
+          </p>
+
+          <p class="reef-data-attribution">
+            Sources: Australian Institute of Marine Science (AIMS) Long-Term Monitoring Program and Great Barrier Reef Marine Park Authority marine bioregion boundaries.
+          </p>
         </article>
 
-
-
-        <!-- RIGHT: CASE STUDY FINDING -->
-        <aside
-          class="reef-impact-story"
-          aria-label="John Brewer Reef case study result"
-        > <!-- [Creates the text panel beside the dumbbell chart.] -->
-
-
-          <p class="reef-impact-eyebrow">
-            CONTROL CASE STUDY
-          </p>
-
-          <div class="reef-impact-number">
-            90<span>% ↓</span>
-          </div> <!-- [Highlights the 90% decrease in observations.] -->
-
-
-          <h4>
-            Fewer starfish observed per manta tow
-          </h4>
-
-
-          <p>
-            The reported average fell from
-            <strong>3.5</strong> to
-            <strong>0.35</strong> during intensive
-            control operations.
-
-            More than 20,000 starfish were
-            removed between those surveys.
-          </p>
-
-
-          <p class="reef-impact-note">
-            This is an observed change at one reef.
-
-            It does not establish that starfish
-            control alone explains wider changes
-            in coral health.
-          </p> <!-- [Clarifies that the result does not prove wider causation.] -->
-
-        </aside>
-
-      </div>
-
-
+        <p class="reef-takeaway">
+          <span aria-hidden="true" class="reef-takeaway-icon">✦</span>
+          <span>
+            <strong>Why this matters:</strong>
+            Starfish control targets an important
+                    coral predator, while long-term monitoring
+                    reveals how coral habitat varies across
+                    the Great Barrier Reef.
+                    Coral cover is also influenced by marine
+                    heatwaves, bleaching, cyclones and
+                    other pressures, so the map should
+                    not be interpreted as an effect
+                    of starfish control alone.
+          </span>
+        </p>
+      </section>
 
       <!-- ==========================================
-           REEF CHART 3
-           CORAL COVER CHOROPLETH
+                  KOALA CONSERVATION PROGRAM — CASE STUDY 02
+        ========================================== -->
+
+      <section class="koala-program" id="koala-program">
+        <div class="koala-hero">
+          <div class="koala-hero-copy">
+            <p class="koala-program-kicker">CONSERVATION PROGRAM 02 / 02 · KOALAS AFTER THE 2019–20 BUSHFIRES</p>
+            <h2>After the Fires</h2>
+            <p class="koala-hero-intro">
+              The Black Summer bushfires affected important koala habitat in New South Wales. Explore where suitable habitat was exposed to fire and how announced conservation funding is directed towards protecting and restoring koala habitat.
+            </p>
+
+            <a class="koala-hero-btn" href="#koala-map-block">
+              Explore the data
+              <span aria-hidden="true">↘</span>
+            </a>
+          </div>
+
+          <div aria-hidden="true" class="koala-hero-graphic">
+            <div class="koala-hero-orb">
+              <div class="koala-hero-orb-inner">
+                <span class="koala-orb-number">22%</span>
+                <span class="koala-orb-label">of highly suitable habitat was fire-affected (approximate NSW estimate)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="koala-stats-strip">
+          <div class="koala-stat">
+            <div class="koala-stat-number">22%</div>
+            <div class="koala-stat-label">High-suitability habitat affected</div>
+            <div class="koala-stat-sub">Approximate NSW-wide estimate</div>
+          </div>
+
+          <div class="koala-stat">
+            <div class="koala-stat-number">68%</div>
+            <div class="koala-stat-label">South Coast habitat within the fire footprint</div>
+            <div class="koala-stat-sub">Highest of six reported regions</div>
+          </div>
+
+          <div class="koala-stat">
+            <div class="koala-stat-number">A$102.1m</div>
+            <div class="koala-stat-label">Selected announced habitat allocations</div>
+            <div class="koala-stat-sub">NSW Koala Strategy, 2021–26</div>
+          </div>
+
+          <div class="koala-stat">
+            <div class="koala-stat-number">47,000 ha</div>
+            <div class="koala-stat-label">Combined area targets</div>
+            <div class="koala-stat-sub">Across the four selected actions, not achieved area</div>
+          </div>
+        </div>
+
+        <div class="koala-story-block" id="koala-map-block">
+          <div class="koala-story-top">
+            <div>
+              <p class="koala-step-label">01 — FIRE IMPACT MAP</p>
+              <h3>Where Was Suitable Koala Habitat Most Affected?</h3>
+              <p>
+                Explore official New South Wales koala modelling regions
+                and compare how much suitable koala habitat was exposed
+                to the 2019–20 bushfires. The annotations highlight the
+                highest and lowest reported regional percentages.
+              </p>
+            </div>
+
+            <div class="koala-step-counter">
+              01
+              <span>/ 03</span>
+            </div>
+          </div>
+
+          <!-- ==========================================
+               KOALA CHOROPLETH MAP + SIDE ANNOTATIONS
+          ========================================== -->
+
+          <article class="koala-viz-card">
+
+            <p class="koala-card-kicker">
+              KOALA MODELLING REGIONS · 2019–20
+            </p>
+
+            <!-- Map and two explanatory annotations share one three-column layout. -->
+            <div class="koala-map-layout">
+
+              <!-- LEFT: Lowest reported fire exposure. -->
+              <aside class="koala-side-note koala-side-note--left">
+
+                <span class="koala-side-note-label">
+                  LOWEST FIRE EXPOSURE
+                </span>
+
+                <h4>Northwest Slopes</h4>
+
+                <p class="koala-side-note-value">
+                  2%
+                  <span>of suitable habitat</span>
+                </p>
+
+                <p>
+                  Only a small share of the region's modelled suitable
+                  koala habitat fell within the 2019–20 fire footprint.
+                </p>
+
+              </aside>
+
+              <!-- CENTRE: Interactive choropleth and a short data note. -->
+              <div class="koala-map-centre">
+
+                <div
+                  id="koala_fire_map_chart"
+                  class="koala-chart"
+                ></div>
+
+                <p class="koala-map-note">
+                  <strong>Grey regions:</strong>
+                  No comparable percentage is available in this dataset.
+                  Grey does not mean zero fire exposure.
+                </p>
+
+              </div>
+
+              <!-- RIGHT: Highest reported fire exposure. -->
+              <aside class="koala-side-note koala-side-note--right">
+
+                <span class="koala-side-note-label">
+                  HIGHEST FIRE EXPOSURE
+                </span>
+
+                <h4>South Coast</h4>
+
+                <p class="koala-side-note-value">
+                  68%
+                  <span>of suitable habitat</span>
+                </p>
+
+                <p>
+                  More than two-thirds of modelled suitable koala habitat
+                  was within the fire footprint, the highest share reported.
+                </p>
+
+              </aside>
+
+            </div>
+
+            <!-- MAP EXPLANATION -->
+            <p class="koala-how">
+              <strong>How to read:</strong>
+              Coloured shapes represent official NSW koala modelling
+              regions. The colour bands show the percentage of modelled
+              suitable habitat inside the 2019–20 fire footprint.
+              Green shades indicate lower exposure, and orange shades
+              indicate higher exposure. Hover over each region for details.
+            </p>
+
+            <!-- KEY FINDING -->
+            <p class="key-finding">
+              <strong>Key finding:</strong>
+              Suitable habitat within the fire footprint ranged from
+              2% in the Northwest Slopes to 68% on the South Coast.
+              These figures describe habitat exposure, not the number
+              of koalas killed.
+            </p>
+
+          </article>
+        </div>
+
+        <!-- ==========================================
+             KOALA CHART 02 — DEVIATION LOLLIPOP
+        ========================================== -->
+
+        <div class="koala-story-block">
+
+          <div class="koala-story-top">
+
+            <div>
+
+              <p class="koala-step-label">
+                02 — A CLOSER LOOK AT FIRE EXPOSURE
+              </p>
+
+              <h3>A Statewide Figure Hides Local Differences</h3>
+
+              <p>
+                About 22% of highly suitable koala habitat across New South Wales
+                was within the 2019–20 fire footprint. But that statewide estimate
+                does not describe every region. Which regions were most different
+                from the broader NSW picture?
+              </p>
+
+            </div>
+
+            <div class="koala-step-counter" aria-hidden="true">
+              02 <span>/ 03</span>
+            </div>
+
+          </div>
+
+
+          <article class="koala-viz-card">
+
+            <p class="koala-card-kicker">
+              ABOVE AND BELOW THE STATEWIDE REFERENCE · 2019–20
+            </p>
+
+            <div class="koala-deviation-intro">
+
+              <span class="koala-deviation-reference">
+                <strong>~22%</strong>
+                NSW-wide exposure estimate
+              </span>
+
+              <p>
+                See how each region compares with the statewide estimate,
+                rather than only ranking the regional percentages.
+              </p>
+
+            </div>
+
+
+            <!-- Advanced diverging lollipop chart -->
+            <div
+              class="koala-chart"
+              id="koala_exposure_difference_chart"
+            ></div>
+
+
+            <div class="koala-deviation-guide">
+
+              <span>
+                <i class="koala-deviation-key koala-deviation-key--below"></i>
+                Below statewide reference
+              </span>
+
+              <span>
+                <i class="koala-deviation-key koala-deviation-key--above"></i>
+                Above statewide reference
+              </span>
+
+              <span>
+                <i class="koala-deviation-key koala-deviation-key--reference"></i>
+                Zero = approximately 22% NSW-wide
+              </span>
+
+            </div>
+
+
+            <p class="koala-how">
+              <strong>How to read:</strong>
+              Each dot shows how many <strong>percentage points</strong> a
+              region's fire-exposure share differs from the approximate
+              NSW-wide estimate. Orange dots are above that reference and
+              green dots are below it. A negative difference does
+              <strong>not</strong> mean that no habitat burnt.
+            </p>
+
+
+            <p class="key-finding">
+              <strong>Key Finding:</strong>
+              The South Coast was approximately <strong>46 percentage points
+              above</strong> the NSW-wide reference (68% versus roughly 22%),
+              while the Northwest Slopes was around 20 points below.
+              These figures indicate differences in habitat exposure,
+              not koala deaths, fire severity or total habitat destroyed.
+            </p>
+
+            <p class="koala-deviation-caveat">
+              <strong>Data note:</strong> The 22% statewide estimate is
+              approximate. The differences are calculated using that rounded
+              reference; they should be read as approximate comparisons,
+              not precise estimates of ecological damage.
+            </p>
+
+          </article>
+
+        </div>
+
+
+        <!-- ==========================================
+             KOALA CHART 03 — HABITAT FUNDING
+        ========================================== -->
+
+        <div class="koala-story-block">
+
+          <div class="koala-story-top">
+
+            <div>
+
+              <p class="koala-step-label">
+                03 — THE CONSERVATION RESPONSE
+              </p>
+
+              <h3>Protecting What Remains, Restoring What Was Lost</h3>
+
+              <p>
+                Koala conservation requires both protecting existing habitat
+                and repairing degraded landscapes. Of the A$102.1 million
+                across four selected NSW Koala Strategy allocations,
+                A$70.6 million supports habitat protection and
+                A$31.5 million supports habitat restoration.
+              </p>
+
+              <p>
+                These are announced allocations under the broader 2021–26
+                strategy, not spending exclusively on recovery from
+                the 2019–20 bushfires.
+              </p>
+
+            </div>
+
+            <div class="koala-step-counter" aria-hidden="true">
+              03 <span>/ 03</span>
+            </div>
+
+          </div>
+
+
+          <article class="koala-viz-card">
+
+            <p class="koala-card-kicker">
+              WHERE THE FUNDING GOES · NSW KOALA STRATEGY 2021–26
+            </p>
+
+            <!-- ==========================================
+                 FUNDING COMPARISON — ONE SHARED AXIS
+            ========================================== -->
+
+            <div class="koala-funding-visual-header">
+
+              <div>
+
+                <h4>How Do the Four Allocations Compare?</h4>
+
+                <p>
+                  Selected announced funding under the NSW Koala Strategy,
+                  2021–26. Each bar uses the same A$ million scale.
+                </p>
+
+              </div>
+
+              <div class="koala-funding-visual-total">
+
+                <strong>A$102.1m</strong>
+
+                <span>Selected funding total</span>
+
+              </div>
+
+            </div>
+
+
+            <!-- Colour key sits above the plot, not between the bars. -->
+            <div class="koala-funding-mini-legend" aria-label="Funding purpose colours">
+
+              <span class="koala-funding-mini-legend-item">
+                <i class="koala-funding-mini-legend-dot koala-funding-mini-legend-dot--protect" aria-hidden="true"></i>
+                Habitat protection
+              </span>
+
+              <span class="koala-funding-mini-legend-item">
+                <i class="koala-funding-mini-legend-dot koala-funding-mini-legend-dot--restore" aria-hidden="true"></i>
+                Habitat restoration
+              </span>
+
+            </div>
+
+
+            <!-- One aligned four-bar chart. The chart has no internal group headings. -->
+            <div
+              class="koala-chart koala-funding-bar-chart"
+              id="koala_funding_grouped_chart"
+            ></div>
+
+
+            <!-- Summaries of the four selected allocations -->
+            <div
+              class="koala-funding-highlights"
+              aria-label="Funding breakdown across selected actions"
+            >
+
+              <div class="koala-funding-highlight koala-funding-highlight--protect">
+
+                <span class="koala-funding-highlight-eyebrow">
+                  HABITAT PROTECTION
+                </span>
+
+                <strong>69.1%</strong>
+
+                <span>A$70.6m across two protection actions</span>
+
+              </div>
+
+              <div class="koala-funding-highlight koala-funding-highlight--restore">
+
+                <span class="koala-funding-highlight-eyebrow">
+                  HABITAT RESTORATION
+                </span>
+
+                <strong>30.9%</strong>
+
+                <span>A$31.5m across two restoration actions</span>
+
+              </div>
+
+              <div class="koala-funding-highlight koala-funding-highlight--largest">
+
+                <span class="koala-funding-highlight-eyebrow">
+                  LARGEST INDIVIDUAL ALLOCATION
+                </span>
+
+                <strong>A$50.3m</strong>
+
+                <span>National park additions</span>
+
+              </div>
+
+            </div>
+
+
+            <p class="koala-how">
+
+              <strong>How to read:</strong>
+              The bars share one scale, from A$0 to A$55 million.
+              Green bars represent habitat protection, while orange bars
+              represent habitat restoration. The figures are announced
+              allocations, not confirmed expenditure. Hover over a bar
+              to see its funding amount and proposed habitat area target.
+
+            </p>
+
+
+            <!-- Explanations of the four funded actions -->
+            <div class="koala-funding-explainer">
+
+              <div class="koala-funding-explainer-heading">
+
+                <p class="koala-step-label">
+                  WHAT THE INVESTMENT SUPPORTS
+                </p>
+
+                <h4>Four approaches to koala habitat conservation</h4>
+
+                <p>
+                  Protection secures habitat already in place. Restoration
+                  aims to improve habitat condition and connectivity over
+                  time. Area figures are targets, not verified completed results.
+                </p>
+
+              </div>
+
+
+              <div class="koala-funding-action-grid">
+
+                <div
+                  class="koala-funding-action"
+                  style="--funding-accent: #31765A"
+                >
+
+                  <span class="koala-funding-action-number">
+                    01 · PROTECT
+                  </span>
+
+                  <h5>National park additions</h5>
+
+                  <p>
+                    Bring more suitable koala habitat into protected
+                    areas to secure important landscapes over time.
+                  </p>
+
+                  <span class="koala-funding-action-target">
+                    A$50.3m · 15,000 ha target
+                  </span>
+
+                </div>
+
+
+                <div
+                  class="koala-funding-action"
+                  style="--funding-accent: #7CA98A"
+                >
+
+                  <span class="koala-funding-action-number">
+                    02 · CONSERVE
+                  </span>
+
+                  <h5>Private land protection</h5>
+
+                  <p>
+                    Conserve koala habitat on privately owned land,
+                    including areas outside national parks.
+                  </p>
+
+                  <span class="koala-funding-action-target">
+                    A$20.3m · 7,000 ha target
+                  </span>
+
+                </div>
+
+
+                <div
+                  class="koala-funding-action"
+                  style="--funding-accent: #D77A50"
+                >
+
+                  <span class="koala-funding-action-number">
+                    03 · RESTORE
+                  </span>
+
+                  <h5>Box-gum woodland restoration</h5>
+
+                  <p>
+                    Support native woodland restoration and improve
+                    ecological condition in landscapes important to wildlife.
+                  </p>
+
+                  <span class="koala-funding-action-target">
+                    A$16.0m · 5,000 ha target
+                  </span>
+
+                </div>
+
+
+                <div
+                  class="koala-funding-action"
+                  style="--funding-accent: #E1AE70"
+                >
+
+                  <span class="koala-funding-action-number">
+                    04 · RECONNECT
+                  </span>
+
+                  <h5>Coordinated habitat restoration</h5>
+
+                  <p>
+                    Support landscape-scale projects that can improve
+                    habitat quality and links between natural areas.
+                  </p>
+
+                  <span class="koala-funding-action-target">
+                    A$15.5m · 20,000 ha target
+                  </span>
+
+                </div>
+
+              </div>
+
+            </div>
+
+
+            <p class="koala-funding-context">
+
+              <strong>Why this matters after the fires:</strong>
+              Retaining unburnt habitat and restoring damaged landscapes
+              can complement bushfire recovery, although these allocations
+              address koala conservation more broadly.
+
+            </p>
+
+
+            <p class="key-finding">
+
+              <strong>Key Finding:</strong>
+              About 69% of the funding shown goes to habitat protection
+              and 31% to restoration. National park additions receive
+              almost half of the selected total. These are funding plans,
+              not evidence that all habitat targets have been achieved
+              or that koala populations have recovered.
+
+            </p>
+
+          </article>
+
+        </div>
+
+      </section>
+      <!-- ==========================================
+           DATA REFERENCES — APA 7
       ========================================== -->
 
-      <div
-        class="reef-story-header reef-story-compact"
-        id="reef-coral-condition"
-      > <!-- [Introduces the final Reef visualisation.] -->
+      <section
+        class="data-credits-section"
+        id="data-and-credits"
+        aria-labelledby="data-credits-heading"
+      >
 
-        <div>
+        <!-- Simple reference section heading -->
+        <div class="data-credits-hero">
 
-          <p class="reef-step">
-            03 — THE BIGGER REEF PICTURE
-          </p>
+          <p class="data-credits-kicker">THE SOURCES BEHIND THE STORY</p>
 
-          <h3>
-            Where Is Live Coral Cover Highest Across
-            Reef Bioregions?
-          </h3>
+          <h2 id="data-credits-heading">Data References</h2>
 
-          <p>
-            Reef Authority marine bioregions show the
-            spatial context of the Great Barrier Reef.
-
-            Explore how AIMS monitoring estimates vary
-            between surveyed bioregions over four
-            reporting periods.
-
-            These are coral-cover observations,
-            not measurements of starfish-control
-            effectiveness.
-          </p>
-
-        </div>
-
-      </div>
-
-
-
-      <article
-        class="reef-viz-card reef-map-wide reef-choropleth-card"
-      > <!-- [Creates the full-width chart card for the coral cover map.] -->
-
-        <div class="reef-viz-top">
-
-          <span class="reef-viz-label">
-            AIMS REEF SURVEYS + REEF AUTHORITY
-            BIOREGIONS · 1986–2025
-          </span>
-
-          <span class="reef-viz-chip">
-            Interactive choropleth map
-          </span>
+          <p>Original datasets, reports and research · APA 7th edition</p>
 
         </div>
 
 
+        <!-- Alphabetical reference list with clickable source links -->
+        <div class="data-credits-content">
 
-        <p class="reef-map-instruction">
-          Select a reporting period and a map view
-          to zoom in on small reef polygons.
+          <div class="data-reference-card">
 
-          Hover over a coloured marine bioregion
-          to see the number of matched reef
-          observations and their average live
-          hard coral cover.
+            <ul class="data-apa-list">
+              <li class="data-apa-entry">
+                    Australian Bureau of Statistics. (2025, September 15). <em>Protected areas</em>.
+                    <a href="https://www.abs.gov.au/statistics/measuring-what-matters/measuring-what-matters-themes-and-indicators/sustainable/protected-areas" target="_blank" rel="noopener noreferrer">https://www.abs.gov.au/statistics/measuring-what-matters/measuring-what-matters-themes-and-indicators/sustainable/protected-areas</a>
+              </li>
 
-          Select <strong>Show surveyed reefs</strong>
-          to reveal individual locations.
-        </p> <!-- [Instructions explaining how to interact with the choropleth.] -->
+              <li class="data-apa-entry">
+                    Australian Institute of Marine Science. (n.d.). <em>Long-Term Monitoring Program</em>.
+                    <a href="https://www.aims.gov.au/research-topics/monitoring-and-discovery/monitoring-great-barrier-reef/long-term-monitoring-program" target="_blank" rel="noopener noreferrer">https://www.aims.gov.au/research-topics/monitoring-and-discovery/monitoring-great-barrier-reef/long-term-monitoring-program</a>
+              </li>
 
+              <li class="data-apa-entry">
+                    Clear Horizon Consulting. (2024). <em>Reef Trust Partnership: End-of-portfolio evaluation</em> [Evaluation report]. Great Barrier Reef Foundation.
+                    <a href="https://www.barrierreef.org/uploads/RTP-EOP-Evaluation-Report-2024-FINAL-combined.pdf" target="_blank" rel="noopener noreferrer">https://www.barrierreef.org/uploads/RTP-EOP-Evaluation-Report-2024-FINAL-combined.pdf</a>
+              </li>
 
+              <li class="data-apa-entry">
+                    Department of Climate Change, Energy, the Environment and Water. (2026). <em>Collaborative Australian Protected Areas Database 2024</em> [Data set].
+                    <a href="https://www.dcceew.gov.au/environment/land/nrs/science/capad/2024" target="_blank" rel="noopener noreferrer">https://www.dcceew.gov.au/environment/land/nrs/science/capad/2024</a>
+              </li>
 
-        <div
-          id="reef_choropleth_status"
-          class="reef-map-status"
-          role="status"
-          aria-live="polite"
-        >
-          Loading official reef bioregion
-          boundaries and matching AIMS monitoring sites…
-        </div>
-        <!-- [Shows loading or error messages while the map data loads.] -->
+              <li class="data-apa-entry">
+                    Department of Climate Change, Energy, the Environment and Water. (2026). <em>EPBC Act publications and resources</em>.
+                    <a href="https://www.dcceew.gov.au/environment/epbc/publications" target="_blank" rel="noopener noreferrer">https://www.dcceew.gov.au/environment/epbc/publications</a>
+              </li>
 
+              <li class="data-apa-entry">
+                    Department of Planning, Industry and Environment. (2020). <em>Fire and the environment 2019–20: Summary</em> [Report].
+                    <a href="https://www.environment.nsw.gov.au/publications/fire-and-environment-2019-20-summary" target="_blank" rel="noopener noreferrer">https://www.environment.nsw.gov.au/publications/fire-and-environment-2019-20-summary</a>
+              </li>
 
+              <li class="data-apa-entry">
+                    Great Barrier Reef Marine Park Authority. (n.d.-a). <em>Crown-of-thorns starfish control program dashboard</em> [Interactive dashboard].
+                    <a href="https://www.gbrmpa.gov.au/our-work/programs-and-projects/crown-thorns-starfish-management/crown-thorns-starfish-control-program-dashboard" target="_blank" rel="noopener noreferrer">https://www.gbrmpa.gov.au/our-work/programs-and-projects/crown-thorns-starfish-management/crown-thorns-starfish-control-program-dashboard</a>
+              </li>
 
-        <div
-          id="reef_coral_choropleth_controls"
-          class="reef-controls reef-map-controls"
-        ></div>
-        <!-- [Displays Vega-Lite dropdowns and map filters.] -->
+              <li class="data-apa-entry">
+                    Great Barrier Reef Marine Park Authority. (n.d.-b). <em>Marine bioregions of the Great Barrier Reef</em> [Geospatial data layer].
+                    <a href="https://services7.arcgis.com/VR04g7C6WRYLS9jd/ArcGIS/rest/services/GBRMPA_Data/FeatureServer/11" target="_blank" rel="noopener noreferrer">https://services7.arcgis.com/VR04g7C6WRYLS9jd/ArcGIS/rest/services/GBRMPA_Data/FeatureServer/11</a>
+              </li>
 
+              <li class="data-apa-entry">
+                    Hogan, R. (n.d.). <em>Australian states</em> [GeoJSON data file]. GitHub.
+                    <a href="https://github.com/rowanhogan/australian-states/blob/master/states.geojson" target="_blank" rel="noopener noreferrer">https://github.com/rowanhogan/australian-states/blob/master/states.geojson</a>
+              </li>
 
+              <li class="data-apa-entry">
+                    International Union for Conservation of Nature. (2026). <em>The IUCN Red List of Threatened Species (Version 2026-1)</em> [Database].
+                    <a href="https://www.iucnredlist.org/" target="_blank" rel="noopener noreferrer">https://www.iucnredlist.org/</a>
+              </li>
 
-        <div class="reef-region-row">
-          <!-- [Groups the regional zoom dropdown and its label.] -->
+              <li class="data-apa-entry">
+                    NSW Department of Climate Change, Energy, the Environment and Water. (n.d.). <em>Koala habitat conservation</em>.
+                    <a href="https://www.environment.nsw.gov.au/topics/animals-and-plants/threatened-species/programs-legislation-and-framework/nsw-koala-strategy/koala-habitat-conservation" target="_blank" rel="noopener noreferrer">https://www.environment.nsw.gov.au/topics/animals-and-plants/threatened-species/programs-legislation-and-framework/nsw-koala-strategy/koala-habitat-conservation</a>
+              </li>
 
-          <label for="reef_region_view">
-            Map view:
-          </label> <!-- [Accessible label describing the dropdown.] -->
+              <li class="data-apa-entry">
+                    NSW Department of Climate Change, Energy, the Environment and Water. (2020). <em>Koala modelling regions</em> [Geospatial data set].
+                    <a href="https://data.nsw.gov.au/data/dataset/koala-modelling-regions" target="_blank" rel="noopener noreferrer">https://data.nsw.gov.au/data/dataset/koala-modelling-regions</a>
+              </li>
 
-
-          <select id="reef_region_view">
-            <!-- [Dropdown allows users to change the map's regional zoom.] -->
-
-            <option value="all">
-              Entire Great Barrier Reef
-            </option> <!-- [Shows the entire Reef.] -->
-
-            <option value="north">
-              Northern Reef — closer view
-            </option> <!-- [Zooms into the northern region.] -->
-
-            <option value="central">
-              Central Reef — closer view
-            </option> <!-- [Zooms into the central region.] -->
-
-            <option value="south">
-              Southern Reef — closer view
-            </option> <!-- [Zooms into the southern region.] -->
-
-          </select>
-
-        </div>
-
-
-
-        <div
-          id="reef_coral_choropleth_chart"
-          class="reef-chart reef-full-map"
-        ></div>
-        <!-- [JavaScript renders the interactive coral-cover choropleth here.] -->
-
-
-
-        <div class="reef-map-reading">
-          <!-- [Creates two explanatory text columns beneath the map.] -->
-
-          <div>
-
-            <strong>
-              How to read this choropleth
-            </strong>
-
-            <p>
-              Each polygon is an official reef
-              marine bioregion.
-
-              Its colour represents the unweighted
-              mean of available AIMS reef-level
-              modelled median hard-coral-cover
-              estimates for that reporting period.
-
-              <strong>
-                Grey means no matched survey data,
-                not 0% coral.
-              </strong>
-            </p> <!-- [Explains how the polygon colours represent coral cover.] -->
-
-          </div>
-
-
-          <div>
-
-            <strong>
-              Important limitations
-            </strong>
-
-            <p>
-              Surveyed reefs are not a random or
-              complete sample of each bioregion.
-
-              A coloured polygon does not mean every
-              reef or every point in the region
-              has that coral cover.
-
-              Site positions and official polygons
-              are matched geographically.
-
-              Internet access is required for the
-              Reef Authority boundary layer.
-            </p> <!-- [Explains the limitations of the monitoring data.] -->
+              <li class="data-apa-entry">
+                    Threatened Species Index. (2025). <em>The Australian Threatened Species Index 2025</em> [Interactive data visualisation].
+                    <a href="https://tsx.org.au/tsx2025/" target="_blank" rel="noopener noreferrer">https://tsx.org.au/tsx2025/</a>
+              </li>
+            </ul>
 
           </div>
 
         </div>
 
+      </section>
 
+    </main>
 
-        <p class="reef-data-attribution">
-          Boundaries: © Great Barrier Reef Marine
-          Park Authority (Marine Bioregions of
-          the Great Barrier Reef — Reef).
+    <!-- ==========================================
+              JAVASCRIPT LIBRARIES
+    ========================================== -->
 
-          Coral-cover data: AIMS Long-Term
-          Monitoring Program.
-        </p> <!-- [Credits the organisations that supplied the data.] -->
+    <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js">
+    </script>
 
-      </article>
+    <script src="https://cdn.jsdelivr.net/npm/vega@5">
+    </script>
 
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5">
+    </script>
 
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6">
+    </script>
 
-      <p class="reef-takeaway"> <!-- [Creates the final highlighted conclusion for the Reef.] -->
+    <script src="https://cdn.jsdelivr.net/npm/@turf/turf@6.5.0/turf.min.js">
+    </script>
 
-        <span
-          class="reef-takeaway-icon"
-          aria-hidden="true"
-        >
-          ✦
-        </span> <!-- [Decorative star icon.] -->
-
-        <span>
-
-          <strong>Why this matters:</strong>
-
-          Starfish control targets an important
-          coral predator, while long-term monitoring
-          reveals how coral habitat varies across
-          the Great Barrier Reef.
-
-          Coral cover is also influenced by marine
-          heatwaves, bleaching, cyclones and
-          other pressures, so the map should
-          not be interpreted as an effect
-          of starfish control alone.
-
-        </span>
-
-      </p>
-
-    </section>
-
-  </main>
-
-
-
-  <!-- ==========================================
-       JAVASCRIPT LIBRARIES
-  ========================================== -->
-
-  <!-- [Lucide library displays the icons used throughout the website.] -->
-  <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
-
-  <!-- [Vega is the underlying engine that renders visualisations.] -->
-  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
-
-  <!-- [Vega-Lite defines chart types, axes, colours and interactive features.] -->
-  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
-
-  <!-- [Vega-Embed inserts Vega-Lite charts into the HTML chart containers.] -->
-  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
-
-  <!-- [Turf.js supports geographic calculations and spatial data processing.] -->
-  <script src="https://cdn.jsdelivr.net/npm/@turf/turf@6.5.0/turf.min.js"></script>
-
-  <!-- [Your custom JavaScript connects the charts, dropdowns and interactive buttons.] -->
-  <script src="script.js"></script>
-
-</body>
+    <script src="script.js">
+    </script>
+  </body>
 </html>

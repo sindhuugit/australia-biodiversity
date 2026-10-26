@@ -1,0 +1,283 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Advanced diverging lollipop chart. Regional percentage point differences from an approximate NSW-wide exposure reference of 22%. Differences are derived from the accompanying six regional proportions. No koala population loss or hectares are inferred.",
+  "background": "transparent",
+  "width": 690,
+  "height": {
+    "step": 59
+  },
+  "title": {
+    "text": "Which Regions Were Above or Below the NSW-wide Estimate?",
+    "subtitle": "Difference from approximately 22% NSW-wide fire exposure · percentage points",
+    "anchor": "start"
+  },
+  "data": {
+    "url": "data/koala_exposure_vs_nsw.csv",
+    "format": {
+      "type": "csv",
+      "parse": {
+        "region_pct": "number",
+        "nsw_reference_pct": "number",
+        "difference_pp": "number"
+      }
+    }
+  },
+  "transform": [
+    {
+      "calculate": "datum.difference_pp > 0 ? '+' + format(datum.difference_pp, '.0f') + ' pp' : format(datum.difference_pp, '.0f') + ' pp'",
+      "as": "difference_label"
+    },
+    {
+      "calculate": "datum.difference_pp > 0 ? 'Above NSW estimate' : 'Below NSW estimate'",
+      "as": "position_label"
+    }
+  ],
+  "layer": [
+    {
+      "data": {
+        "values": [
+          {
+            "reference": 0
+          }
+        ]
+      },
+      "mark": {
+        "type": "rule",
+        "color": "#48695C",
+        "strokeWidth": 2,
+        "strokeDash": [
+          5,
+          5
+        ]
+      },
+      "encoding": {
+        "x": {
+          "field": "reference",
+          "type": "quantitative"
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "rule",
+        "strokeWidth": 5,
+        "strokeCap": "round"
+      },
+      "encoding": {
+        "x": {
+          "field": "difference_pp",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              -28,
+              56
+            ]
+          },
+          "axis": {
+            "title": "Difference from NSW-wide estimate (percentage points)",
+            "values": [
+              -20,
+              -10,
+              0,
+              10,
+              20,
+              30,
+              40,
+              50
+            ],
+            "labelExpr": "datum.value > 0 ? '+' + datum.value : datum.value",
+            "grid": true,
+            "gridColor": "#E6EDE7",
+            "labelFontSize": 12,
+            "titleFontSize": 12
+          }
+        },
+        "x2": {
+          "datum": 0
+        },
+        "y": {
+          "field": "region",
+          "type": "nominal",
+          "sort": {
+            "field": "difference_pp",
+            "order": "descending"
+          },
+          "axis": {
+            "title": null,
+            "labelFontSize": 12,
+            "labelLimit": 260,
+            "labelPadding": 10
+          }
+        },
+        "color": {
+          "condition": {
+            "test": "datum.difference_pp > 0",
+            "value": "#D77A50"
+          },
+          "value": "#76A386"
+        },
+        "tooltip": [
+          {
+            "field": "region",
+            "title": "Koala modelling region"
+          },
+          {
+            "field": "region_pct",
+            "title": "Regional exposure (%)",
+            "format": ".0f"
+          },
+          {
+            "field": "nsw_reference_pct",
+            "title": "Approx. NSW-wide exposure (%)",
+            "format": ".0f"
+          },
+          {
+            "field": "difference_label",
+            "title": "Difference from NSW reference"
+          }
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "circle",
+        "filled": true,
+        "size": 190,
+        "stroke": "#FFFFFF",
+        "strokeWidth": 1.5
+      },
+      "encoding": {
+        "x": {
+          "field": "difference_pp",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "region",
+          "type": "nominal",
+          "sort": {
+            "field": "difference_pp",
+            "order": "descending"
+          }
+        },
+        "color": {
+          "condition": {
+            "test": "datum.difference_pp > 0",
+            "value": "#D77A50"
+          },
+          "value": "#76A386"
+        },
+        "tooltip": [
+          {
+            "field": "region",
+            "title": "Koala modelling region"
+          },
+          {
+            "field": "region_pct",
+            "title": "Regional exposure (%)",
+            "format": ".0f"
+          },
+          {
+            "field": "nsw_reference_pct",
+            "title": "Approx. NSW-wide exposure (%)",
+            "format": ".0f"
+          },
+          {
+            "field": "difference_label",
+            "title": "Difference from NSW reference"
+          }
+        ]
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.difference_pp >= 0"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 13,
+        "baseline": "middle",
+        "font": "DM Sans",
+        "fontWeight": "bold",
+        "fontSize": 13,
+        "color": "#9C492B"
+      },
+      "encoding": {
+        "x": {
+          "field": "difference_pp",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "region",
+          "type": "nominal",
+          "sort": {
+            "field": "difference_pp",
+            "order": "descending"
+          }
+        },
+        "text": {
+          "field": "difference_label",
+          "type": "nominal"
+        }
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "datum.difference_pp < 0"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "right",
+        "dx": -13,
+        "baseline": "middle",
+        "font": "DM Sans",
+        "fontWeight": "bold",
+        "fontSize": 13,
+        "color": "#315C46"
+      },
+      "encoding": {
+        "x": {
+          "field": "difference_pp",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "region",
+          "type": "nominal",
+          "sort": {
+            "field": "difference_pp",
+            "order": "descending"
+          }
+        },
+        "text": {
+          "field": "difference_label",
+          "type": "nominal"
+        }
+      }
+    }
+  ],
+  "config": {
+    "font": "DM Sans",
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "domainColor": "#A8C4B6",
+      "tickColor": "#A8C4B6",
+      "labelColor": "#315B57",
+      "titleColor": "#173D34"
+    },
+    "title": {
+      "font": "DM Sans",
+      "fontSize": 19,
+      "color": "#173D34",
+      "subtitleFont": "DM Sans",
+      "subtitleFontSize": 12,
+      "subtitleColor": "#56756D",
+      "subtitlePadding": 10
+    }
+  }
+}

@@ -2,7 +2,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
 
-  "description": "Interactive proportional-symbol map showing distinct threatened bird species monitored across Australian regions, with smaller transparent circles and automatic state zoom.",
+  "description": "Interactive proportional-symbol map showing distinct threatened bird species monitored across Australian regions, with annotations explaining monitoring gaps and limitations.",
 
   "title": {
     "text": "Threatened Bird Monitoring Across Australia",
@@ -176,6 +176,166 @@
             "format": ".2f"
           }
         ]
+      }
+    },
+
+    {
+      "data": {
+        "values": [
+          {
+            "heading": "MONITORING GAPS"
+          }
+        ]
+      },
+
+      "transform": [
+        {
+          "filter": "chosenState === 'All states'"
+        }
+      ],
+
+      "mark": {
+        "type": "text",
+        "font": "DM Sans",
+        "fontSize": 11,
+        "fontWeight": "bold",
+        "color": "#31765A",
+        "align": "left",
+        "baseline": "middle"
+      },
+
+      "encoding": {
+        "x": {
+          "value": 12
+        },
+        "y": {
+          "value": 115
+        },
+        "text": {
+          "field": "heading",
+          "type": "nominal"
+        }
+      }
+    },
+
+    {
+      "data": {
+        "values": [
+          {
+            "note": "Fewer records in|remote regions do not|necessarily mean fewer|threatened birds."
+          }
+        ]
+      },
+
+      "transform": [
+        {
+          "filter": "chosenState === 'All states'"
+        }
+      ],
+
+      "mark": {
+        "type": "text",
+        "font": "DM Sans",
+        "fontSize": 12,
+        "fontWeight": "normal",
+        "color": "#5C7974",
+        "align": "left",
+        "baseline": "top",
+        "lineBreak": "|",
+        "lineHeight": 18
+      },
+
+      "encoding": {
+        "x": {
+          "value": 12
+        },
+        "y": {
+          "value": 130
+        },
+        "text": {
+          "field": "note",
+          "type": "nominal"
+        }
+      }
+    },
+
+    {
+      "data": {
+        "values": [
+          {
+            "heading": "MONITORING VS ABUNDANCE"
+          }
+        ]
+      },
+
+      "transform": [
+        {
+          "filter": "chosenState === 'All states'"
+        }
+      ],
+
+      "mark": {
+        "type": "text",
+        "font": "DM Sans",
+        "fontSize": 11,
+        "fontWeight": "bold",
+        "color": "#31765A",
+        "align": "left",
+        "baseline": "middle"
+      },
+
+      "encoding": {
+        "x": {
+          "value": 605
+        },
+        "y": {
+          "value": 285
+        },
+        "text": {
+          "field": "heading",
+          "type": "nominal"
+        }
+      }
+    },
+
+    {
+      "data": {
+        "values": [
+          {
+            "note": "The eastern cluster|shows monitored species|locations, not where|bird populations are|necessarily largest."
+          }
+        ]
+      },
+
+      "transform": [
+        {
+          "filter": "chosenState === 'All states'"
+        }
+      ],
+
+      "mark": {
+        "type": "text",
+        "font": "DM Sans",
+        "fontSize": 12,
+        "fontWeight": "normal",
+        "color": "#5C7974",
+        "align": "left",
+        "baseline": "top",
+        "lineBreak": "|",
+        "lineHeight": 18
+      },
+
+      "encoding": {
+        "x": {
+          "value": 605
+        },
+        "y": {
+          "value": 300
+        },
+        "text": {
+          "field": "note",
+          "type": "nominal"
+        }
       }
     }
   ],

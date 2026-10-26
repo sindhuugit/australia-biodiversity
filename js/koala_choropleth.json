@@ -1,0 +1,141 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Choropleth of official NSW koala modelling region boundaries. Six matched fire exposure estimates; missing data grey.",
+  "background": "transparent",
+  "width": 760,
+  "height": 520,
+  "title": {
+    "text": "Where Was Suitable Koala Habitat Most Affected?",
+    "subtitle": "NSW koala modelling regions · 2019–20 fire footprint",
+    "anchor": "middle"
+  },
+  "data": {
+    "url": "data/koala_choropleth_regions.geojson",
+    "format": {
+      "type": "json",
+      "property": "features"
+    }
+  },
+  "projection": {
+    "type": "mercator",
+    "center": [
+      148.6,
+      -33.4
+    ],
+    "scale": 2100,
+    "translate": [
+      395,
+      260
+    ]
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "geoshape",
+        "fill": "#E5E8E3",
+        "stroke": "#ffffff",
+        "strokeWidth": 1
+      },
+      "encoding": {
+        "shape": {
+          "field": "geometry",
+          "type": "geojson"
+        },
+        "tooltip": [
+          {
+            "field": "properties.region",
+            "type": "nominal",
+            "title": "Koala modelling region"
+          },
+          {
+            "field": "properties.exposure_label",
+            "type": "nominal",
+            "title": "Habitat exposure"
+          }
+        ]
+      }
+    },
+    {
+      "transform": [
+        {
+          "filter": "isValid(datum.properties.burnt_pct)"
+        }
+      ],
+      "mark": {
+        "type": "geoshape",
+        "stroke": "#FFFFFF",
+        "strokeWidth": 1
+      },
+      "encoding": {
+        "shape": {
+          "field": "geometry",
+          "type": "geojson"
+        },
+        "color": {
+          "field": "properties.band",
+          "type": "nominal",
+          "title": "Habitat within fire footprint (%)",
+          "scale": {
+            "domain": [
+              "0–<10%",
+              "10–<20%",
+              "20–<30%",
+              "30–<40%",
+              "40–<50%",
+              "50–<60%",
+              "60–70%"
+            ],
+            "range": [
+              "#E4EEDA",
+              "#BDD8BC",
+              "#8ABB94",
+              "#5E9D79",
+              "#CEB970",
+              "#E99B61",
+              "#D77A50"
+            ]
+          },
+          "legend": {
+            "orient": "bottom",
+            "direction": "horizontal",
+            "columns": 7,
+            "symbolType": "square",
+            "symbolSize": 175,
+            "labelFontSize": 11,
+            "titleFontSize": 12,
+            "labelLimit": 110,
+            "title": "Suitable habitat in fire footprint (%)",
+            "titleLimit": 400
+          }
+        },
+        "tooltip": [
+          {
+            "field": "properties.region",
+            "type": "nominal",
+            "title": "Koala modelling region"
+          },
+          {
+            "field": "properties.burnt_pct",
+            "type": "quantitative",
+            "title": "Habitat exposed (%)",
+            "format": ".0f"
+          }
+        ]
+      }
+    }
+  ],
+  "config": {
+    "font": "DM Sans",
+    "view": {
+      "stroke": null
+    },
+    "title": {
+      "font": "DM Sans",
+      "fontSize": 19,
+      "color": "#173D34",
+      "subtitleFont": "DM Sans",
+      "subtitleFontSize": 12,
+      "subtitleColor": "#5C7974"
+    }
+  }
+}

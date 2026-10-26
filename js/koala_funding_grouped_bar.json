@@ -1,0 +1,186 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "A single-axis horizontal bar comparison of four announced NSW Koala Strategy habitat allocations. Protection is green; restoration is orange. Group descriptions are in accessible HTML above the plot.",
+  "background": "transparent",
+  "width": 710,
+  "height": {
+    "step": 62
+  },
+  "padding": {
+    "top": 12,
+    "left": 5,
+    "right": 76,
+    "bottom": 8
+  },
+  "data": {
+    "url": "data/koala_funding_allocations.csv",
+    "format": {
+      "type": "csv",
+      "parse": {
+        "amount_m": "number",
+        "target_ha": "number"
+      }
+    }
+  },
+  "transform": [
+    {
+      "calculate": "'A$' + format(datum.amount_m, '.1f') + 'm'",
+      "as": "amount_label"
+    },
+    {
+      "calculate": "round(datum.amount_m / 102.1 * 1000) / 10",
+      "as": "selected_share_pct"
+    }
+  ],
+  "layer": [
+    {
+      "mark": {
+        "type": "bar",
+        "size": 33,
+        "cornerRadiusEnd": 6
+      },
+      "encoding": {
+        "y": {
+          "field": "action",
+          "type": "nominal",
+          "sort": [
+            "National park additions",
+            "Private land protection",
+            "Box-gum woodland restoration",
+            "Coordinated habitat restoration"
+          ],
+          "axis": {
+            "title": null,
+            "labelFontSize": 13,
+            "labelFontWeight": 600,
+            "labelColor": "#173D34",
+            "labelLimit": 280,
+            "labelPadding": 14,
+            "ticks": false,
+            "domain": false
+          }
+        },
+        "x": {
+          "field": "amount_m",
+          "type": "quantitative",
+          "scale": {
+            "domain": [
+              0,
+              55
+            ],
+            "nice": false
+          },
+          "axis": {
+            "title": "Announced funding (A$ million)",
+            "values": [
+              0,
+              10,
+              20,
+              30,
+              40,
+              50
+            ],
+            "grid": true,
+            "gridColor": "#E4E9E3",
+            "gridOpacity": 1,
+            "tickColor": "#C3D3C8",
+            "domain": false,
+            "labelFontSize": 12,
+            "labelPadding": 7,
+            "titleFontSize": 13,
+            "titlePadding": 14,
+            "titleColor": "#315247",
+            "labelColor": "#526D61"
+          }
+        },
+        "color": {
+          "field": "action",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "National park additions",
+              "Private land protection",
+              "Box-gum woodland restoration",
+              "Coordinated habitat restoration"
+            ],
+            "range": [
+              "#31765A",
+              "#7CA98A",
+              "#D77A50",
+              "#E1AE70"
+            ]
+          },
+          "legend": null
+        },
+        "tooltip": [
+          {
+            "field": "action",
+            "type": "nominal",
+            "title": "Conservation action"
+          },
+          {
+            "field": "group",
+            "type": "nominal",
+            "title": "Funding purpose"
+          },
+          {
+            "field": "amount_m",
+            "type": "quantitative",
+            "title": "Announced funding (A$ million)",
+            "format": ".1f"
+          },
+          {
+            "field": "selected_share_pct",
+            "type": "quantitative",
+            "title": "Share of selected funding (%)",
+            "format": ".1f"
+          },
+          {
+            "field": "target_ha",
+            "type": "quantitative",
+            "title": "Target area (ha)",
+            "format": ",d"
+          }
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "middle",
+        "dx": 10,
+        "font": "DM Sans",
+        "fontSize": 14,
+        "fontWeight": 700,
+        "color": "#173D34"
+      },
+      "encoding": {
+        "y": {
+          "field": "action",
+          "type": "nominal",
+          "sort": [
+            "National park additions",
+            "Private land protection",
+            "Box-gum woodland restoration",
+            "Coordinated habitat restoration"
+          ]
+        },
+        "x": {
+          "field": "amount_m",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "amount_label",
+          "type": "nominal"
+        }
+      }
+    }
+  ],
+  "config": {
+    "font": "DM Sans",
+    "view": {
+      "stroke": null
+    }
+  }
+}
