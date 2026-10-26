@@ -1,4 +1,3 @@
-
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "TSX trend chart with responsive sizing and nearest-point hover interactions.",
@@ -53,7 +52,8 @@
           "Birds",
           "Mammals",
           "Plants",
-          "Reptiles & Amphibians"
+          "Reptiles",
+          "Amphibians"
         ]
       }
     }
@@ -72,7 +72,10 @@
       "field": "year",
       "type": "quantitative",
       "scale": {
-        "domain": [1984.1, 2023],
+        "domain": [
+          1984.1,
+          2023
+        ],
         "nice": false,
         "zero": false
       },
@@ -131,7 +134,9 @@
             "domain": [
               "Shaded area = uncertainty range around estimated trend"
             ],
-            "range": ["#A8C4A0"]
+            "range": [
+              "#A8C4A0"
+            ]
           },
           "legend": {
             "title": null,
@@ -199,7 +204,9 @@
           "name": "hoveredTsxYear",
           "select": {
             "type": "point",
-            "fields": ["year"],
+            "fields": [
+              "year"
+            ],
             "nearest": true,
             "on": "pointerover",
             "clear": "pointerout"
