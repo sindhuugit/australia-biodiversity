@@ -8,8 +8,8 @@
       "Points show published CAPAD reporting years"
     ]
   },
-  "width": 350,
-  "height": 315,
+  "width": 375,
+  "height": 340,
   "data": {
     "url": "data/protected_land_coverage_2004_2024.csv",
     "format": {
@@ -26,8 +26,8 @@
       "type": "quantitative",
       "scale": {
         "domain": [
-          2004,
-          2024
+          2002.5,
+          2025.5
         ],
         "nice": false
       },
@@ -54,7 +54,7 @@
       "scale": {
         "domain": [
           0,
-          25
+          27
         ],
         "nice": false
       },
@@ -129,11 +129,11 @@
       "mark": {
         "type": "text",
         "color": "#173D34",
-        "fontSize": 11,
+        "fontSize": 12,
         "fontWeight": 700,
         "align": "left",
-        "dx": 5,
-        "dy": -14
+        "dx": 9,
+        "dy": -12
       },
       "encoding": {
         "text": {
@@ -151,11 +151,11 @@
       "mark": {
         "type": "text",
         "color": "#173D34",
-        "fontSize": 11,
+        "fontSize": 12,
         "fontWeight": 700,
         "align": "right",
-        "dx": -5,
-        "dy": -14
+        "dx": -8,
+        "dy": -12
       },
       "encoding": {
         "text": {

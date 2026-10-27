@@ -4134,3 +4134,31 @@ header.site-hero {
 .species-section #species_controls:empty {
   display: none !important;
 }
+
+/* Protected land trend layout */
+.protected-land-trend-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(260px, 0.75fr);
+  gap: 2rem;
+  align-items: start;
+  margin-top: 1.5rem;
+}
+
+.protected-land-trend-layout .chart-wrap {
+  margin: 0;
+}
+
+.protected-land-trend-layout .chart-note {
+  margin: 0;
+  height: fit-content;
+}
+
+@media (max-width: 900px) {
+  .protected-land-trend-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .protected-land-trend-layout .chart-note {
+    margin-top: 1rem;
+  }
+}

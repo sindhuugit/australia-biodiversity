@@ -8,6 +8,90 @@
     <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=DM+Serif+Display&amp;display=swap" rel="stylesheet"/>
     <link href="style.css" rel="stylesheet"/>
+
+    <!-- Protected-land growth card: keep its note close to the chart. -->
+    <style>
+      .story-section .bio-double-grid .conservation-panel--growth {
+        justify-content: flex-start;
+      }
+
+      .story-section .bio-double-grid .conservation-panel--growth
+      #conservation_growth_chart {
+        display: flex;
+        flex: 0 0 auto;
+        justify-content: center;
+        align-items: flex-start;
+        min-height: 0;
+        margin: 10px auto 0;
+        padding: 0;
+        overflow-x: auto;
+      }
+
+      .story-section .conservation-panel--growth
+      #conservation_growth_chart > .vega-embed {
+        flex: 0 0 auto;
+        margin: 0 auto;
+      }
+
+      .story-section .bio-double-grid .conservation-panel--growth
+      .bio-card-note {
+        margin: 14px 0 0 !important;
+      }
+
+      .trend-growth-summary {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 9px;
+        margin-top: 14px;
+      }
+
+      .trend-growth-stat {
+        min-width: 0;
+        padding: 12px 10px;
+        border: 1px solid #D8EAE3;
+        border-radius: 12px;
+        background: #F2F8F4;
+        text-align: center;
+      }
+
+      .trend-growth-stat span {
+        display: block;
+        margin-bottom: 4px;
+        color: #567469;
+        font: 600 11px/1.4 'DM Sans', sans-serif;
+      }
+
+      .trend-growth-stat strong {
+        display: block;
+        color: #173D34;
+        font: 700 clamp(16px, 1.65vw, 21px)/1.3 'DM Sans', sans-serif;
+        white-space: nowrap;
+      }
+
+      .trend-growth-stat--change {
+        background: #F9EEE7;
+        border-color: #EEDBCB;
+      }
+
+      .trend-growth-stat--change strong {
+        color: #B96740;
+      }
+
+      @media (max-width: 550px) {
+        .trend-growth-summary {
+          gap: 6px;
+        }
+
+        .trend-growth-stat {
+          padding: 10px 5px;
+        }
+
+        .trend-growth-stat strong {
+          font-size: 15px;
+        }
+      }
+    </style>
+
   </head>
   <body>
 
@@ -392,24 +476,53 @@
 
           <div class="conservation-grid bio-double-grid">
 
-            <!-- LEFT CHART: PROTECTED LAND GROWTH -->
+            <!-- ==========================================
+                 LEFT CHART: PROTECTED LAND GROWTH
+            ========================================== -->
 
-            <article class="conservation-panel bio-chart-card">
+            <article class="conservation-panel bio-chart-card conservation-panel--growth">
+
               <div class="bio-card-top">
-                <span class="bio-card-label">PROTECTED LAND GROWTH · 2004–2024</span>
+                <span class="bio-card-label">
+                  PROTECTED LAND GROWTH · 2004–2024
+                </span>
               </div>
 
-              <div class="conservation-chart bio-chart-space" id="conservation_growth_chart">
+              <!-- Vega-Lite draws the line-and-area chart in this container. -->
+              <div
+                class="conservation-chart bio-chart-space"
+                id="conservation_growth_chart"
+              ></div>
+
+              <!-- Main values at a glance, directly below the chart. -->
+              <div class="trend-growth-summary" aria-label="Change in protected land from 2004 to 2024">
+
+                <div class="trend-growth-stat">
+                  <span>2004</span>
+                  <strong>10.52%</strong>
+                </div>
+
+                <div class="trend-growth-stat">
+                  <span>2024</span>
+                  <strong>22.57%</strong>
+                </div>
+
+                <div class="trend-growth-stat trend-growth-stat--change">
+                  <span>Increase</span>
+                  <strong>+12.05 pp</strong>
+                </div>
+
               </div>
 
+              <!-- Close to the chart instead of at the bottom of an empty card. -->
               <p class="conservation-note bio-card-note">
                 <strong>How to read:</strong>
-                The line shows the percentage
-                            of Australia's terrestrial land protected for conservation.
-                            The green area fills the space below the line; it is not
-                            an uncertainty band. Points represent published CAPAD
-                            reporting years, not observations for every intervening year.
+                The line shows the percentage of Australia's land protected
+                in published CAPAD reporting years. The shaded area is not an
+                uncertainty range. Points show the reporting years; values
+                between them are not separate annual observations.
               </p>
+
             </article>
 
             <!-- RIGHT CHART: GOVERNANCE WAFFLE -->
